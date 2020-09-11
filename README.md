@@ -1,6 +1,6 @@
 ## Mansion Mod
 
-Main mod file is under game\overworld-town\Mansion and is running on an old version of the game, however that should not be an issue.
+Main mod file is under game\overworld-town\Mansion and is running on an old version of the game, however that should not be an issue as the mansion is completely seperate from the main game.
 
 For a list of what is completed, and some other notes see CompletedWork.txt
 
@@ -9,6 +9,12 @@ The file structure of the mod is simple, and I've compartmentalized everything p
 For now, you have to make a new save when testing the mod, however I have not found this to be an issue. This is because the mod uses new variables, and I have not figured out how to initialize new variables in an old save automatically. The link to entering the mansion is in the PCs bedroom.
 
 When the player enters the main hall of the mansion, the list of chores is created, this is just for testing and will be done each morning. The main hall is also the only room with random movement events set up, but adding that to other rooms is simple. There is a link to a test room where you can begin some of the events and chores manually. 
+
+If anyone wants to help, feel free to go over what I've written and give feedback/find mispellings. There will certaily be some of those. 
+Or, if somebody wants to expand on, edit or write a new event, that would be apreceated too. Adding a chore event shouldn't be too hard. My goal for each chore event is to have sub events where the player can interact with each of a guard, guest or another servant while doing each chore.
+
+###Super Short TLDR:
+The player is in a mansion doing work, possibly against their will. They are given a list of chores to do each day. Chores are things like cleaning a room or doing laundry. There are other events like serving or cooking dinner, one happens each day. There are rare events like a servant escaping that will happen some mornings.
 
 # General Overview
 
