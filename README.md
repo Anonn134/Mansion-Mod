@@ -2,7 +2,7 @@
 
 Main mod file is under game\overworld-town\Mansion and is running on an old version of the game, however that should not be an issue as the mansion is completely seperate from the main game.
 
-For a list of what is completed, and some other notes see CompletedWork.txt
+For a list of what is completed, and some other notes, see CompletedWork.txt
 
 The file structure of the mod is simple, and I've compartmentalized everything pretty well, so it should be easy to work with it. Each chore, room, event, etc has its own file, so seeing what has or has not been done should be easily done by looking at the files. Honestly, looking at the file structure should go a long way in explaining what’s going on.
 
