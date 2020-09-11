@@ -1,6 +1,6 @@
 ## Mansion Mod
 
-Main mod file is under game\overworld-town\Mansion and is running on an old version of the game, however that should not be an issue as the mansion is completely seperate from the main game.
+Main mod file is under game\overworld-town\Mansion and is running on an old version of the game, however that should not be an issue as the mansion is completely separate from the main game.
 
 For a list of what is completed, and some other notes, see CompletedWork.txt
 
@@ -10,8 +10,8 @@ For now, you have to make a new save when testing the mod, however I have not fo
 
 When the player enters the main hall of the mansion, the list of chores is created, this is just for testing and will be done each morning. The main hall is also the only room with random movement events set up, but adding that to other rooms is simple. There is a link to a test room where you can begin some of the events and chores manually. 
 
-If anyone wants to help, feel free to go over what I've written and give feedback/find mispellings. There will certaily be some of those. 
-Or, if somebody wants to expand on, edit or write a new event, that would be apreceated too. Adding a chore event shouldn't be too hard. My goal for each chore event is to have sub events where the player can interact with each of a guard, guest or another servant while doing each chore.
+If anyone wants to help, feel free to go over what I've written and give feedback/find misspellings. There will certainly be some of those. 
+Or, if somebody wants to expand on, edit or write a new event, that would be appreciated too. Adding a chore event shouldn't be too hard. My goal for each chore event is to have sub events where the player can interact with each of a guard, guest or another servant while doing each chore.
 
 My main goal right now is to complete all of the chores, daily events and morning events. Getting those done doesn’t require much else done. Then I can move on to refining the layout of the mansion, getting random events firing while navigating the mansion and getting guest rooms sorted out.
 
