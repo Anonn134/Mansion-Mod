@@ -13,6 +13,8 @@ When the player enters the main hall of the mansion, the list of chores is creat
 If anyone wants to help, feel free to go over what I've written and give feedback/find mispellings. There will certaily be some of those. 
 Or, if somebody wants to expand on, edit or write a new event, that would be apreceated too. Adding a chore event shouldn't be too hard. My goal for each chore event is to have sub events where the player can interact with each of a guard, guest or another servant while doing each chore.
 
+My main goal right now is to complete all of the chores, daily events and morning events. Getting those done doesn’t require much else done. Then I can move on to refining the layout of the mansion, getting random events firing while navigating the mansion and getting guest rooms sorted out.
+
 ### Super Short TLDR:
 The player is in a mansion doing work, possibly against their will. They are given a list of chores to do each day. Chores are things like cleaning a room or doing laundry. There are other events like serving or cooking dinner, one happens each day. There are rare events like a servant escaping that will happen some mornings.
 
