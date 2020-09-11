@@ -1,0 +1,11 @@
+:: Mansion Laundry Room [nobr]
+	<<mansionDisplayChores>>
+	
+	Six washers and dryers line the wall, and cleaning supplies is littered throughout the room. The guard is closely watching you.
+	
+	<br>
+	<br>
+	<<link [[Basement Entrance|Mansion Basement Entrance]]>><<pass 1>><</link>>
+	<br>
+	<<mansionDoChores>>
+	<<mansionDoQuest>>

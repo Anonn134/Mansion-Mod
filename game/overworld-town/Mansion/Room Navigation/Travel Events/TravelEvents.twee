@@ -1,0 +1,43 @@
+:: Widgets Events Mansion Travel [widget]
+	<<widget "mansiontravelevent">><<nobr>>
+
+	/* An event can fire every 8-12 minutes */
+	<<set $mansionRoom to passage()>> 
+	<<set $mansionLastEventTime to $time + random(8,12)>>
+	<<if $mansionLastEventTime gte 1440>>
+		<<set $mansionLastEventTime to 0>>
+	<</if>>
+	<<set $mansionRng to random(1, 2)>>
+	<<if $mansionRng is 1>>
+		<<mansionevent1>>
+	<<elseif $mansionRng is 2>>
+		<<mansionevent2>>
+	<</if>>
+
+	<</nobr>><</widget>>
+
+
+<<widget "mansionevent1">><<nobr>>
+	<br>
+	Mansion event 1 in $mansionRoom
+	<<mansiondestinationeventend>>
+
+	<</nobr>><</widget>>
+
+	
+<<widget "mansionevent2">><<nobr>>
+	<br>
+	Mansion event 2 in $mansionRoom
+	<<mansiondestinationeventend>>
+
+	<</nobr>><</widget>>
+
+
+:: Widgets Events Mansion Event Destination[widget]
+	<<widget "mansiondestinationeventend">><<nobr>>
+	<<set $mansionTravelEventFlag to true>>
+	<br>
+	<br>
+	<<link [[Next|$mansionRoom]]>><</link>>
+
+	<</nobr>><</widget>>

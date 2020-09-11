@@ -1,0 +1,34 @@
+:: Widgets Mansion Movement Flavor [widget]
+	<<widget "mansionwalkingflavor">><<nobr>>
+	/* Flavor text that appears when the player moves. Communicates some useful info to the player */
+	<<if $rng lte 40>>
+		<<set $mansionRng to random(1, 8)>>
+	
+		<<if $mansionRng is 1>>
+			You see a pair of guards walking past and overhear them talking, "The luxury suite idea was genius, pit the whores against each other and they won’t have time to think about how to work together, let alone escape."<br>
+
+		<<elseif $mansionRng is 2>>
+			As you walk through the room, you hear a guests mumbling to himself, "I wonder if I can get any of those whores to myself, I might ask if I can buy one to take home."<br>
+
+		<<elseif $mansionRng is 3>>
+			You hear two gards talking as you walk through the room, "Have you heard about the hedge maze? I think there's something in there, one of the maids went in and didn’t come out."<br>
+
+		<<elseif $mansionRng is 4>>
+			You overhear a small group of guests gossiping, "Have you seen that guy in the library that just comes here to read? What’s the point of this place if you’re just going to read."<br>
+
+		<<elseif $mansionRng is 5>>
+			I heard that the head honcho was having trouble dealing with all the paperwork, it seems like he could use some help.<br>
+
+		<<elseif $mansionRng is 6>>
+			A guard bumps into you as he walks past, nearly knocking you over.<br>
+		
+		<<elseif $mansionRng is 7>>
+			A guard walks by talking to his friend, you hear him saying "It’s hilarious what some of these sluts will do for money. I think some of them even like it, I’m not complaining though."<br>
+		
+		<<elseif $mansionRng is 8>>
+			A guest walks by and you hear him mumbling to himself, "One of my favorites is about to have her contract expire, I wonder if I could pay her to stay longer."<br>
+		<</if>>
+	<</if>>
+
+
+	<</nobr>><</widget>>

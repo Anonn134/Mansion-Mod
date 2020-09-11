@@ -1,0 +1,166 @@
+:: Widgets Events Mansion Variables [widget]
+	<<widget "mansionvars">><<nobr>>
+
+<<set $mansinoBedLevel to 0>>
+
+<<set $daysInMansion to 0>>
+<<set $mansionInv to {
+	keyCard: false,
+	dullKnife: false,
+	sharpKnife: false,
+	libraryKey: false,
+	bleach: false,
+	sleepPills: false,
+	food: false,
+	water: false
+}>>
+
+<<set $mansionChores to {
+	cleanKitchen: false,
+	cleanDungeon: false,
+	cleanStripClub: false,
+	cleanGuestRooms: false,
+	cleanMainHall: false,
+	cleanDormitory: false,
+	cleanGarden: false,
+	cleanLibrary: false,
+	doLaundry: false,
+	harperExperiment: false,
+	nakedPose: false,
+	patioService: false,
+	visitGuestRoom: false
+}>>
+
+<<set $mansionDaily to {
+	cookDinner: false,
+	danceClub: false,
+	serveDinner: false,
+	gardenMazeGame: false,
+	masqueradeBall: false,
+	mudWrestle: false,
+	poseForPainting: false
+}>>
+
+/* The weekly favorite dishes */
+<<set $mansionDinner to {
+	appetizer: 0,
+	entree: 0,
+	dessert: 0
+}>>
+
+/* The quest stage of the few "quests" within the mansion */
+<<set $mansionQuestsStage to {
+	dungeonFoodWater: 0,
+	laundryStage: 0
+}>>
+
+
+
+/* Entering rooms can sometimes give a - to mental stats, these make sure that event fires only once per day */
+<<set $mansionOneRoomEventDay to {
+	dungeoncells: false,
+	dormitorieshalls: false,
+	stripclubentrance: false,
+	guestroomhalls: false
+}>>
+
+<<set $mansionMiscFlag to 0>> /* Misc flag used for random things */
+<<set $mansionpunished to false>> /* Used for when the player is being punished to make sure they are punished at least once */
+<<set $mansionMissedChores to 0>> /* Number of missed chores each morning when old chores are checked and new ones created  */
+<<set $mansionWake to false>> /* Mirror to Bailywake */
+<<set $mansionCreateChores to true>> 
+<<set $mansionPRType to 0>> /* There are multiple types of punishment rooms, this stores which one the player is in */
+<<set $mansionPunishmentTime to 0>> /* Number of cycles the player has been in punishment */
+<<set $mansionTravelEventFlag to true>>
+
+<<set $mansionTrustMax to 100>>
+<<set $mansionTrust to 0>>
+
+<<set $mansionServantPopularity to 0>>
+<<set $mansionServantPopularityMax to 100>>
+
+<<set $mansionGuestPopularity to 0>>
+<<set $mansionGuestPopularityMax to 100>>
+<<set $mansionGuestReport to 0>> /* If lguestpop or gguestpop is called, there is a chance that they will report the player for good or bad behavior */
+
+<<set $mansionRng to 0>>
+<<set $mansionDisplayChoresFlag to false>> /* Flag used to show either the "chores done" message or the list of chores */
+<<set $mansionRoom to "none">> 
+
+<<set $mansionEventFired to false>> 
+<<set $mansionChoreCount to 2>> /* Number of chores to be given to the player at the start of each day */
+<<set $mansionMainHallReDirtyTime to 0>> /* See <<mansionmainhallupdate>> */
+
+<<set $mansionNextEventTime to 0>>
+
+
+/* Related to guest rooms */
+<<set $presetGuestRoom to 0>>
+
+<<set _mansionGuest1 to clone($baseNPC)>>
+<<set _mansionGuest2 to clone($baseNPC)>>
+<<set _mansionGuest3 to clone($baseNPC)>>
+<<set _mansionGuest4 to clone($baseNPC)>>
+<<set _mansionGuest5 to clone($baseNPC)>>
+<<set _mansionGuest6 to clone($baseNPC)>>
+
+<<set $mansionGuestList = [_mansionGuest1, _mansionGuest2, _mansionGuest3, _mansionGuest4, _mansionGuest5, _mansionGuest6]>>
+
+<<set $guestNum to 0>>
+
+/* While there may be multiple guests in the room, there will always only be one set of quirks and sexwants */
+<<set $mansionGuestQuirks to {
+	startingAnger: 0,
+	startingTrust: 0,
+	
+	quickLeave: false,
+	refuseLeave: false,
+	refuseClean: false,
+	wantClean: false,
+	beatNoise: false,
+	silentViolent: false,
+	wantStruggle: false,
+	playerDenial: false,
+	useToys: false,
+	useGag: false,
+	useBlind: false,
+	useBind: false,
+	chokeOut: false,
+	leaveRoom: false,
+	useBed: false,
+	isKind: false,
+	isSchiz: false
+}>>
+
+<<set $mansionGuestRoomLeaveCond to "">>
+
+<<set $mansionGuestSexWant to {
+	wantInsert: false,
+	wantAnal: false,
+	wantVaginal: false,
+	wantBoob: false,
+	wantOral: false,
+	wantFeet: false,
+	wantThighs: false
+}>>
+
+<<set $mansionGuestRoomQuirks to {
+	desc: "",
+	dirty: false,
+	smallBed: false,
+	pillory: false,
+	bedChains: false,
+	roomChains: false,
+	floorArmBinder: false,
+	woodenHorse: false
+}>>
+
+<<set $mansionGuestStatus to {
+	guestLocation: "blank",
+	playerLocation: "blank",
+	guestAnger: 0,
+	guestTrust: 0,
+	roomDirt: 0
+}>>
+
+<</nobr>><</widget>>

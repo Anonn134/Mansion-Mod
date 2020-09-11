@@ -1,0 +1,37 @@
+:: Clean Dorms Chore [nobr]
+	<<if $rng gte 30>>
+		You begin cleaning the dormitories and the other guests stay out of your way.
+	
+		<<set $mansionChores.cleanDormitory to false>>
+		<br>
+		<<link [[Next|Dormitories Hall]]>><<pass 60>><</link>>
+	
+	<<else>>
+		As you begin cleaning, a pair of guests barge in and the room goes silent. They look at you and ask if you've seen a specific girl who works in the mansion, and assumably sleeps here. The room falls silent as they ask.
+
+		<br>
+		<<link [[Tell them that you don't know who that is|Clean Dorms Chore 2.1]]>><<pass 60>><</link>>
+		<br>
+		<<link [[Tell them where the girl is|Clean Dorms Chore 2.2]]>><<pass 60>><</link>>
+	<</if>>
+
+:: Clean Dorms Chore 2.1 [nobr]
+	The men smile at you and pat you on the back as they pass you and enter towards the girls room. The room remains silent as you complete your cleaning.
+	
+	<<set $mansionChores.cleanDormitory to false>>
+	<br>
+	<<link [[Next|Dormitories Hall]]>><<pass 60>><</link>>
+		
+:: Clean Dorms Chore 2.2 [nobr]
+	mtodo: Change to english check
+	
+	<<if $rng lte 10>>
+		The men don't believe you and aproach you angrily.
+		
+	<<else>>
+		The men glance around at the dozen of faces looking at them then leave without another word. You complete your cleaning and the room returns to normal.
+		
+		<<set $mansionChores.cleanDormitory to false>>
+		<br>
+		<<link [[Next|Dormitories Hall]]>><<pass 60>><</link>>	
+	<</if>>

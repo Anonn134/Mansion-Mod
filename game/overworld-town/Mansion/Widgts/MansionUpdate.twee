@@ -1,0 +1,12 @@
+:: Widgets Mansion Main Hall Redirt [widget]
+	<<widget "mansionmainhallupdate">><<nobr>>
+	
+	<<if passage() is "Mansion Main Hall" and $mansionMainHallReDirtyTime lte $time>>
+		<<set $mansionChores.cleanMainHall to true>>
+		<<set $mansionMainHallReDirtyTime to 0>>
+		<br>
+		As you enter the main hall, you see that the room has become a mess, despite you cleaning it earlier in the day. Maybe you could hold off on cleaning it so early next time.
+		<br>
+	<</if>>
+	
+	<</nobr>><</widget>>

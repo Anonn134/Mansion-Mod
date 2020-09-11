@@ -1,0 +1,11 @@
+:: Mansion Hospital [nobr]
+	<<mansionDisplayChores>>
+	
+	The hospital looks like any other hospital, sterile white tiles line the floors and walls. A door leads back further into the hospital, but the guards make it clear you won’t be allowed in. The doctors here don’t care how you feel, just if you’re able to perform your chores and other duties. Somebody walks up to you and asks if you have any buisness here, or are in dire need of help.
+		
+	<br>
+	<br>
+	<<link [[Mansion Main Hall|Mansion Main Hall]]>><<pass 1>><</link>>
+	<br>
+	<<mansionDoChores>>	
+	<<mansionDoQuest>>

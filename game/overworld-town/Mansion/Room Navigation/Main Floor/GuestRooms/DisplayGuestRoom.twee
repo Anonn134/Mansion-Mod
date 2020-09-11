@@ -1,0 +1,85 @@
+:: Widgets Mansion Display Guest Room [widget]
+	<<widget "mansionshowroom">><<nobr>>
+	
+	<br><br>
+	<<if $mansionGuestRoomQuirks.dirty is true>>
+		The room is filthy, trash is everywhere and everything is unkempt. Glancing around, you see the bathroom next to the entrance.
+	<<else>>
+		The room is clean and you see the door to what you assume is the bathroom next to the entrance to the room.
+	<</if>>
+	<<if $mansionGuestRoomQuirks.smallBed is true>>
+		There is a very small bed in the corner of the room. 
+	<<else>>
+		There is a bed in the corner of the room. 
+	<</if>>
+	<<if $mansionGuestRoomQuirks.bedChains is true>>
+		Upon closer inspection, you see rings to tie rope or chain to on each corner of the bed. 
+	<</if>>
+	<<if $mansionGuestRoomQuirks.pillory is true>>
+		Off to the side of the bed, there is a pillory. 
+	<</if>>
+	<<if $mansionGuestRoomQuirks.roomChains is true>>
+		In the center of the room, there is a set of chains and cuffs. 
+	<</if>>
+	<<if $mansionGuestRoomQuirks.floorArmBinder is true>>
+		Opposite the bed, there is what seems to be an armbinder, with rope attatched in some places. 
+	<</if>>
+	<<if $mansionGuestRoomQuirks.woodenHorse is true>>
+		In the center of the room there a wooden horse, its size dominates the room. 
+	<</if>>	
+<</nobr>><</widget>>
+
+:: Widgets Mansion Display Guest Feelings [widget]
+	<<widget "mansionshowguestfeelings">><<nobr>>
+	
+	<<set $enemyangermax to 200>>
+	<<set $pronoun to $mansionGuestList[0].pronoun>>
+	
+	<<if $mansionGuestStatus.guestAnger gte $enemyangermax>>
+		<span class="red"><<He>> is furious.</span>
+	<<elseif $mansionGuestStatus.guestAnger gte ($enemyangermax / 5) * 4>>
+		<span class="pink"><<He>> looks incredibly pissed off.</span>
+	<<elseif $mansionGuestStatus.guestAnger gte ($enemyangermax / 5) * 3>>
+		<span class="purple"><<He>> looks angry.</span>
+	<<elseif $mansionGuestStatus.guestAnger gte ($enemyangermax / 5) * 2>>
+		<span class="blue"><<He>> looks frustrated.</span>
+	<<elseif $mansionGuestStatus.guestAnger gte ($enemyangermax / 5) * 1>>
+		<span class="lblue"><<He>> looks irritated.</span>
+	<<elseif $mansionGuestStatus.guestAnger gt 0>>
+		<span class="teal"><<He>> looks disappointed.</span>
+	<<elseif $mansionGuestStatus.guestAnger lte 0>>
+		<span class="green"><<He>> looks calm.</span>
+	<</if>>
+
+	<<if $mansionGuestStatus.guestTrust lte -100>>
+		<span class="red"><<He>> looks full of suspicion.</span>
+	<<elseif $mansionGuestStatus.guestTrust lte -60>>
+		<span class="pink"><<He>> looks guarded.</span>
+	<<elseif $mansionGuestStatus.guestTrust lte -20>>
+		<span class="purple"><<He>> looks wary.</span>
+	<<elseif $mansionGuestStatus.guestTrust lte 20>>
+		<span class="blue"><<He>> looks cautious.</span>
+	<<elseif $mansionGuestStatus.guestTrust lte 60>>
+		<span class="lblue"><<He>> looks alert</span>
+	<<elseif $mansionGuestStatus.guestTrust lte 100>>
+		<span class="teal"><<He>> looks relaxed.</span>
+	<<elseif $mansionGuestStatus.guestTrust gt 100>>
+		<span class="green"><<He>> looks confident.</span>
+	<</if>>
+	
+<</nobr>><</widget>>
+
+
+:: Widgets Mansion Display Player Location [widget]
+	<<widget "mansionshowplayerlocation">><<nobr>>
+	
+	<<print $mansionGuestStatus.playerLocation>>
+	
+<</nobr>><</widget>>
+
+:: Widgets Mansion Display Guest Location [widget]
+	<<widget "mansionshowguestlocation">><<nobr>>
+	
+	<<print $mansionGuestStatus.guestLocation>>
+	
+<</nobr>><</widget>>

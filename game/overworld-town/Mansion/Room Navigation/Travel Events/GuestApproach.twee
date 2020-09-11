@@ -1,0 +1,110 @@
+:: Mansion Finish Chore Guest Chat [nobr]
+	As you finish your chore, you see a guest walking towards you with purpose.
+	
+	<br>
+	<br>
+	<<link [[Stay put|Mansion Guest Chat 2.1]]>><</link>>
+	<<link [[Walk away|Mansion Guest Chat 2.2]]>><</link>>
+	
+:: Mansion Guest Chat 2.1 [nobr]
+	<<generate1>><<person1>>You turn to them as they approach. 
+	<<if $rng is 50>>
+		<<He>> leans towards you and whispers to you. "Looks like you're done here, how about you and I take a load off and spend some time somwhere private." He motions for you to follow him.
+		<br>
+		<br>
+		<<link [[Stay put|Mansion Guest Chat 3.1]]>><</link>>
+		<<link [[Follow him|Mansion Guest Chat 3.2]]>><</link>>
+	<<else>>	
+		<<He>> leans towards you and politely asks mtodo: something relevant about the room the player is in
+		<br>
+		<br>
+		<<link [[Help|Mansion Guest Chat Chat 4.1]]>><</link>>
+		<<link [[Don't help|Mansion Guest Chat 4.2]]>><</link>>
+	<</if>>
+
+		
+:: Mansion Guest Chat 3.1 [nobr]
+	You tell <<him>> that you aren't interested.
+	<br>
+	<<if $rng is 50>>
+		<<His>> face sours as <<he>> grabs your arm and says "that wasn't a request."
+		<br>
+		<br>
+		<<link [[Next|Mansion Assault 2]]>><</link>>
+	<<else>>
+		<<He>> shrugs and leaves.
+		<br>
+		<br>
+		mtodo: Link towards current event
+	<<link [[Next|Mansion Main Hall]]>><</link>>
+	<</if>>
+	
+::Mansion Guest Chat 3.2 [nobr]
+	mtodo: Go to guest room
+	<br>
+	<br>
+	<<link [[Next|Mansion Main Hall]]>><</link>>
+
+:: Mansion Guest Chat 4.1 [nobr]
+	mtodo: Relevent text for helping the guest
+	<br>
+	<br>
+	<<endevent>>
+	<<link [[Next|Mansion Main Hall]]>><</link>>
+
+:: Mansion Guest Chat 4.2 [nobr]
+	mtodo: Don't help
+	<br>
+	<br>
+	<<endevent>>
+	<<link [[Next|Mansion Main Hall]]>><</link>>
+
+:: Mansion Guest Chat Assault[nobr]
+	<<if $sexstart is 1>>
+		<<set $sexstart to 0>>
+		<<controlloss>>
+		<<violence 3>>
+		<<molested>>
+		<<maninit>>
+		<<set $enemyanger += 80>>
+	<</if>>
+
+	<<effects>>
+	<<effectsman>>
+	<<man>>
+	<<stateman>>
+	<br><br>
+
+	<<actionsman>>
+
+	<<if $enemyarousal lt $enemyarousalmax and $enemyhealth gt 0>>
+		<span id="next"><<link [[Next|Mansion Guest Chat End 1]]>><</link>></span><<nexttext>>
+	<<elseif $pain gte 100 and $willpowerpain is 0>>
+		<span id="next"><<link [[Next|Mansion Guest Chat End 2]]>><</link>></span><<nexttext>>
+	<<else>>
+		<span id="next"><<link [[Next|Mansion Guest Chat Assault]]]>><</link>></span><<nexttext>>
+	<</if>>
+
+:: Mansion Guest Chat End 1
+	<<if $enemyarousal lt $enemyarousalmax>>
+		<<ejaculation>>
+		<br>
+		<br>
+		<<He>> redoubles his efforts to beat you into submission.
+		<br>
+		<br>
+		<<link [[Next|Mansion Guest Chat Assault]]>><</link>>
+	<<elseif $enemyhealth gt 0>>
+		You mannage to fend <<him>> off, pushing <<him>> away and scrambling to your feet. You stare at each other for a few seconds, then <<he>> silently leaves. <<llGuestPop>>
+		<br><br>
+		<<clotheson>>
+		<<endcombat>>
+	<</if>>
+
+
+:: Mansion Guest Chat End 2
+	mtodo: Too beaten to resist, he drags you into his room.
+	<br>
+	<br>
+	<<endevent>>
+	<<link [[Next|Mansion Main Hall]]>><</link>>

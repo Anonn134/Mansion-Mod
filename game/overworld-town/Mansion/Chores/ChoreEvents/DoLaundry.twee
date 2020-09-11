@@ -1,0 +1,224 @@
+:: Do Laundry Chore [nobr]
+	You begin sorting through the piles of laundry left by other servants and putting them in the washing machine. It will take a while for this to finish, you could do something while you wait.
+	
+	<br>
+	<br>
+	<<link [[Do Nothing|Laundry Idle]]>><</link>>
+	<br>
+	<<link [[Take a Nap|Laundry Nap]]>><</link>>
+
+	
+:: Laundry Nap [nobr]
+	<<if $mansionQuestsStage.laundryStage is 0>>
+		<<set $mansionQuestsStage.laundryStage to 1>>
+		<<if $rng lte 50>>
+			<<pass 30>>
+			You take a short nap and are soon woken up by the ringing of the washing machine. You move the wet clothing into the dryer and put the next load in the washing machine. Once again, you have some time before this load finishes. <<ltiredness>>
+			<br>
+			<br>
+			<<link [[Do Nothing|Laundry Idle]]>><</link>>
+			<br>
+			<<link [[Take a Nap|Laundry Nap]]>><</link>>
+		<<else>>
+			<<if $rng gte 20>>
+				<<generate1>><<person1>>The sound of the laundry room door closing wakes you up, and before you can get your bearings somebody is pulling your out of the chair you were sitting in, the chair hitting your head on the way down. <<ggpain>><br>
+				Seeing your struggles, <<he>> says "it's ok, we can get you a new set of clothes afterwards" as he pins your body to the ground.
+				<br>
+				<br>
+				<<link [[Next|Laundry Sleep Assault]]>><<set $sexstart to 1>><</link>>
+			<<else>>
+				<<if $mansionServantPopularity gte random(40, 150)>>
+					<<pass 50>>
+					You slept through the washing machine ring, but not by that much. As you go to move the wet clothing into the dryer, you see that somebody has already done it for you. It seems like another servant helped you out. <<lstress>> <<ltiredness>>
+					<br>
+					After you survey the room and see that you have nothing to do but wait, you decide that you have some time before this load finishes.
+					<br>
+					<br>
+					<<link [[Do Nothing|Laundry Idle]]>><</link>>
+					<br>
+					<<link [[Take a Nap|Laundry Nap]]>><</link>>
+				<<else>>
+					<<pass 50>>
+					You slept through the washing machine ring, but not by that much. You move the wet clothing into the dryer and put the next load in the washing machine. Once again, you have some time before this load finishes. <<ltiredness>>
+					<br>
+					<br>
+					<<link [[Do Nothing|Laundry Idle]]>><</link>>
+					<br>
+					<<link [[Take a Nap|Laundry Nap]]>><</link>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<<elseif $mansionQuestsStage.laundryStage is 1>>
+		<<set $mansionQuestsStage.laundryStage to 2>>
+		<<if $rng lte 50>>
+			<<pass 30>>
+			You take a short nap and are soon woken up by the ringing of the washing machine. You move the wet clothing into the dryer and put the next load in the washing machine. Once again, you have some time before this load finishes. <<ltiredness>>
+			<br>
+			<br>
+			<<link [[Do Nothing|Laundry Idle]]>><</link>>
+			<br>
+			<<link [[Take a Nap|Laundry Nap]]>><</link>>
+		<<else>>
+			<<if $rng gte 20>>
+				<<generate1>><<person1>>The sound of the laundry room door closing wakes you up, and before you can get your bearings somebody is pulling your out of the chair you were sitting in, the chair hitting your head on the way down. <<ggpain>><br>
+				Seeing your struggles, <<he>> says "it's ok, we can get you a new set of clothes afterwards" as he pins your body to the ground.
+				<br>
+				<br>
+				<<link [[Next|Laundry Sleep Assault]]>><<set $sexstart to 1>><</link>>
+			<<else>>
+				<<if $mansionServantPopularity gte random(40, 150)>>
+					<<pass 50>>
+					You slept through the washing machine ring, but not by that much. As you go to move the wet clothing into the dryer, you see that somebody has already done it for you. It seems like another servant helped you out. <<lstress>> <<ltiredness>>
+					<br>
+					After you survey the room and see that you have nothing to do but wait, you decide that you have some time before this load finishes.
+					<br>
+					<br>
+					<<link [[Do Nothing|Laundry Idle]]>><</link>>
+					<br>
+					<<link [[Take a Nap|Laundry Nap]]>><</link>>
+				<<else>>
+					<<pass 50>>
+					You slept through the washing machine ring, but not by that much. You move the wet clothing into the dryer and put the next load in the washing machine. Once again, you have some time before this load finishes. <<ltiredness>>
+					<br>
+					<br>
+					<<link [[Do Nothing|Laundry Idle]]>><</link>>
+					<br>
+					<<link [[Take a Nap|Laundry Nap]]>><</link>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<<elseif $mansionQuestsStage.laundryStage is 2>>
+		<<set $mansionQuestsStage.laundryStage to 0>>
+		<<set $mansionChores.cleanLibrary to false>>
+		<<if $rng lte 80>>
+			<<pass 30>>
+			You take a short nap and are soon woken up by the ringing of the washing machine. You take some time to fold the cloths and put them away.<<ltiredness>>
+		<<else>>
+			<<pass 50>>
+			You slept through the washing machine ring, but not by that much. You take some time to fold the cloths and put them away. <<ltiredness>>
+		<</if>>
+				
+		<br>
+		<br>
+		<<link [[Finish Chore|Mansion Laundry Room]]>><</link>>
+	<</if>>
+		
+:: Laundry Idle [nobr]
+	<<pass 30>>
+	<<mansionlaundryflavor>>
+	<<if $mansionQuestsStage.laundryStage is 0>>
+		<<set $mansionQuestsStage.laundryStage to 1>>
+		You idly sit by as the machine whirs away. After a while, it stops and you begin the next load. Once again, you have some time before this load finishes.
+		
+		<br>
+		<br>
+		<<link [[Do Nothing|Laundry Idle]]>><</link>>
+		<br>
+		<<link [[Take a Nap|Laundry Nap]]>><</link>>
+		
+	<<elseif $mansionQuestsStage.laundryStage is 1>>
+		<<set $mansionQuestsStage.laundryStage to 2>>
+		You idly sit by as the machine whirs away. After a while, it stops and you begin the next load. Once again, you have some time before this load finishes.
+		
+		<br>
+		<br>
+		<<link [[Do Nothing|Laundry Idle]]>><</link>>
+		<br>
+		<<link [[Take a Nap|Laundry Nap]]>><</link>>	
+		
+	<<elseif $mansionQuestsStage.laundryStage is 2>>
+		<<set $mansionQuestsStage.laundryStage to 0>>
+		<<set $mansionChores.cleanLibrary to false>>
+		You idly sit by as the machine whirs away. After a while, it finishes and you take some time to fold the cloths and put them away.
+		
+		<br>
+		<br>
+		<<link [[Finish Chore|Mansion Laundry Room]]>><</link>>	
+	<</if>>
+	
+:: Laundry Sleep Assault [nobr]
+	<<if $sexstart is 1>>
+		<<set $mansionRng to random (1, 2)>>
+			<<if $mansionRng is 1>>
+				As the world stops spinning, you see that your attacker is a guest.
+			<<elseif $mansionRng is 2>>
+				As the world stops spinning, you recognize your attacker as one of the guards.
+			<</if>>
+		<br>
+		<br>
+		<<set $sexstart to 0>>
+		<<controlloss>>
+		<<violence 1>>
+		<<neutral 1>>
+		<<molested>>
+		<<maninit>>
+	<</if>>
+
+	<<effects>>
+	<<effectsman>>
+	<<man>>
+	<<stateman>>
+	<br><br>
+	<<actionsman>>
+
+	<<if $enemyarousal lt $enemyarousalmax and $enemyhealth gt 0>>
+		<span id="next"><<link [[Next|Laundry Sleep Assault]]>><</link>></span><<nexttext>>
+	<<else>>
+		<span id="next"><<link [[Next|Laundry Sleep Assault End]]>><</link>></span><<nexttext>>
+	<</if>>
+	
+:: Laundry Sleep Assault End [nobr]
+	<<if $enemyarousal gte $enemyarousalmax>>
+		<<ejaculation>>
+		<<if $mansonRNG is 1>>
+			The <<person>> climbs off of you. "I should come down here more often," he says. As he leaves he thanks you for the fun time. <<gGuestPop>>
+		<<elseif $mansonRNG is 2>>
+			The <<person>> climbs off of you. "That should remind you of your place in this house, whore."  <<gtrauma>>
+		<</if>>
+		<br><br>
+		<<clotheson>>
+		<<endcombat>>
+	<<elseif $enemyhealth lte 0>>
+		<<if $mansonRNG is 1>>
+			You knock the <<person>> off of you and scramble to your feet. "Do you not know how things work around here? The guards will hear about how you attacked me." <<gstress>> <<llGuestPop>>
+		<<elseif $mansonRNG is 2>>	
+			You knock the <<person>> off of you and scramble to your feet. The guard composes himself, then leaves without a word. <<lMansionTrust>>
+		<</if>>
+		<br><br>
+		<<clotheson>>
+		<<endcombat>>
+	<</if>>
+	<br>
+	<br>
+	<<link [[Next|Laundry Assault Restart Chore]]>><</link>>
+
+:: Laundry Assault Restart Chore [nobr]
+	After your assalent leaves, you survey the room. The laundry still has some time before its done, giving you some time to do as you please within the laundry room.
+	
+	<br>
+	<br>
+	<<link [[Do Nothing|Laundry Idle]]>><<pass 10>><</link>>
+	<br>
+	<<link [[Take a Nap|Laundry Nap]]>><<pass 20>><</link>>
+	
+:: Widgets Laundry Wait Flavor [widget]
+	<<widget "mansionlaundryflavor">><<nobr>>
+		
+		<<if random(1,2) is 1>>
+			<<set $mansionRng to random(1, 4)>>
+			<<if $mansionRng is 1>>
+				<<generate1>><<person1>>As you wait for the laundry to finish, a servant walks in. <<He>> is covered in tears and <<his>> clothing is torn. <<He>> grabs a new set of clothing then leaves wordlessly. <<gstress>><<endevent>>
+			<<elseif $mansionRng is 2>>
+				<<generate1>><<person1>>As you wait for the laundry to finish, a servant walks in to get a clean set of clothing. You strike up a small conversation before <<he>> leaves. <<ltrauma>><<gServantPop>><<endevent>>
+			<<elseif $mansionRng is 3>>
+				As you sit there waiting for the laundry to finish, you hear a scream from the dungeon. <<gstress>>
+			<<elseif $mansionRng is 4>>
+				<<if $mansionServantPopularity gte random(10, 50)>>
+					<<generate1>><<person1>>As you wait for the laundry to finish, a servant past the laundry room, doubles backs and approaches you. <<He>> begins to talk with you, and the two of you talk until the ding of the laundry machine interupts the conversation. <<He>> helps you with the load, then says goodbye and leaves.<<lltrauma>><<gServantPop>><<endevent>>
+				<</if>>
+			<</if>>
+			<br>
+			<br>
+		<</if>>
+		
+	<</nobr>><</widget>>

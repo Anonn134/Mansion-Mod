@@ -1,0 +1,103 @@
+/* Passages related to quests */
+
+/* event start */
+:: Dungeon FoodWater Event 1 [widget]
+	<<widget "dungeonfoodwaterrventstart">><<nobr>>
+
+	As you enter another cell to clean it, you see a gaunt person dangling by their wrists from the ceiling. They look up at you with pained eyes and ask if you have any 
+	<<if $rng lte 50>>
+		water<<set $mansionQuestsStage.dungeonFoodWater to 1>>
+	<<else>>
+		food<<set $mansionQuestsStage.dungeonFoodWater to 2>>
+	<</if>>.
+	
+	<br>
+	<<link [[Offer to Help|Dungeon FoodWater Event 2.1]]>><<pass 1>><</link>>
+	<br>
+	<<link [[Offer to Help, After you Clean the Room|Dungeon FoodWater Event 2.2]]>><</link>>
+	<br>
+	<<link [[Ignore and Clean the Room|Dungeon FoodWater Event 2.3]]>><<pass 120>><</link>>
+	
+	<</nobr>><</widget>>
+		
+
+/* help, no cleaning */		
+:: Dungeon FoodWater Event 2.1 [nobr]
+	You tell them that you will be back with <<if $mansionQuestsStage.dungeonFoodWater is 1>>
+		water
+	<<else>>
+		food
+	<</if>> for them. They quietly thank you as you leave.
+
+	<br>
+	<<link [[Next|Dungeon Entrance]]>><<pass 1>><</link>>
+
+
+/* clean then help */
+:: Dungeon FoodWater Event 2.2 [nobr]
+		You tell them that you will be back with <<if $mansionQuestsStage.dungeonFoodWater is 1>>
+		water
+	<<else>>
+		food
+	<</if>> to help, and then you finish your chore. They don't respond.
+	
+	<<set $mansionChores.cleanDungeon to false>>
+	
+	<br>
+	<<link [[Next|Dungeon Entrance]]>><<pass 120>><</link>>
+	
+
+/* ignore food or water */	
+:: Dungeon FoodWater Event 2.3 [nobr]
+	You ignore their pleas for help and finish your chore.
+	
+	<<set $mansionChores.cleanDungeon to false>>
+
+	<br>
+	<<link [[Next|Dungeon Entrance]]>><<pass 120>><</link>>
+
+/* get food or water */
+:: Dungeon FoodWater Event 3 [nobr]
+	<<if $mansionQuestsStage.dungeonFoodWater is 1>>
+		<<pass 5>>
+		You enter the kitchen, find a container that can hold a lot of water and then fill it.
+		
+		<br>
+		<<link [[Next|Kitchen]]>><<set $mansionQuestsStage.dungeonFoodWater to 3>><</link>>
+	<<elseif $mansionQuestsStage.dungeonFoodWater is 2>>
+		
+		<<if $daystate is "day" or $daystate is "dawn">>
+			<<pass 20>>
+			The kitchen is busy, but you are able to find some food laying around that you can bring to help the person in the dungeon.
+			
+			<br>
+			<<link [[Next|Kitchen]]>><<set $mansionQuestsStage.dungeonFoodWater to 4>><</link>>
+			
+		<<elseif $daystate is "night" or $daystate is "dusk">>
+			<<pass 10>>
+			At this time of night, the kitchen is quiet. Under the watchful eyes of the guards, you get some food to bring to the person in the dungeon.
+			
+			<br>
+			<<link [[Next|Kitchen]]>><<set $mansionQuestsStage.dungeonFoodWater to 4>><</link>>
+		
+		<</if>>
+	<</if>>
+	
+/* give food or water */
+:: Dungeon FoodWater Event 4 [nobr]
+	<<pass 10>>
+	
+	As you enter the dungeon cell, the person hanging there looks up at you hopefully. Because their hands are bound, you  
+
+	<<if $mansionQuestsStage.dungeonFoodWater is 3>>
+		help them drink the water. Looking much better, they thank you and you spend some time talking. You hear somebody walking down the hall so you leave. <<ltrauma>>
+		
+		<br>
+		<<link [[Leave|Dungeon Entrance]]>>	<<set $mansionQuestsStage.dungeonFoodWater to 0>><</link>>
+	<<elseif $mansionQuestsStage.dungeonFoodWater is 4>>
+		gingerly feed them the food you brought. Looking much better, they thank you and you spend some time talking. You hear somebody walking down the hall so you leave. <<ltrauma>>
+		
+		<br>
+		<<link [[Leave|Dungeon Entrance]]>>	<<set $mansionQuestsStage.dungeonFoodWater to 0>><</link>>
+	<</if>>.
+	

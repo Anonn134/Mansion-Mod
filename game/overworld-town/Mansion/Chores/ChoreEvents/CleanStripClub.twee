@@ -1,0 +1,18 @@
+:: Clean Club Chore [nobr]
+	<<if $daystate is "day" or $daystate is "dawn">>
+		The room is empty as most guests tend to want to visit the club after dinner. You're able to clean the room without anyone getting in your way.
+		
+		<<set $mansionChores.cleanStripClub to false>>
+		
+		<br>
+		<<link [[Next|Strip Club Entrance]]>><<pass 60>><</link>>
+
+		<</if>>
+	<<if $daystate is "night" or $daystate is "dusk">>
+		The room is crowded and full of guests oogling at the dancers, making your cleaning effort take much longer. You quietly clean the bar area and what unused furniture you can find, glad that you have not been noticed. 
+		
+		<<set $mansionChores.cleanStripClub to false>>
+		
+		<br>
+		<<link [[Next|Strip Club Entrance]]>><<pass 90>><</link>>
+	<</if>>

@@ -1,0 +1,29 @@
+:: Widgets Mansion Daily Event Display [widget]
+	<<widget "mansiondisplaydailyevent">><<nobr>>
+	
+	<br>
+	
+	<<if $mansionDaily.cookDinner is true>>
+		At 7:00pm you are supposed to be at the kitchen, ready to cook dinner.
+	
+	<<elseif $mansionDaily.danceClub is true>>
+		At 7:00pm you are supposed to be at the dance club.
+
+	<<elseif $mansionDaily.serveDinner is true>> 
+		At 7:00pm you are supposed to be in the kitchen, ready to serve dinner.
+		
+	<<elseif $mansionDaily.gardenMazeGame is true>> 
+		At 7:00 pm you are supposed to report to the garden with the rest of the servants.
+
+	<<elseif $mansionDaily.masqueradeBall is true>> 
+		At 6:00 pm you are supposed to go to the library with the rest of the servants to prepare for tonight's masquerade ball.
+		
+	<<elseif $mansionDaily.mudWrestle is true>> 
+		At 5:00pm today you are supposed to be in the garden.
+
+	<<elseif $mansionDaily.poseForPainting is true>>
+		At 7:00pm you are supposed to be in the rec room, upstairs.
+	<</if>>
+	
+	<br>
+	<</nobr>><</widget>>

@@ -1,0 +1,93 @@
+:: Mansion Pose For Painting [nobr]
+	As you enter the room, you see a half circle of chairs and easels set up with a guest sitting at each. In the center of the circle is a well lit pedestal.The rest of the room is dark, but clean, and there are paint and other art supplies lining the walls of the room. You are greeted by a well dressed man who directs you to strip down and stand on the pedestal.
+	<br>
+	<br>
+	<<link [[Strip|Mansion Pose Strip]]>><</link>>
+	<br>
+	<<link [[Refuse|Mansion Pose Strip Refuse]]>><</link>>
+	
+:: Mansion Pose Strip [nobr]
+	<<if $worn.genitals.type.includes("naked")>>
+		You remove your clothing, revealing that you weren’t wearing much underwear in the first place (++guest popularity)<<if $exhibitionism lt 35>> <<ggstress>> <</if>>
+	<<else>>
+		You strip down to your underwear, but as the guard continues to stare at you, waiting for something else, you remove those as well. <<if $exhibitionism lt 35>> <<ggstress>> <</if>>
+	<</if>>
+	mtodo: undress the player
+	
+	<br>
+	<br>
+	<<link [[Next|Mansion Pose Strip]]>><</link>>
+	
+:: Mansion Pose Strip Refuse [nobr]
+	The guard looks around at the guests then leans close to you and whispers “are you sure? These guests have paid good money for this, and one way or another you will be on that pedestal.”
+	<br>
+	<br>
+	<<link [[Refuse Again|Mansion Pose Refuse Again]]>><</link>>
+	<br>
+	<<link [[Strip|Mansion Pose Strip]]>><</link>>
+	
+:: Mansion Pose Refuse Again [nobr]
+	You once again refuse. The guard sighs then says something into his walkie talkie. Not a moment later, two other guards enter the room and grab you. <<generate 2>> <<generate 3>>
+	<br>
+	<br>
+	<<link [[Next|Mansion Pose Force Undress Loop]]>><<set $sexStart to 0>><</link>>
+	
+	
+	
+
+:: Mansion Pose Loop [nobr]
+
+	<<if $exhibitionism gte 15>>
+	
+	<</if>><br>
+	<<if $exhibitionism gte 35>>
+	
+	<</if>><br>
+	<<if $exhibitionism gte 55>>
+	
+	<</if>><br>
+	<<if $exhibitionism gte 75>>
+	
+	<</if>><br>
+	
+:: Mansion Pose Bondage Loop [nobr]
+
+
+:: Mansion Pose Force Undress Loop [nobr]
+	<<if $sexStart is 1>>
+		<<set $sexStart to 0>>
+
+		<<neutral 1>>
+
+		<<maninit>>
+		<<set $enemyhealthmax += 200>>
+		<<set $enemyhealth += 200>>
+		<<set $enemyanger += 200>>
+		<<npcidlegenitals>>
+		<br><br>
+		<<set $phase to 1>>
+	<</if>>
+
+	<<effects>>
+	<<effectsman>><<man>>
+
+	<<if $phase is 1>><<set $phase to 2>>
+	The guests look at your struggles, some with mild concern on their face, but most of them just seem impatient.
+	<br><br>
+	<</if>>
+
+	<<stateman>>
+	<br><br>
+	<<actionsman>>
+
+	<<if $enemyhealth lte 0>>
+		<span id="next"><<link [[Next|Mansion Pose Force Undress Finish]]>><</link>></span><<nexttext>>
+	<<elseif $enemyarousal gte $enemyarousalmax>>
+		<span id="next"><<link [[Next|Mansion Pose Force Undress Finish]]>><</link>></span><<nexttext>>
+	<<elseif $pain gte 100 and $willpowerpain is 0>>
+		<span id="next"><<link [[Next|Mansion Pose Force Undress Finish]]>><</link>></span><<nexttext>>
+	<<else>>
+		<span id="next"><<link [[Next|Mansion Pose Force Undress Loop]]>><</link>></span><<nexttext>>
+	<</if>>
+
+:: Mansion Pose Force Undress Finish [nobr]

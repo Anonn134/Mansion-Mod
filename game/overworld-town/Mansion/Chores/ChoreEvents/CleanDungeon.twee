@@ -1,0 +1,167 @@
+:: Clean Dungeon Chore [nobr]
+	/* if the foodwater quest is not started */
+	<<if $mansionQuestsStage.dungeonFoodWater is 0>>
+		<<if $rng lte 30>>
+			You spend a couple of hours cleaning the scattered puddles of unidentifiable fluids in the cells.
+			<<set $mansionChores.cleanDungeon to false>>
+			<br>
+			<br>
+			<<link [[Finish Chore|Dungeon Entrance]]>><<pass 120>><</link>>
+			
+		<<elseif $rng lte 50>>
+			The cells are especially dirty today, it takes more than a couple hours to clean this mess up.
+			<<set $mansionChores.cleanDungeon to false>>
+			
+			<br>
+			<<link [[Finish Chore|Dungeon Entrance]]>><<pass 180>><</link>>
+		<<elseif $rng lte 70>>
+			<<generate1>><<person1>>As you exit a particularly disgusting room, you see an angry guard rubbing their arm with a grimmace on <<his>> face. You hear <<him>> mutter "bitch sure has some claws on her, she'll pay for that."
+			<br>You try to keep your head down as <<he>> passes, not wanting to draw <<his>> ire.
+			<<if $allure + random(-2000,2000) gte 4000>>
+				As you pass, <<he>> glances at you with a hungry look in <<his>> eyes, then reaches down to you, putting his arm around you and drawing you near. "Hey, so the girl in that room over there didn't want to have fun, so you're going to play the part instead, got it?"
+				<br>
+				<br>
+				<<link [[Give in|Clean Dungeon Assault Give In]]>><</link>>
+				<br>
+				<<link [[Resist|Clean Dungeon Assault Resist]]>><</link>>
+			<<else>>
+				As you pass, <<he>> glances at you but doesn't say anything.
+			<</if>>
+			
+		<<elseif $rng lte 100>>
+			<<dungeonfoodwaterrventstart>>
+		<</if>>
+	
+	/* if the foodwater quest is started */
+	<<elseif $mansionQuestsStage.dungeonFoodWater is not 0>> 
+		You return to the cell room with the maid who has asked for your help.
+		
+		<br>
+		<br>
+		<<link [[Finish Chore|Dungeon Entrance]]>><<pass 120>><<set $mansionChores.cleanDungeon to false>><</link>>
+		
+		<br>
+		<<link [[Leave|Dungeon Entrance]]>><<pass 1>><</link>>
+		
+		<<if $mansionQuestsStage.dungeonFoodWater is 3>>
+			<<link [[Give the prisoner water|Dungeon FoodWater Event 4]]>>
+		<<elseif $mansionQuestsStage.dungeonFoodWater is 4>>
+			<<link [[Give the prisoner food|Dungeon FoodWater Event 4]]>><</link>>
+		<</if>>
+	<</if>>
+
+
+:: Clean Dungeon Assault Resist
+	You begin to tell <<him>> that you aren't interested, but before you can finish your sentence <<he>> begins grabs your hair and pulls down. <<gpain>> "I won't have two bitches talk back to me in a row, you're going to do what you're told one way or another."
+	<br>
+	<br>
+	<<link [[Next|Clean Dungeon Assault Resist Loop]]>><<set $sexstart to 1>><</link>>
+
+:: Clean Dungeon Assault Give In
+	You nod your head and the <<man>> smiles. "Good pet." <<He>> half drags, half pushes you into one of the open cells, causing you to sumble and fall. <<gpain>> 
+	<br>You see various pieces of bondage strewn throughout the room, and the <<man>> says "I'm not about to have a second one fight back" while locking your arms in a tight binding and locking you to the floor before advancing on you. <<bind>>
+	<br>
+	<br>
+	<<link [[Next|Clean Dungeon Assault Bound Assault Loop]]>><<set $sexstart to 1>><</link>>	
+	
+:: Clean Dungeon Assault Bound Assault Loop
+	<<if $sexstart is 1>>
+		The <<man>> looks at you and says "if you don't behave yourself I'll just leave you bound here when I'm done with you"
+		<<set $sexstart to 0>>
+		<<controlloss>>
+		<<violence 3>>
+		<<molested>>
+		<<maninit>>
+		<<set $enemytrust -= 80>>
+		<<set $enemyanger to 0>>
+	<</if>>
+
+	<<effects>>
+	<<effectsman>>
+	<<man>>
+	<<stateman>>
+	<br><br>
+
+	<<actionsman>>
+	
+	<<if $enemyarousal lt $enemyarousalmax and $enemyhealth gt 0>>
+		<span id="next"><<link [[Next|Clean Dungeon Assault Bound Assault Loop]]>><</link>></span><<nexttext>>
+	<<else>>
+		<span id="next"><<link [[Next|Mansion Guest Chat Bound Assault End]]]>><</link>></span><<nexttext>>
+	<</if>>
+	
+:: Mansion Guest Chat Bound Assault End [nobr]
+	<<ejaculation>>
+	<<if $enemyhealth is 0>>
+		<<He>> stagers back and says "what did I say? You could've been out of here, but now you're stuck. Have fun." <<He>> walks out of the cell, leaving you imobile and bound on the ground. <<ggstress>> <<lllMansionTrust>>
+		<br><br>
+		<<stealclothes>>
+		<br><br>
+		<<clotheson>>
+		<<endcombat>>
+		
+		<<link [[Next|Mansion Unoficial Dungeon Stuck Loop]]]>><<set $mansionPunishmentTime to 0>><<pass 30>><</link>>
+			
+	<<elseif $enemyanger gte ($enemyangermax / 5) * 3>>
+		<<He>> steps back and says "what did I say? You could've been out of here, but now you're stuck. Have fun." <<He>> walks out of the cell, leaving you imobile and bound on the ground. <<ggstress>> <<lllMansionTrust>>
+		<br><br>
+		<<stealclothes>>
+		<br><br>
+		<<clotheson>>
+		<<endcombat>>
+			
+		<<link [[Next|Mansion Unoficial Dungeon Stuck Loop]]]>><<set $mansionPunishmentTime to 0>><</link>>
+		
+	<<else>>
+		<<He>> says "you're lucky I'm not in a worse mood" before untying you and quickly leaving the cell. <<unbind>>
+		<br><br>
+		<<tearful>> you rise to your feet.
+		<br><br>
+		<<clotheson>>
+		<<endcombat>>
+		
+		<<link [[Finish Cleaning|Mansion Dungeon]]]>><<pass 30>><</link>>
+	<</if>>
+	
+:: Clean Dungeon Assault Resist Attack Loop
+	<<if $sexstart is 1>>
+		<<set $sexstart to 0>>
+		<<controlloss>>
+		<<violence 3>>
+		<<molested>>
+		<<maninit>>
+		<<set $enemyanger += 80>>
+	<</if>>
+
+	<<effects>>
+	<<effectsman>>
+	<<man>>
+	<<stateman>>
+	<br><br>
+
+	<<actionsman>>
+
+	<<if $enemyarousal lt $enemyarousalmax and $enemyhealth gt 0>>
+		<span id="next"><<link [[Next|Mansion Guest Chat Assault Attack Loop]]>><</link>></span><<nexttext>>
+	<<else>>
+		<span id="next"><<link [[Next|Clean Dungeon Assault Resist End]]]>><</link>></span><<nexttext>>
+	<</if>>
+	
+	
+:: Clean Dungeon Assault Resist End
+	<<ejaculation>>
+	<<if $enemyanger gte ($enemyangermax / 5) * 3>>
+		<<He>> hits you in the gut one last time and says "you'll regret defying me" <<lllMansionTrust>>
+		<<violence 3>>
+		<br><br>
+	<<else>>
+		<<He>> stands up and says "you're lucky I'm not in a worse mood" before walking away, leaving you <<tearful>> laying there.
+		<br><br>
+	<</if>>
+	<br><br>
+	<<tearful>> you rise to your feet.
+	<br><br>
+	<<clotheson>>
+	<<endcombat>>
+	
+	<<link [[Next|Mansion Dungeon]]]>><</link>>

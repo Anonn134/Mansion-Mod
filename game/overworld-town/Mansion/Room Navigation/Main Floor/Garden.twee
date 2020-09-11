@@ -1,0 +1,57 @@
+:: Mansion Garden Entrance [nobr]
+	
+	<<mansionDisplayChores>>
+	
+	A lush garden with a large patio area, a small growing area for produce and an extremely large hedge maze. 
+		
+	<br>
+	<br>
+	<<link [[Mansion Main Hall|Mansion Main Hall]]>><<pass 4>><</link>>
+	<br>
+	<<link [[Garden Patio|Mansion Patio Area]]>><<pass 1>><</link>>
+	<br>
+	<<link [[Garden Growing Area|Mansion Garden Plots]]>><<pass 1>><</link>>
+	<br>
+	<<link [[Hedge Maze|Mansion Garden Maze Entrance]]>><<pass 2>><</link>>
+	<br>
+	<<mansionDoChores>>
+	<<mansionDoQuest>>
+
+	
+:: Mansion Patio Area [nobr]
+	<<mansionDisplayChores>>	
+
+	The patio area is large enough to get a decent amount of running done, and has an area with deck chairs where guests are able to sunbathe. 
+		
+	<br>
+	<br>
+	<<link [[Return to Garden Entrance|Mansion Garden Entrance]]>><<pass 1>><</link>>
+	<br>
+	<<mansionDoChores>>
+	<<mansionDoQuest>>
+
+	
+:: Mansion Garden Plots [nobr]
+	<<mansionDisplayChores>>	
+	
+	There are a sets of tilled land that you can plant produce or flowers.
+		
+	<br>
+	<br>
+	<<link [[Return to Garden Entrance|Mansion Garden Entrance]]>><<pass 1>><</link>>
+	<br>
+	<<mansionDoChores>>
+	<<mansionDoQuest>>
+
+
+:: Mansion Garden Maze Entrance [nobr]
+	<<mansionDisplayChores>>
+	
+	The maze hedges are seven feet tall and covered by a lattice of metal and vines. The entrance to the maze is adorned with flowers, but is otherwise undecorated.
+	
+	<br>
+	<br>
+	<<link [[Return to Garden Entrance|Mansion Garden Entrance]]>><<pass 2>><</link>>
+	<br>
+	<<mansionDoChores>>
+	<<mansionDoQuest>>

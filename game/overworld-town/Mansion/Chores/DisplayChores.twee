@@ -1,0 +1,128 @@
+:: Widgets Mansion Chore Display [widget]
+	<<widget "mansionDisplayChores">><<nobr>>
+	
+
+	/*
+	<<for _i to 0; _i < $mansionOneRoomEventDay.length; _i++>>     
+		<<if $mansionOneRoomEventDay[Object.keys($mansionOneRoomEventDay)[_i] is true]>>
+			<<set $mansionDisplayChoresFlag to true>>
+	<</for>>
+	*/
+	
+	/* Checks every chore and sees if the player is done with all their chores. The above loop should just do this, but nope. */
+	
+	<<set $mansionDisplayChoresFlag to false>>
+	<<if $mansionChores.cleanKitchen is true>>
+		<<set $mansionDisplayChoresFlag to true>>
+	<</if>>
+		
+	<<if $mansionChores.cleanDungeon is true>>
+		<<set $mansionDisplayChoresFlag to true>>
+	<</if>>
+	
+	<<if $mansionChores.cleanStripClub is true>>
+		<<set $mansionDisplayChoresFlag to true>>
+	<</if>>
+
+	<<if $mansionChores.cleanGuestRooms is true>>
+		<<set $mansionDisplayChoresFlag to true>>
+	<</if>>
+	
+	<<if $mansionChores.cleanMainHall is true>>
+		<<set $mansionDisplayChoresFlag to true>>	
+	<</if>>
+	
+	<<if $mansionChores.cleanDormitory is true>>
+		<<set $mansionDisplayChoresFlag to true>>
+	<</if>>
+	
+	<<if $mansionChores.cleanGarden is true>>
+		<<set $mansionDisplayChoresFlag to true>>
+	<</if>>
+	
+	<<if $mansionChores.cleanLibrary is true>>
+		<<set $mansionDisplayChoresFlag to true>>
+	<</if>>
+	
+	<<if $mansionChores.doLaundry is true>>
+		<<set $mansionDisplayChoresFlag to true>>
+	<</if>>
+	
+	<<if $mansionChores.harperExperiment is true>>
+		<<set $mansionDisplayChoresFlag to true>>
+	<</if>>
+	
+	<<if $mansionChores.nakedPose is true>>
+		<<set $mansionDisplayChoresFlag to true>>
+	<</if>>
+	
+	<<if $mansionChores.patioService is true>>
+		<<set $mansionDisplayChoresFlag to true>>
+	<</if>>
+	
+	
+	/* Displays text saying either you have chores or do not have chores to do */
+	<<if $mansionDisplayChoresFlag is true>>
+		<br>
+		Assigned Chores:
+		
+	<<else>>
+		<br>
+		You have completed all of your work for today.
+		<br>
+	<</if>>
+	
+	
+	
+	/* displays the list of chores you need to complete */
+	<<if $mansionChores.cleanKitchen is true>>
+		<br>Clean Kitchen
+	<</if>>
+		
+	<<if $mansionChores.cleanDungeon is true>>
+		<br>Clean Dungeon
+	<</if>>
+	
+	<<if $mansionChores.cleanStripClub is true>>
+		<br>Clean Club Room
+	<</if>>
+
+	<<if $mansionChores.cleanGuestRooms is true>>
+		<br>Clean Guest Rooms
+	<</if>>
+	
+	<<if $mansionChores.cleanMainHall is true>>
+		<br>Clean Main Hall		
+	<</if>>
+	
+	<<if $mansionChores.cleanDormitory is true>>
+		<br>Clean Dormitories
+	<</if>>
+	
+	<<if $mansionChores.cleanGarden is true>>
+		<br>Clean Garden
+	<</if>>
+	
+	<<if $mansionChores.cleanLibrary is true>>
+		<br>Organize Library
+	<</if>>
+	
+	<<if $mansionChores.doLaundry is true>>
+		<br>Do Laundry
+	<</if>>
+	
+	<<if $mansionChores.harperExperiment is true>>
+		<br>Visit the Hospital
+	<</if>>
+	
+	<<if $mansionChores.nakedPose is true>>
+		<br>Pose for Painting
+	<</if>>
+	
+	<<if $mansionChores.patioService is true>>
+		<br>Help Guests on the Patio
+	<</if>>
+	
+	<br>
+	<br>
+	<</nobr>><</widget>>

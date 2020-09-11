@@ -1,0 +1,134 @@
+/* If a new chore is added, it must be added in X places. <<mansionmissedchores>>, <<mansionCreateChores>> (in two places), <<mansionDisplayChores>> (2 places) */
+
+:: Widgets Mansion Chores Missed [widget]
+	<<widget "mansionmissedchores">><<nobr>>
+		
+		<<set $mansionMissedChores to 0>>
+		<<if $mansionChores.cleanKitchen is true>>
+			<<set $mansionMissedChores += 1>>
+		<</if>>
+			
+		<<if $mansionChores.cleanDungeon is true>>
+			<<set $mansionMissedChores += 1>>
+		<</if>>
+		
+		<<if $mansionChores.gardenGame is true>>
+			<<set $mansionMissedChores += 1>>
+		<</if>>
+		
+		<<if $mansionChores.cleanStripClub is true>>
+			<<set $mansionMissedChores += 1>>
+		<</if>>
+
+		<<if $mansionChores.cleanGuestRooms is true>>
+			<<set $mansionMissedChores += 1>>
+		<</if>>
+		
+		<<if $mansionChores.cleanMainHall is true>>
+			<<set $mansionMissedChores += 1>>	
+		<</if>>
+		
+		<<if $mansionChores.cleanDormitory is true>>
+			<<set $mansionMissedChores += 1>>
+		<</if>>
+		
+		<<if $mansionChores.cleanGarden is true>>
+			<<set $mansionMissedChores += 1>>
+		<</if>>
+		
+		<<if $mansionChores.cleanLibrary is true>>
+			<<set $mansionMissedChores += 1>>
+		<</if>>
+		
+		<<if $mansionChores.doLaundry is true>>
+			<<set $mansionMissedChores += 1>>
+		<</if>>
+		
+		<<if $mansionChores.harperExperiment is true>>
+			<<set $mansionMissedChores += 1>>
+		<</if>>
+		
+		<<if $mansionChores.gardenMazeGame is true>>
+			<<set $mansionMissedChores += 1>>
+		<</if>>
+		
+		<<if $mansionChores.nakedPose is true>>
+			<<set $mansionMissedChores += 1>>
+		<</if>>
+		
+		<<if $mansionChores.patioService is true>>
+			<<set $mansionMissedChores += 1>>
+		<</if>>
+		
+		<<if $mansionChores.visitGuestRoom is true>>
+			<<set $mansionMissedChores += 1>>
+		<</if>>
+		
+	<</nobr>><</widget>>
+
+:: Widgets Mansion Chore Creation [widget]
+	<<widget "mansionCreateChores">><<nobr>>
+	
+	<<set $mansionLastEventTime to $time>>
+	
+	<<set $mansionChores to {
+		cleanKitchen: false,
+		cleanDungeon: false,
+		cleanStripClub: false,
+		cleanGuestRooms: false,
+		cleanMainHall: false,
+		cleanDormitory: false,
+		cleanGarden: false,
+		cleanLibrary: false,
+		doLaundry: false,
+		harperExperiment: false,
+		nakedPose: false,
+		patioService: false,
+		visitGuestRoom: false
+	}>>
+	
+	<<for _i to 0; _i < $mansionChoreCount; _i++>>
+		<<set $chore = Math.floor(Math.random()*13)>>
+		
+		<<switch $chore>>
+			<<case 1>>
+				<<set $mansionChores.cleanKitchen to true>> 
+			<<case 2>>
+				<<set $mansionChores.cleanDungeon to true>> 
+			<<case 3>>
+				<<set $mansionChores.cleanStripClub to true>> 
+			<<case 4>>
+				<<set $mansionChores.cleanGuestRooms to true>> 
+			<<case 5>>
+				<<set $mansionChores.cleanMainHall to true>> 
+			<<case 6>>
+				<<set $mansionChores.cleanDormitory to true>> 
+			<<case 7>>
+				<<set $mansionChores.cleanGarden to true>> 
+			<<case 8>>
+				<<set $mansionChores.cleanLibrary to true>> 
+			<<case 9>>
+				<<set $mansionChores.doLaundry to true>> 
+			<<case 10>>
+				<<set $mansionChores.harperExperiment to true>> 
+			<<case 11>>
+				<<set $mansionChores.nakedPose to true>> 
+			<<case 12>>
+				<<set $mansionChores.patioService to true>> 	
+			<<case 13>>
+				<<set $mansionChores.visitGuestRoom to true>> 	
+		<</switch>>
+	
+	<</for>>
+	
+	<</nobr>><</widget>>
+	
+	
+:: Mansion Chore Wakeup [nobr]
+	You’re woken up by a bell above your bed, the mansion will soon spring to life. On your door your list of daily tasks is posted.
+	<br>
+	<br>
+	<<mansionDisplayChores>>
+	<br>
+	<br>
+	<<link [[Next|Mansion Dormitories Personal Room]]>><</link>>

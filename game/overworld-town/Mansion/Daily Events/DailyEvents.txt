@@ -1,0 +1,16 @@
+Each weekday there will be an activity for the player to take part in at night. M/W/F that activity will be cooking. The activity will start at 7, unless otherwise stated, and last an hour.
+
+* Cook for dinner: The default daily activity. The player will cook food for the guests, choosing from a list of three food choices for the three courses of the meal. The player will be told how well the guests like the meal overall, and will have to guess at what choices they made that were correct. Each week the correct meal choices change. The player may be able to get info about the meals from overheard conversation after the first day of dinner, once per day. Or from talking with the guests while in their room.
+
+* Masquerade ball: All the guests wear masks and get much more aggressive thanks to their anonymity. The servants must wait on the guests and provide food and drink. Gets more dangerous as the night goes on. Different rooms become more populated and more dangerous as the night goes on, forcing the player to move between rooms while working. They might meet Avery here, who might be willing to save you from the mansion.
+
+* Garden maze game: Must attempt to run and hide from hunters, you are given a small head start to hide in the hedge maze. Don’t get caught. The maze is random, however going the right direction when coming to landmarks is how to advance in the maze. If the player hides well enough, they may be able to slip away.
+
+* Dinner Party: The player is told to be a hostess for a dinner party, the player needs to wait on guests who might want a taste of something more than food.
+	* You might be able to slip something into drinks, causing a panic that allows you free reign of the mansion for a short time.
+	* You may be able to regulate the amount of drinking guests do.
+	* After some parties (cumulative random chance, at most every other), the servants will be lined up and guests will pair off and be taken to the guest room. If a guest is sufficiently drunk, they might just go right to sleep after picking you, letting you leave the room in peace. If the pair off does not happen, drunk guests can be dangerous after dinner.
+
+* Mud Wrestling: While cliche, some members enjoy seeing two servants duke it out in the mud. Winner gets to be cleaned off, the loser gets mobbed. This event would happen in the day rather than at 7.
+
+* Be a dancer in the club: Self explanatory

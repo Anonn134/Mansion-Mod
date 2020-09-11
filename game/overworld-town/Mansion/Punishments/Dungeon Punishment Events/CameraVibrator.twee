@@ -1,0 +1,124 @@
+:: Mansion Dungeon Punishment Camera Orgasm [nobr]
+	The guards approach you and release you from your bonds before dragging you out of the room and into the dungeon propper. They bring you into a cell with cameras set up eveywhere, all pointed at a well lit set of chains and cuffs in the middle of the room.
+	<br>
+	<<mansiondungeonapplybondage>>
+	<br>
+	<br>
+	The pair pushes you towards the chains, and attempt to force you down into a kneeling position.
+	<br><br>
+	<<link [[Don't resist|Mansion Dungeon Punishment Camera Orgasm 2.1]]>><<bind>><</link>>
+	<br>
+	<<link [[Resist|Mansion Dungeon Punishment Camera Orgasm 2.2]]>><<bind>><</link>>
+	
+:: Mansion Dungeon Punishment Camera Orgasm 2.2 [nobr]
+	You attempt to stop yourself from being pushed down, but the two of them are too strong for you. They roughly push you on to the ground and begin to place your arms in the cuffs. <<ggpain>>
+	<br>
+	<br>
+	After a small striggle, your wrists are tied together behind your back and locked to a latch on the ground, forcing you to kneel with your hands painfully stretched behind your back. A metal bar forces your knees apart.
+	<br>
+	<br>
+	<<link [[Next|Mansion Dungeon Punishment Camera Orgasm 3]]>><<pass 120>><</link>>
+
+:: Mansion Dungeon Punishment Camera Orgasm 2.1 [nobr]
+	You let the two of them push you down and cooperate with them as they attach the restraints.
+	<br>
+	<br>
+	When they are done, your wrists are tied together behind your back and locked to a latch on the ground, forcing you to kneel with your hands painfully stretched behind your back. A metal bar forces your knees apart.
+	<br>
+	<br>
+	<<link [[Next|Mansion Dungeon Punishment Camera Orgasm 3]]>><<pass 120>><</link>>
+
+:: Mansion Dungeon Punishment Camera Orgasm 3 [nobr]
+	One of the men leave while the other begins to turn on the cameras surrounding you. When he returns, he has a small box in his hands. From it he takes out two small pink objects, and tapes one to each of your <<breasts>>. He then reaches in and grabs another small pink object, which he slides into your <<genitals>>. 
+	<br><br>
+	
+	<<link [[Give in|Mansion Dungeon Punishment Camera Orgasm 4.1]]>><<pass 180>><</link>>
+	<br>
+	<<link [[Resist|Mansion Dungeon Punishment Camera Orgasm 4.2]]>><<pass 180>><</link>>
+	<br>
+	
+	
+:: Mansion Dungeon Punishment Camera Orgasm 4.1 [nobr]
+	You let yourself go, there's no way you would be able to resist so why stress yourself?
+	<br>
+	<br>
+	<<effects>>
+	<<link [[Next|Mansion Dungeon Punishment Camera Orgasm 5]]>><</link>>
+	
+:: Mansion Dungeon Punishment Camera Orgasm 4.2 [nobr]
+	You try to focus on something, anything other than the feeling on your <<genitals 1>> and <<breasts>>. You won't give them what they want. You won't. The toys become more intense, as if sensing your defiance. The vibrations are maddening.
+	<br><br>
+
+	<<if $willpower gte random(1, 1000)>>
+		You remain as still as you can, afraid that even a slight movement would send you over the edge. The urge to cum is almost painful in its maddening intensity.
+		<br><br>
+		You're not sure how long passes, stuck there on the edge. But eventually, the vibration stops and you are left there, sticky with sweat but unbroken.
+		<br><br>
+		<<link [[Next|Mansion Dungeon Punishment Camera Orgasm End 1.1]]>><</link>>
+		<br>
+	<<else>>
+		You can't take it. <span class="red">Your body gives in.</span>
+		<<orgasmpassage>>
+		<<gggwillpower>><<willpower 24>>
+		<br>
+		<br>
+		<<link [[Next|Mansion Dungeon Punishment Camera Orgasm 5]]>><</link>>
+		<br>
+	<</if>>
+	
+:: Mansion Dungeon Punishment Camera Orgasm 5 [nobr]
+	The vibrators continue to assault your body, and you approach your peak once more.
+	<<orgasmpassage>>
+	You're still shaking from climax when you feel the next start to build. It's on you within moments.
+	<<orgasmpassage>>
+	The next comes faster still, almost blurring with the previous.
+	<<orgasmpassage>>
+	<<orgasmpassage>>
+	<<orgasmpassage>>
+	
+	<<link [[Next|Mansion Dungeon Punishment Camera Orgasm 6]]>><</link>>
+
+:: Mansion Dungeon Punishment Camera Orgasm 6 [nobr]
+	Your body is wracked time and again, until the orgasm just doesn't stop. Your body is kept in a state of constant climax, the toys tormenting your body vibrating without pause.
+	<br>
+	At last, the vibration stops. Your body gives one last pitiable spasm then you sit motionless, letting yourself be supported by the restraints. <<ggarousal>>
+	<<ggtrauma>><<trauma 24>>
+	<br>
+	<br>
+	<<link [[Next|Mansion Dungeon Punishment Camera Orgasm End 1.1]]>><</link>>
+
+:: Mansion Dungeon Punishment Camera Orgasm End 1.1 [nobr]
+	<<set $mansionpunishmentroomtype to 0>>
+	<<if $worn.face.type.includes("blindfold")>>
+		You kneel there for a moment, panting and in a small puddle of your own juices, when you hear the door to the cell open. You hear somebody walk over to you then remove the toys strapped to your <<genitals 1>> and <<breasts>>. That alone is almost enough to send you over the edge. 
+		<br>
+		You hear the guard walk around the room, then approach you. Still shuttering with arousal, you feel him unattatch you from the floor then carry your limp body back to your cell. You are thrown in and  hear the door slam.
+		<br>
+		<br>
+		<<link [[Next|Mansion Dungeon Punishment Main]]>><</link>>	
+	<<else>>
+		You kneel there for a moment, panting and in a small puddle of your own juices, when the door to the cell opens. You see one of the guards walk towards you, reach beneath you, and tug free the toys strapped to your <<genitals 1>> and <<breasts>>. That alone is almost enough to send you over the edge.
+		<br>
+		The guard walks around the cameras, shutting them each off one by one. He then unattatches you from the floor, all the while you continue to shutter with arousal. He carries your limp body back to your cell and throws you in, locking the door behind him.
+		<br>
+		<br>
+		<<link [[Next|Mansion Dungeon Punishment Main]]>><</link>>
+	<</if>>
+
+:: Mansion Dungeon Punishment Camera Orgasm End 1.2 [nobr]
+	<<set $mansionpunishmentroomtype to 0>>
+	<<if $worn.face.type.includes("blindfold")>>
+		You kneel there for a moment, panting and sweaty , when you hear the door to the cell open. You hear somebody walk over to you then remove the toys strapped to your <<genitals 1>> and <<breasts>>. That alone is almost enough to send you over the edge, but you still hold strong.
+		<br>
+		You hear the guard walk around the room, then approach you. Still shuttering with arousal, you feel him unattatch you from the floor then carry your limp body back to your cell. You are thrown in and  hear the door slam.
+		<br>
+		<br>
+		<<link [[Next|Mansion Dungeon Punishment Main]]>><</link>>		
+	<<else>>
+		You kneel there for a moment, panting and sweaty, when the door to the cell opens. You see one of the guards walk towards you, reach beneath you, and tug free the toys strapped to your <<genitals 1>> and <<breasts>>. That alone is almost enough to send you over the edge, but you still hold strong.
+		<br>
+		The guard walks around the cameras, shutting them each off one by one. He then aproaches you, still shuttering with arousal, and unattatches you from the floor. He carries your limp body back to your cell and throws you in, locking the door behind him.
+		<br>
+		<br>
+		<<link [[Next|Mansion Dungeon Punishment Main]]>><</link>>
+	<</if>>

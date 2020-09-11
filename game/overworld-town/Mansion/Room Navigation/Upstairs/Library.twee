@@ -1,0 +1,16 @@
+:: Mansion Library [nobr]
+	<<mansionDisplayChores>>
+	A large, tall room with dozens of shelves lined with books. 
+	
+	<<if $daystate is "day" or $daystate is "dawn" or $daystate is "dusk">>
+		A couple guests glance up at you.
+	<<elseif $daystate is "night">>
+		The library is dark, silent and hopefully empty except for you.
+	<</if>>
+		
+	<br>
+	<br>
+	<<link [[Upstairs Main Hall|Mansion Upstairs Entrance]]>><<pass 1>><</link>>
+	<br>
+	<<mansionDoChores>>
+	<<mansionDoQuest>>

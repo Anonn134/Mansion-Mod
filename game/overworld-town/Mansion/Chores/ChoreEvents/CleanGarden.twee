@@ -1,0 +1,220 @@
+:: Clean Garden Chore [nobr]
+		
+	<<if $daystate is "day" or $daystate is "dawn">>
+		<<if $rng gte 60>>
+			<<if $tending gte random(1, 800)>>
+				You spend a couple hours trimming the hedges around the mansion and raking up leaves. The time passes uneventfully.
+				
+				<<set $mansionChores.cleanGarden to false>>
+				<br>
+				<br>
+				<<link [[Next|Mansion Garden Entrance]]>><<pass 120>><</link>>
+			<<else>>
+				You spend a couple hours trimming the hedges around the mansion and raking up leaves. The time passes uneventfully, but you do struggle a bit and get slowed down by some mistakes.
+				
+				<<set $mansionChores.cleanGarden to false>>
+				<br>
+				<br>
+				<<link [[Next|Mansion Garden Entrance]]>><<pass 160>><</link>>
+			<</if>>
+		<<elseif $rng gte 30>>		
+			<<generate1>>You begin to trim some hedges, but as you reach up to trim some especially high branches you feel somebody wrap their hands around and your chest and begin gropping you.
+			<br>
+			<br>			
+			<<link [[Ask them to stop|Mansion Garden Ask Stop]]>><</link>>
+			<br>
+			<<link [[Put up with it|Mansion Garden Put Up With]]>><</link>>
+		<<else>>	
+			<<if $mansionServantPopularity gte random(20, 130)>>
+				As you struggle to get a large pile of leaves in a trash bag, another servant approaches you and helps. The two of you chat, and once you're done they wave and go on their way.
+				<br>
+				<br>
+				<<link [[Next|Mansion Garden Entrance]]>><<pass 100>><</link>>
+			<<else>>
+				<<if $tending gte random(1, 800)>>
+					You spend a couple hours trimming the hedges around the mansion and raking up leaves. The time passes uneventfully.
+					
+					<<set $mansionChores.cleanGarden to false>>
+					<br>
+					<br>
+					<<link [[Next|Mansion Garden Entrance]]>><<pass 120>><</link>>
+				<<else>>
+					You spend a couple hours trimming the hedges around the mansion and raking up leaves. The time passes uneventfully, but you do struggle a bit and get slowed down by some mistakes.
+					
+					<<set $mansionChores.cleanGarden to false>>
+					<br>
+					<br>
+					<<link [[Next|Mansion Garden Entrance]]>><<pass 160>><</link>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<<elseif $daystate is "night" or $daystate is "dusk">>
+		<<if random(0, 120) lte $mansionGuestPopularity>>
+			You hear footsteps behind you, but before you can turn you feel somebody roughly grab you and shove you to the ground.
+			<br>
+			<br>
+			<<link [[Next|Mansion Garden Assault Resist]]>><<set $sexstart to 1>><</link>>
+		<<else>>
+			<<if $tending gte random(1, 800)>>
+				<<set $mansionRng to random(1,2)>>
+				You spend a couple hours trimming the hedges around the mansion and raking up leaves. 
+					<<if $mansionRng is 1>>
+						The time passes uneventfully.
+					<<elseif $mansionRng is 2>>
+						You hear something scurrying behind you, but when you turn around you see nothing but darkness. You quickly finish your chore. <<gstress>>		
+					<</if>>
+				
+				<<set $mansionChores.cleanGarden to false>>
+				<br>
+				<br>
+				<<link [[Next|Mansion Garden Entrance]]>><<pass 120>><</link>>
+			<<else>>
+				You spend a couple hours trimming the hedges around the mansion and raking up leaves. The time passes uneventfully, but you do struggle a bit and get slowed down by some mistakes.
+				
+				<<set $mansionChores.cleanGarden to false>>
+				<br>
+				<br>
+				<<link [[Next|Mansion Garden Entrance]]>><<pass 160>><</link>>
+			<</if>>
+		<</if>>
+	<</if>>
+	
+	
+:: Mansion Garden Ask Stop [nobr]
+	You turn around and ask <<him>> to stop so you can get your work done. 
+	
+	<<if $mansionGuestPopularity lte random(0,80)>>
+		 <<He>> looks dissapointed, and leaves you to continue your work.
+		 <br>
+		 <br>
+		 <<link [[Finish The Chore|Mansion Garden Entrance]]>><<pass 160>><</link>>
+	<<else>>
+		 <<He>> narrows his eyes and says "your job is to do what I want, and I want to have some fun with you" as he grasps your arms and pushes you to the ground. <<lGuestPop>>
+		 <br>
+		 <br>
+		 <<link [[Next|Mansion Garden Assault Resist]]>><<set $sexstart to 1>><</link>>
+	<</if>>
+
+:: Mansion Garden Put Up With [nobr]
+	You ignore the guest as <<he>> gropes your breasts, before reaching into your pants and begins to play with your <<genitals>>. <<garousal>><<arousal 100>>
+	<<if $worn.genitals.type.includes("naked")>>
+		"How naughty you are, not wearing any underwear." <<set $rng += 10>> <<gGuestPop>>
+	<</if>>
+	
+	<<if $rng gte 70>>
+		<br>
+		<<He>> gets more aggressive, drawing you closer and whispering "lets have some fun here."
+		<br>
+		<br>
+		<<link [[Allow|Mansion Garden Assault Give In]]>><<set $sexstart to 1>><</link>>
+		<br>
+		<<link [[Resist|Mansion Garden Assault Resist]]>><<set $sexstart to 1>><</link>>
+	<<else>>
+		<br>
+		<<He>> continues to grope you, but eventually leaves you to finish your chore.
+		<br>
+		<br>
+		<<link [[Finish The Chore|Mansion Garden Entrance]]>><<pass 160>><</link>>
+	<</if>>
+	
+:: Mansion Garden Assault Give In [nobr]
+	<<if $sexstart is 1>>
+		<<set $sexstart to 0>>
+		<<controlloss>>
+		<<neutral 1>>
+		<<molested>>
+		<<maninit>>
+	<</if>>
+
+	<<effects>>
+	<<effectsman>>
+	<<man>>
+	<<stateman>>
+	<br><br>
+	<<actionsman>>
+
+	<<if $enemyarousal lt $enemyarousalmax and $enemyhealth gt 0>>
+		<span id="next"><<link [[Next|Mansion Garden Assault Give In End]]>><</link>></span><<nexttext>>
+	<<else>>
+		<span id="next"><<link [[Next|Mansion Garden Assault Resist]]>><</link>></span><<nexttext>>
+	<</if>>
+
+
+:: Mansion Garden Assault Resist [nobr]
+	<<if $sexstart is 1>>
+		<<set $sexstart to 0>>
+		<<controlloss>>
+		<<violence 1>>
+		<<neutral 1>>
+		<<molested>>
+		<<maninit>>
+		<<set $NPCList[0].lefthand to "arms">>
+	<</if>>
+
+	<<effects>>
+	<<effectsman>>
+	<<man>>
+	<<stateman>>
+	<br><br>
+	<<actionsman>>
+
+	<<if $enemyarousal lt $enemyarousalmax and $enemyhealth gt 0>>
+		<span id="next"><<link [[Next|Mansion Garden Assault Resist End]]>><</link>></span><<nexttext>>
+	<<else>>
+		<span id="next"><<link [[Next|Mansion Garden Assault Resist]]>><</link>></span><<nexttext>>
+	<</if>>
+
+
+:: Mansion Garden Assault Resist End [nobr]
+	<<if $enemyarousal lt $enemyarousalmax>>
+		<<He>> recoils in pain before gathering his things and scrambling away. Hopefully that doesn't come back to bite you. <<llGuestPop>>
+		<<clotheson>>
+		<<endcombat>>
+		<br>
+		<br>
+	<<elseif $enemyhealth gt 0>>
+		<<ejaculation>>
+		<<if $enemyanger gte ($enemyangermax / 5) * 3>>
+			<<He>> grabs your hair and angrily says "you need to learn your position in this place." <<lllGuestPop>>
+			<<violence 2>>
+			<br><br>
+		<<elseif $enemyanger gte 1>>
+			Without a word, <<he>> tosses you into the bushes and leaves.
+			<br><br>
+		<<else>>
+			<<He>> kisses you on the cheek, then leaves you to finish your chore. <<ggGuestPop>>
+			<br><br>
+		<</if>>
+		<<tearful>> you gather yourself.
+		<br><br>
+		<<clotheson>>
+		<<endcombat>>
+	<</if>>
+	
+	<<link [[Finish The Chore|Mansion Garden Entrance]]>><<pass 160>><</link>>
+
+:: Mansion Garden Assault Give In End [nobr]
+<<if $enemyarousal lt $enemyarousalmax>>
+		<<He>> recoils in pain before gathering his things and scrambling away. Hopefully that doesn't come back to bite you. <<llGuestPop>>
+		<<clotheson>>
+		<<endcombat>>
+		<br>
+		<br>
+	<<elseif $enemyhealth gt 0>>
+		<<ejaculation>>
+		<<if $enemyanger gte ($enemyangermax / 5) * 3>>
+			<<He>> grabs your hair and says "you need to learn where you stand in this place." <<lllGuestPop>>
+			<<violence 2>>
+			<br><br>
+		<<elseif $enemyanger gte 1>>
+			Without a word, <<he>> tosses you into the bushes and leaves.
+			<br><br>
+		<<else>>
+			<<He>> kisses you on the cheek, then leaves you to finish your chore. <<ggGuestPop>>
+			<br><br>
+		<</if>>
+		<<tearful>> you gather yourself.
+		<br><br>
+		<<clotheson>>
+		<<endcombat>>
+	<</if>>

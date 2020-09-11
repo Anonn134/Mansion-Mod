@@ -1,0 +1,18 @@
+:: Mansion Basement Entrance [nobr]
+	<<mansionDisplayChores>>
+	
+	The air is stale and smells of sweat, and the room is made of an uninviting cold stone. There is a door that leads to the dungeon and across from that is another that leads to the crowded dormitories. You can hear laundry machines whining away in a nearby room. A guard closely watches you from an adjacent room with thick glass walls and a solid door.
+	
+	<br>
+	<br>
+	<<link [[Mansion Main Hall|Mansion Main Hall]]>><<pass 3>><</link>>
+	<br>
+	<<link [[Dungeon|Mansion Dungeon Cells]]>><<pass 2>><</link>>
+	<br>
+	<<link [[Dormitories|Mansion Dormitories Hall]]>><<pass 2>><</link>>
+	<br>
+	<<link [[Laundry Room|Mansion Laundry Room]]>><<pass 1>><</link>>
+	<br>
+	<<mansionDoChores>>
+	<br>
+	<<mansionDoQuest>>

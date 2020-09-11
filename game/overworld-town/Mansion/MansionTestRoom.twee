@@ -1,0 +1,28 @@
+:: MansionTestRoom [nobr]
+	
+	<br>
+	<br>
+	<br>
+	<<link [[Do Laundry Chore|Do Laundry Chore]]>><</link>>
+	<br>
+	<<link [[Clean Library Chore|Clean Library Chore]]>><</link>>
+	<br>
+	<<link [[Clean Garden|Clean Garden Chore]]>><</link>>
+	<br>
+	<<link [[Clean Main Hall|Clean Main Hall Chore]]>><</link>>
+	<br>
+	<<link [[Clean Dorms Chore|Clean Dorms Chore]]>><</link>>
+	<br>
+	<<link [[Clean Dungeon Chore|Clean Dungeon Chore]]>><</link>>
+	<br>
+	<<link [[Clean Club Chore|Clean Club Chore]]>><</link>>
+	<br>
+	<br>
+	<<link [[Test Punishment From Room|Mansion Dungeon Punish From Room]]>><</link>>
+	<br>
+	<<link [[Dungeon Clean Defy Event|Clean Dungeon Assault Resist]]>><</link>>
+	<br>
+	<<link [[Pose For Painting Event|Mansion Pose For Painting]]>><</link>>
+	<br>
+	
+	

@@ -1,0 +1,42 @@
+:: Guest Room Hall [nobr]
+	<<mansionDisplayChores>>
+
+	A dark hallway lined with doors and ending with a lavish, pink door that leads to the strip club. A couple of cameras line the hall, leaving no space unwatched. <br>
+	
+	/* mansionOneRoomEventDay is to prevent the player from seeing specific room flavor text more than once when moving to a room. */
+	<<if $mansionOneRoomEventDay.guestroomhalls is false>>
+		<<set $mansionOneRoomEventDay.guestroomhalls to true>>
+		<<if $rng lte 50>>
+			<<set $mansionRng to random(1, 10)>>
+			<<if $mansionRng is to 1>>
+				You hear a loud crash from a nearby room, followed by the sound of gagging. <<gstress>>
+			<<elseif $mansionRng is 2>>
+				You think you hear muffled screams. <<gstress>>
+			<<elseif $mansionRng is 3>>
+				You hear quiet sobs coming from one of the rooms. <<gstress>>
+			<<elseif $mansionRng is 4>>
+				You hear a bed knocking against a wall.
+			<<elseif $mansionRng is 5>>
+				You hear sharp cracks followed by quiet yelps. <<gstress>>
+			<<elseif $mansionRng is 6>>
+				You hear laughing coming from one of the rooms.
+			<<elseif $mansionRng is 7>>
+				You hear a quiet moaning from a nearby room.
+			<<elseif $mansionRng is 8>>
+				You hear a something clinking quietly in a nearby room.
+			<<elseif $mansionRng is 9 or $mansionRng is 10>>
+				You hear a moans of extacy in a nearby room.
+			<</if>>
+		<<else>>
+			The silence is unsettling.
+		<</if>>
+	<</if>>
+
+	<br>
+	<br>
+	<<link [[Strip Club|Mansion Strip Club Entrance]]>><<pass 2>><</link>>
+	<br>
+	<<link [[Mansion Main Hall|Mansion Main Hall]]>><<pass 3>><</link>>
+	<br>
+	<<mansionDoChores>>
+	<<mansionDoQuest>>

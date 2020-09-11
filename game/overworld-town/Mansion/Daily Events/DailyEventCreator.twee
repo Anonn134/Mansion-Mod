@@ -1,0 +1,33 @@
+:: Widgets Mansion Create Daily Event [widget]
+	<<widget "mansioncreatedailyevent">><<nobr>>
+		
+	<<set $mansionDaily to {
+		cookDinner: false,
+		danceClub: false,
+		serveDinner: false,
+		gardenMazeGame: false,
+		masqueradeBall: false,
+		mudWrestle: false,
+		poseForPainting: false
+	}>>
+	
+	<<if $dayname is "Monday" or $dayname is "Wednsday" or $dayname is "Friday">>
+		<<set $mansionDaily.serveDinner to true>>
+	<<elseif $dayname is "Teusday" or $dayname is "Thursday">>
+		<<set $chore = Math.floor(Math.random()*6)>>
+			<<switch $chore>>
+				<<case 1>>
+					<<set $mansionDaily.danceClub to true>> 
+				<<case 2>>
+					<<set $mansionDaily.serveDinner to true>> 
+				<<case 3>>
+					<<set $mansionDaily.gardenMazeGame to true>> 
+				<<case 4>>
+					<<set $mansionDaily.masqueradeBall to true>> 
+				<<case 5>>
+					<<set $mansionDaily.mudWrestle to true>> 
+				<<case 6>>
+					<<set $mansionDaily.poseForPainting to true>> 
+			<</switch>>
+	<</if>>
+	<</nobr>><</widget>>

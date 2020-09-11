@@ -1,0 +1,39 @@
+:: Mansion Dormitories Personal Room [nobr]
+	<<mansionDisplayChores>>
+	
+		
+	<br>
+	<<link [[Look in the mirror|mirror]]>><</link>>
+	<br><br>
+	<<link [[Sleep till 6am|Mansion Dungeon Punish From Room]]>><</link>>
+	
+	
+	<br>
+	<br>
+	<br>
+	<<link [[Sleep for 8 hours|Mansion Dorm Sleep]]>><<set $sleephour to 8>><</link>><<ltiredness>>
+	<br>
+	<<link [[Sleep for 7 hours|Mansion Dorm Sleep]]>><<set $sleephour to 7>><</link>><<ltiredness>>
+	<br>
+	<<link [[Sleep for 6 hours|Mansion Dorm Sleep]]>><<set $sleephour to 6>><</link>><<ltiredness>>
+	<br>
+	<<link [[Sleep for 5 hours|Mansion Dorm Sleep]]>><<set $sleephour to 5>><</link>><<ltiredness>>
+	<br>
+	<<link [[Sleep for 4 hours|Mansion Dorm Sleep]]>><<set $sleephour to 4>><</link>><<ltiredness>>
+	<br>
+	<<link [[Sleep for 3 hours|Mansion Dorm Sleep]]>><<set $sleephour to 3>><</link>><<ltiredness>>
+	<br>
+	<<link [[Sleep for 2 hours|Mansion Dorm Sleep]]>><<set $sleephour to 2>><</link>><<ltiredness>>
+	<br>
+	<<link [[Sleep for 1 hours|Mansion Dorm Sleep]]>><<set $sleephour to 1>><</link>><<ltiredness>>
+	<br>
+	
+	<br>
+	<br>
+	<<link [[Dungeon Entrance|Mansion Dungeon Entrance]]>><<pass 1>><</link>>
+	<br>
+	<<link [[Dormitories Bathroom|Mansion Dormitories Bathroom]]>><<pass 1>><</link>>
+	<br>
+	<<mansionDoChores>>
+	<<mansionDoQuest>>
+	

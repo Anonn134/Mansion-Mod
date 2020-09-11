@@ -1,0 +1,15 @@
+:: Clean Kitchen Chore [nobr]
+	
+	<<set $mansionChores.cleanKitchen to false>>
+	
+	<<if $rng lte 20>>
+		You clean the Kitchen without any issues.
+		<br>
+		
+		<<link [[Finish Chore|Kitchen]]>><<pass 60>><</link>>
+	<<else>>
+		As you are cleaning, another maid slips and falls, knocking over a stack of plates and breaking them, you spend an extra half hour cleaning.
+		<br>
+		
+		<<link [[Finish Chore|Kitchen]]>><<pass 90>><</link>>
+	<</if>>

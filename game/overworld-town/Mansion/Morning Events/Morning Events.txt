@@ -1,0 +1,9 @@
+On some mornings, an event will fire that does not have to do with chores or the daily event.
+
+* Escapee: Another servant has escaped, if you have high trust, you may be asked to help find them (new option added to each menu within quest widget). If you find them and turn them in, you will gain max trust. If you find them and don’t, they will tell you how to escape. Or you could just ignore them.
+
+* Know your place: If the player gets too comfortable, demonstrating that they have a lot of free time, they are reminded of where they are and what they are in an unsavory way. The player is sufficiently traumatized, lose all sense of control and your daily tasks increase by 1 (dynamic difficulty)
+
+* Player is rented out: Yacht: An especially rich guest has “rented out” the player for a couple of days, you will be spending a lot of time with them on their yacht. This event will work similarly to a player being trapped in a guest room.
+
+* Player is rented out: Room: A wealthy guest has requested, and paid a large sum, to have you visit their room at least once a day for the next X days. Not doing so will anger the guest and the player will be punished until 7pm the next day and be sent off to the guests room with no chores.

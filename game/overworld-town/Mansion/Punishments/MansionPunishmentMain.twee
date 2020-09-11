@@ -1,0 +1,125 @@
+/* When the player wakes up and is to be punished, they are either sent to the dungeon or not. */
+:: Mansion Dungeon Punish From Room [nobr]
+	When you wake up, you see a pair of men standing over you. They grab you, drag you through the dorms and into the dungeon. They walk your to the end of the dungeon hall, where there is a large menacing door. One of them unlocks it, then the other pushes you in, the other following close behind.
+	<<if $rng lte 20>>
+		<br>
+		You fall down as they push you in, then they close the door and advance on you. As they do one of them speaks up, "you're one of the pretty ones, I hope you won't mind us having some fun with you before we set you up in here."
+		<br>todo: Dungeon assault event
+		<br>
+		<<link [[Next|Mansion Dungeon Punishment Start]]>><</link>>
+	<<else>>
+		<br>
+		<br>
+		<<link [[Next|Mansion Dungeon Punishment Start]]>><</link>>
+	<</if>>
+	
+
+:: Mansion Dungeon Punishment Start [nobr]
+	<<set $mansionpunishmentroomtype to either(1, 2, 3, 4)>>
+	
+	<<if $mansionpunishmentroomtype is 1>>
+		One of them men grabs your wrists, locking them into cuffs attatched to the ceiling. The other walks to a corner of the room where, after your wrists are both cuffed, he pulls on a chain, lifting you slowly into the air by your wrists until you dangle helplessly. The wrist cuffs dig painfully into your skin as the men leave you hanging in complete darkness. <<ggpain>> <<gstress>>
+
+	<<elseif $mansionpunishmentroomtype is 2>>
+		Your wrists and ankles are tied together with a thick rope behind your back, completely imobilizing you. The men step back, admiring their handywork, then leave, shutting the door and leaving you in complete darkness. <<ggpain>> <<gstress>>
+		
+	<<elseif $mansionpunishmentroomtype is 3>>
+		When you enter, you see a pillory set up in the center of the room. They waste no time in forcing you in and locking your arms and neck inside before giving you a quick slap on the butt and leaving, closing the door and plunging the room into complete darkness. <<ggpain>> <<gstress>>
+		
+	<<elseif $mansionpunishmentroomtype is 4>>
+		One of the men pushes you to the ground face down, and proceeds to force your arms behind your back and into some contraption. When your arms are completely encased, you hear him tug on a string and the contraption tightens painfully, binding your arms together. You are then forced to sit on your kness and you feel the contraption being attatched to the floor, causing your entire body to arch back as your arms are completly imobilized. The men walk around you, admiring their handywork, then exit and close the door, leaving you in pitch darkness. <<ggpain>> <<gstress>>
+	<</if>>
+	<br>
+	<br>
+	<<link [[Next|Mansion Dungeon Punishment Main]]>><</link>>
+
+/* Dungeon Punishment Loop */
+:: Mansion Dungeon Punishment Main [nobr]
+	
+	You are locked in a pitch black room with no way out.
+	<br>
+	<<mansiondungeontimedisplay>>
+	<<mansiondungeonrestraintsdisplay>>
+	<br>
+	
+	/* If the player has been punished since the last time they were checked in on, probably check in on them again.
+	<<if $mansionpunished is true and $rng gte 30>>
+		<<set $mansionpunished to false>>
+		<<mansiondungeoncheckin>>
+	<<else>>
+		/* If not, then 50% chance of the player being punished again */
+		<<if either(1,2) is 1>>
+			<<link [[Wait|Mansion Dungeon Punishment Main]]>><</link>>
+		<<else>>
+			<<mansiondungeonpunish>>
+	<</if>>
+
+/* When a guard approaches the player to punish them in some way */
+:: Widgets Mansion Dungeon Punishment Punish [widget]
+	<<widget "mansiondungeonpunish">><<nobr>>
+	<<set $mansionpunished to true>>
+	
+	<<if $mansionpunishmentroomtype is 1>>
+		As you hang there, the door to the room opens, letting in a bright light. When your eyes adjust, you see a pair of large men standing in front of you. 
+
+	<<elseif $mansionpunishmentroomtype is 2>>
+		As you lay there, the door to the room opens, letting in a bright light. When your eyes adjust, you see a pair of large men standing in front of you. 
+		
+	<<elseif $mansionpunishmentroomtype is 3>>
+		As you stand there, bent over and locked in the pillory, the door to the room opens, letting in a bright light. When your eyes adjust, you see a pair of large men standing in front of you. 
+		
+	<<elseif $mansionpunishmentroomtype is 4>>
+		As you sit there, the door to the room opens, letting in a bright light. When your eyes adjust, you see a pair of large men standing in front of you. 
+	<</if>>
+	
+	<br>
+	<br>
+	
+	<<set $mansionRng to either(1, 2, 3, 4)>>
+	<<if $mansionRng is 1>>
+		<<link [[Next|Mansion Dungeon Punishment Camera Orgasm]]>><</link>>
+	<<elseif $mansionRng is 2>>
+		<<link [[Next|Mansion Dungeon Punishment Camera Orgasm]]>><</link>>
+	<<elseif $mansionRng is 3>>
+		<<link [[Next|Mansion Dungeon Punishment Camera Orgasm]]>><</link>>
+	<<elseif $mansionRng is 4>>
+		<<link [[Next|Mansion Dungeon Punishment Camera Orgasm]]>><</link>>
+	<</if>>
+
+	<</nobr>><</widget>>
+	
+	
+:: Mansion Dungeon Punishment End 1.1
+	<<set $mansionTrust += 5>>
+	<<unbind>>
+	<<blindfoldremove>>
+	<<set $worn.face.type.push("broken")>>
+	<<faceruined>>
+	
+	Good. I hope it can stay this way and we don't have to go through this unpleasantness again.
+	<br><br>
+	<<if $worn.face.type.includes("gag") and $worn.face.type.includes("blindfold")>>
+		He reaches down and carefully removes the piece of tape blocking your mouth, then removes your blindfold.
+	<<elseif $worn.face.type.includes("gag")>>
+		He reaches down and carefully removes the piece of tape blocking your mouth.
+	<<elseif $worn.face.type.includes("blindfold")>>
+		He reaches down and removes your blindfold, you blink as your eyes adjust to the light.
+	<</if>>
+		<br>
+		He then helps you up and gingerly leads you out of the dungeon and into your bedroom without a word. <<unbind>>
+		<br>
+		<br>
+	<<link [[Next|Mansion Dormitories Personal Room]]>><</link>>
+		
+:: Mansion Dungeon Punishment End 1.2
+	<<if $worn.face.type.includes("blindfold")>>
+		Blinded and disoriented, you feel somebody grab you and you hear the door slam shut.
+	<<else>>
+		He frowns, then wordlessly stand up, and motions to somebody outside as he leaves. Immediately, another large man walks in and gruffly grabs you as the door slams shut.
+	<</if>>
+	<br>
+	<br>
+	<<link [[Next|Mansion Dungeon Punishment Assault]]>><</link>>
+		
+:: Mansion Dungeon Punishment End 1.3
+	mtodo: ignore question

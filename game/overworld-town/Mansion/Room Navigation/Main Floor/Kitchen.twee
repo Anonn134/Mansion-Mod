@@ -1,0 +1,24 @@
+:: Mansion Kitchen [nobr]
+	<<mansionDisplayChores>>
+
+	<<if $time lte 1020 or $time gte 1140>>
+		The kitchen is quiet, however the guards are still here watching to make sure nothing is stolen.
+	<</if>>
+	
+	<<if $time gte 1020 and $time lte 1080>>
+		A large kitchen bustling with activity. Multiple stoves line the wall and storage cabinets are everywhere, and there is a door leading towards the Dining Room. You see a couple of large men overlooking the entire room, making sure nothing is happening that they don’t want to happen.
+	<</if>>
+	
+	<<if $time gte 1080 and $time lte 1140>>
+		A large kitchen bustling with activity. Multiple stoves line the wall and storage cabinets are everywhere, and there is a door leading towards the Dining Room. You see a couple of large men overlooking the entire room, making sure nothing is happening that they don’t want to happen.
+	<</if>>
+	
+	<br>
+	<br>
+	<<link [[Mansion Main Hall|Mansion Main Hall]]>><<pass 2>><</link>>
+	<br>
+	<<link [[Dining Room|Mansion Dining Room]]>><<pass 1>><</link>>
+	<br>
+	<<mansionDoChores>>
+	<<mansionDoQuest>>
+	

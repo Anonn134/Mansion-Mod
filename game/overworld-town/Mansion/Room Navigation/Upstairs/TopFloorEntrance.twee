@@ -1,0 +1,19 @@
+:: Mansion Upstairs Entrance [nobr]
+	<<mansionDisplayChores>>
+
+	Upstairs is much less lavish than the floor level. From here you can go to the library, admin offices or the in-house hospital. You can also access the Luxury Bedroom.
+		
+	<br>
+	<br>
+	<<link [[Luxury Bedroom|Mansion Servant Suite]]>><<pass 5>><</link>>
+	<br>
+	<<link [[Admin Office|Mansion Admin Office]]>><<pass 2>><</link>>
+	<br>
+	<<link [[Library|Mansion Library]]>><<pass 3>><</link>>
+	<br>
+	<<link [[Hospital|Mansion Hospital]]>><<pass 3>><</link>>
+	<br>
+	<<link [[Downstairs|Mansion Main Hall]]>><<pass 2>><</link>>
+	<br>
+	<<mansionDoChores>>
+	<<mansionDoQuest>>

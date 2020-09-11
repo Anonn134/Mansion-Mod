@@ -1,0 +1,120 @@
+:: Mansion Entrance 1 [nobr]
+	From the outside, the mansion looks immaculate. While only two stories, it is very wide. On the side of the mansion you can see a large walled off area, which you can assume is some sort of large garden area. As you walk up to the door, a sharply dressed man greets you and asks what business you have here.
+
+	<br><br>
+	<<link [[Say you don't have any business here|Mansion Entrance 2.1]]>><</link>>
+	<br>
+	<<link [[Ask about the mansion|Mansion Entrance 2.2]]>><</link>>
+	<br>
+	<<link [[Ask for a job|Mansion Entrance 2.3]]>><</link>>
+
+:: Mansion Entrance 2.1 [nobr]
+	The man narrows his eyes and says "then I will have to ask you to leave. Have a safe trip back to the town."
+
+	<<link [[Leave|Forest]]>><<set $forest to 100>><</link>>
+	
+:: Mansion Entrance 2.2 [nobr]
+	his place is an exclusive club for the well off members of society, many are from your nearby town but many more come from some ways away. Our guests come here to relax away from their everyday problems and usually stay in the house for many weeks at a time before leaving. Running such a business requires servants and maids who maintain the mansion in many ways, and look after the whims of our guests. With the state of this town we like to employ young men and women who need the income. Are you interested in working with us?
+
+	<br><br>
+	<<link [[Ask for a job|Mansion Entrance 2.3]]>><</link>>
+	<br>
+	<<link [[Leave|Forest]]>><<set $forest to 100>><</link>>
+
+:: Mansion Entrance 2.3 [nobr]
+	You ask if you can be employed here, after which they nod and lead you into the building. You follow them up a set of stairs onto the second floor, and into what appears to be an office.<br>
+
+	When you enter, you see a man seated at a desk, mulling over paperwork. When he sees you, he smiles and beckons you to come to the desk, and begins speaking.<br><br>
+	
+	We know a lot of young men and women in this town need money, and thus we are willing to assist you -and the town as a whole- by employing you as a servant. Becoming employed here entails a few things. <br>
+	Firstly, you will be required to sign a contract. This contract states that you will stay with us for the full time you agreed on working here with us. You will not be allowed to leave the premises of the mansion before your contract is up. This is because working here will be more than a full time job, from sunup to sundown you will be working, no time to commune to and from the town.<br>
+	Secondly, room and board will be provided to you, as will food. The location of your room will be determined by how well you work for us. Most servants live in the dormitories, however we have a small, cozy room upstairs for the most hard working servant.<br>
+	Lastly, know that we put the comfort and the wishes of our guests first as they are the lifeblood that funds this mansion. I hope you understand.<br>
+	
+	<br><br>
+	<<link [[Ask about the pay|Mansion Entrance 3.1]]>><</link>>
+	<br>
+	<<link [[Ask about the living arrangements |Mansion Entrance 3.2]]>><</link>>
+	<br>
+	<<link [[Ask for a job|Mansion Entrance 3.3]]>><</link>>
+	<br>
+	<<link [[Say you are not interested|Mansion Exit]]>><</link>>
+	
+:: Mansion Entrance 3.1 [nobr]
+	Working here entails signing a contract that legally compels you to work for the specified time. A one week contract will net you $600, a two week contract pays $1400, and a 3 week contract pays $2700. You will be paid when the contract expires. You are allowed to take tips from guests, but don’t count on that as a way to make any large amounts of money. <br><br>
+
+	If you sign up for the 3 week contact, we will additionally pull some strings and allow your absence from school, if you still attend, to not be problematic.
+	
+	<br><br>
+	<<link [[Ask about the living arrangements|Mansion Entrance 3.2]]>><</link>>
+	<br>
+	<<link [[Ask for a job|Mansion Entrance 3.3]]>><</link>>
+	<br>
+	<<link [[Say you are not interested|Mansion Exit]]>><</link>>
+
+:: Mansion Entrance 3.2 [nobr]
+	Our guests, staff and servants sleep in separate sections of the building. As a member of the servants, you will not be allowed to enter the living space of the staff or guests without permission, unless you were told to clean those areas. As I said earlier, the location of your room will be determined by how well you work for us. Most servants live in the basement dormitories, but if you are the best at what you do here you will live in the luxury room upstairs on this floor.
+	
+	<br><br>
+	<<link [[Ask about the pay|Mansion Entrance 3.1]]>><</link>>
+	<br>
+	<<link [[Ask for a job|Mansion Entrance 3.3]]>><</link>>
+	<br>
+	<<link [[Say you are not interested|Mansion Exit]]>><</link>>
+
+:: Mansion Entrance 3.3 [nobr]
+	The man claps his hands together and says 
+
+:: Mansion Exit [nobr]
+	You tell the man that you are not interested in working here, he seems dissapointed. "That is unfortunate, feel free to come back if you ever change your mind. I hope to see you again, have a nice day."<br>
+	The man who led you in now leads you out, and you are again left standing outside, surrounded by trees. 
+	
+	<br>
+	<br>
+	<<link [[Leave|Forest]]>><<set $forest to 100>><</link>>
+	
+:: Mansion Rough Start [nobr]
+	You are roughly shoved into a chair and your hands are yanked behind you and handcuffed to the back of the chair. The bag on your head is yanked off and you see two large men standing before you. You appear to be in some sort of cell, with grey brick walls and a solid metal door. <br>
+	“Welcome to your new life, you are now a maid whose sole purpose is to serve. As a maid of this mansion, you will be given a list of daily tasks to complete, which you will complete without complaints. We service many guests here, and require many maids to maintain this mansion and meet the requests of our guests. You will be living in the dormitories across the hall with your fellow maids, unless of course you are exceedingly respectful and trustworthy. In that case, we will have a much more comfy room for you to sleep in, that position is heavily contested and there is only room for one. If you are able to impress us, you will live in luxury. Decent and disrespect towards the other staff members or guests is not tolerated and will be harshly punished. As for what you do to your fellow maids… we don’t really care. I hope you can learn to live here with us in harmony, do you think you can manage that?
+	
+	<br>
+	<br>
+	<<link[[Yes|Mansion Rough Start 1.1]]>><<pass 1>><</link>>
+	<br>
+	<<link[[No|Mansion Rough Start 1.2]]>><</link>>
+	<br>
+	<<link[[Say nothing|Mansion Rough Start 1.3]]>><</link>>
+	<br>
+	<<link[[Spit in his face|Mansion Rough Start 1.4]]>><</link>>
+	
+:: Mansion Rough Start 1.1 [nobr]
+	"That's good to hear. Lets get you untied and we can show you to your room."<br>
+	The two large men unlock the wrist restraints and pick you up out of the chair. They lightly push you out of the cell, across the hall and into a hall lined with doors packed together.<br>"Here is where you will sleep, meals will be brought to you twice a day and starting tomorrow you will be given a list of chores to complete. I suggest you take the rest of today to get aquanted with the layout of the mansion."
+	
+	<<set $bedlevel to 1>>
+	<<set $mansionTrust to 30>>
+	
+	<<link [[Dormitories Personal Room|Mansion Dormitories Personal Room]]>><<pass 1>><</link>>
+
+:: Mansion Rough Start 1.2 [nobr]
+	<<set $mansionTrust to 15>> 
+	<<set $mansionPunishmentTime to 0>>
+	
+	"That's a shame. Well, you aren't leaving as we paid good money for you, so hopefully we are able to change your mind soon." <br> 
+	After this, the two men unlock your wrist restraints, roughly grab you by you shoulders and lead you out of the room. You are taken down the hall, passing a couple of other metal doors, and eventually through a stark black door. Inside there is no light, but you can still see a couple of chains hanging from the ceiling. <br>
+	Despite your struggles, the men again attach a pair of cuffs around your wrists, and then pull on a chain on the other side of the room, pulling your wrist restraints and the rest of your body with it. They lock the chain in place with some mechanism, and then leave the room, closing the door, leaving you hanging painfully from your wrists in complete darkness. <<ggpain>> <<llcontrol>> <<gggstress>>
+	
+	<<link [[Wait|Mansion Punishment Room Main]]>><</link>>
+
+:: Mansion Rough Start 1.3 [nobr]
+	You say nothing. After a couple of seconds of silence, the man in charge begins to speak. "We will be back in a few hours, there are important things happening in this building all the time and sitting here waiting for you to break is not one of them." He leaves the room, leaving you with the two large men that led you here.<br> 
+	
+	<<link [[Next|Mansion Dungeon Punishment Start]]>><</link>>
+	
+:: Mansion Rough Start 1.4 [nobr]
+	<<set $mansionTrust to 0>> 
+	<<set $mansionPunishmentTime to 0>>
+	
+	You spit in his face. After a couple of seconds of silence, the man in charge begins to speak. "We will be back in a few hours, there are important things happening in this building all the time and sitting here waiting for you to break is not one of them." He leaves the room, leaving you with the two large men that led you here.<br> 
+	
+	<<link [[Next|Mansion Dungeon Punishment Start]]>><</link>>

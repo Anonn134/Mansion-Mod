@@ -1,0 +1,111 @@
+:: TestGuestRoom [nobr]
+	<<generate1>>
+	<<mansioncreateguest>>
+	<<mansioncreateroom>>
+	<br>
+	<br>
+	<<link [[TestGuest|Mansion Guest Room Start]]>><</link>>
+	
+	
+:: Mansion Guest Room Start	[nobr]
+	You look around the room as you enter.<br>
+	<<mansionshowroom>>
+	
+	The <<personsimple>> closes the door behind you and locks it. 
+	<br>
+	
+	<<set $mansionRng to random(1,3)>>
+	<<if $mansionRng is 1 and $mansionGuestRoomQuirks.dirty is true>>
+		<<set $mansionLeaveCond to "clean">>
+		The guest lazily tells you to clean the room, then you are free to go.
+		<br>
+		<br>
+		<<link [[Clean|Mansion Guest Room Clean Loop]]>><</link>>
+		<<link [[Refuse|Mansion Guest Room Refuse]]>><</link>>
+	<<elseif $mansionRng is 2 or $mansionRng is 3>>
+		<<set $mansionLeaveCond to "service">>
+		With a hungry look in <<his>> eyes, the guest says "you're going to be my little plaything for a while, lets have some fun"
+	<</if>>
+	
+	<<link [[Next|Mansion Guest Room]]>><</link>>
+	
+
+:: Mansion Guest Room Clean [nobr]
+	<<if $mansionGuestStatus.roomDirt lte 10>>
+		
+	<<elseif $mansionGuestStatus.roomDirt lte 20>>
+		
+	<<elseif $mansionGuestStatus.roomDirt lte 40>>
+		<<if $rng is 50>>
+			You clean the room, sorting through clothing and trash.
+		<<else>>
+		
+		<</if>>
+	<<elseif $mansionGuestStatus.roomDirt lte 60>>
+		<<if $rng is 50>>
+			You clean the room, trying to not touch the more wet spots on the pieces of clothing. <<gstress>>
+		<<else>>
+			You attempt to clean the room, having trouble knowing where to begin. Regardles, you get on your hands and knees and attempt to clean the various stains on the carpet.
+		<</if>>
+	<<elseif $mansionGuestStatus.roomDirt gt 80>>
+		<<if $rng is 50>>
+			You clean the room, trying to not touch the more wet spots on the pieces of clothing. <<gstress>>
+		<<else>>
+			You attempt to clean the room, having trouble knowing where to begin. Regardles, you get on your hands and knees and attempt to clean the various stains on the carpet.
+		<</if>>
+	<</if>>
+	
+	<<set mansionGuestStatus.roomDirt -= random(12,18)>>
+	<br>
+	<br>
+	<<link [[Clean|Mansion Guest Room Clean Loop]]>><</link>>
+	
+	
+:: Mansion Guest Room Clean Loop [nobr]
+	<<if $mansionGuestStatus.roomDirt lte 10>>
+		The room is <span class="green">spotless,</span> everything is in order.
+		
+	<<elseif $mansionGuestStatus.roomDirt lte 20>>
+		The rooms is <span class="blue">neat,</span> the guest's clothes are in neat piles where they belong but the room is still somewhat dirty.
+		
+	<<elseif $mansionGuestStatus.roomDirt lte 40>>
+		The room is <span class="purple">a bit messy.</span> piles of clothes lying around and the room.
+		
+	<<elseif $mansionGuestStatus.roomDirt lte 60>>
+		The room is a <span class="pink">mess.</span> There are piles of clothing and trash everywhere.
+		
+	<<elseif $mansionGuestStatus.roomDirt gt 80>>
+		The room is an <span class="red">anarchic mess.</span> The bed is a mess and the sheets are nowhere to be seen among the mess of strewn bellonings and clothing. There are unidentifiable stains in the carpet and in the bed.
+	<</if>>
+	
+	<<if $rng lte 30>>
+		<<link [[Clean|Mansion Guest Room Clean]]>><</link>>
+	<<else>>
+		<<link [[Clean|Mansion Guest Room Clean Event]]>><</link>>
+	<</if>>
+
+:: Mansion Guest Room [nobr]
+	<<mansionshowroom>>
+	<br>
+	<<mansionshowguestlocation>>
+	<br>
+	<<mansionshowguestfeelings>>
+	<br>
+	<br>
+	<<mansionshowplayerlocation>>
+	
+	<br>
+	<br>
+	<<link [[Do nothing|Mansion Guest Room Idle]]>><</link>>
+	<br>
+	<<link [[Clean the room|Mansion Guest Room Clean]]>><</link>>
+	<br>
+	<<link [[Ask to leave|Mansion Guest Room Ask Leave]]>><</link>>
+	<br>
+	<<link [[Ask to take a bath|Mansion Guest Room Ask Bath]]>><</link>>
+	<br>
+	<<link [[Ask for excuse note|Mansion Guest Room Ask Excuse]]>><</link>>
+	<br>
+	<<link [[Sleep in bed|Mansion Guest Room Enter Bed]]>><</link>>
+	<br>
+	<<link [[Sleep on ground|Mansion Guest Room Lay Ground]]>><</link>>

@@ -1,0 +1,36 @@
+:: Mansion Main Hall [nobr]
+	
+	/* creates the list of daily chores. Should be done at 6am each morning*/
+	<<mansionCreateChores>>
+	
+	/* displays the chores the player is assigned */
+	<<mansionDisplayChores>>
+	
+	<<if $mansionNextEventTime gte $time>>
+		<<mansiontravelevent>>
+	<<else>>
+		The Main Hall of the mansion. A pair of emasculate staircases lead upstairs, and there are pairs of doors on the walls to your left and right. 
+		
+		/* displays movement flavor text*/
+		<<mansionwalkingflavor>>
+				
+		From here you can go upstairs, to the kitchen and dining room, the guest rooms or the garden. A stark door in the corner leads to the basement.
+		<br>
+		<br>
+		<<link [[Test Room|MansionTestRoom]]>><<pass 1>><<set $molestationstart to 1>><</link>>
+		<br>
+		<<link [[Dining Room|Mansion Dining Room]]>><<pass 1>><</link>>
+		<br>
+		<<link [[Kitchen|Mansion Kitchen]]>><<pass 2>><</link>>
+		<br>
+		<<link [[Guest Rooms|Guest Room Hall]]>><<pass 3>><</link>>
+		<br>
+		<<link [[Garden|Mansion Garden Entrance]]>><<pass 4>><</link>>
+		<br>
+		<<link [[Upstairs|Mansion Upstairs Entrance]]>><<pass 2>><</link>>
+		<br>
+		<<link [[Basement|Mansion Basement Entrance]]>><<pass 3>><</link>>
+		<br>
+		<<mansionDoChores>>
+		<<mansionDoQuest>>
+	<</if>>

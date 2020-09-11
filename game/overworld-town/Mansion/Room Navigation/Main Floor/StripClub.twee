@@ -1,0 +1,40 @@
+:: Mansion Strip Club Entrance [nobr]
+	<<mansionDisplayChores>>
+
+	A large room with a raised platform in the middle, housing multiple dance poles. A door in the back corner leads to the stage, from which you can go down a short set of stairs and get to the dormitories. In front of the stage is a door that leads to the guest rooms. 
+	
+	<<if $mansionOneRoomEventDay.stripclubentrance is false>>
+		<<set $mansionOneRoomEventDay.stripclubentrance to true>>
+		<<if $daystate is "day" or $daystate is "dusk" $daystate is "night">>
+			<<set $mansionRng to random(1, 5)>>
+			<<if $mansionRng is 1>>
+				There are dancers you recognize as other maids on the poles and about a dozen guests watching.
+				
+			<<elseif $mansionRng is 2>>
+				You see as one of the dancers is gruffly pulled down by a guest and pulled out towards the guest room hallway. <<gstress>>
+			
+			<<elseif $mansionRng is 3>>
+				You see a guest begin to get handsy with a dancer, and nobody stops him as he pulls her underwear off. <<gstress>>
+				
+			<<elseif $mansionRng is 4>>
+				As you walk in, you see a guest guiding a dancer out of the room, both are smiling.
+			
+			<<elseif $mansionRng is 5>>	
+				As you step in, the smell of alcohol hits you in the face like a wave.		
+			<</if>>
+		<<elseif $daystate is "dawn">>
+			At this time of the morning, the room is empty. There is trash and damp spots everywhere, no doubt here since only last night.
+		<</if>>
+	<</if>>
+	
+
+	<br>
+	<br>
+	<<link [[Guest Rooms|Guest Room Hall]]>><<pass 4>><</link>>
+	<br>
+	<<link [[Dormitories|Mansion Dormitories Hall]]>><<pass 4>><</link>>
+	<br>
+	<<link [[Backstage|Mansion Backstage Entrance]]>><<pass 1>><</link>>
+	<br>
+	<<mansionDoChores>>
+	<<mansionDoQuest>>

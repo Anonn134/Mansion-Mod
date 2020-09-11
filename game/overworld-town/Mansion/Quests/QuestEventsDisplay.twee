@@ -1,0 +1,27 @@
+/* Widget that displays quest links if the player has a "quest" active and is in the correct room */
+
+:: Widgets Mansion Quest Action [widget]
+	<<widget "mansionDoQuest">><<nobr>>
+
+	<br>
+
+	/* get food or water in kitchen */
+	<<if passage() is "Kitchen" and $mansionQuestsStage.dungeonFoodWater is 1>>
+		<br>
+		<<link [[Get Water|Dungeon FoodWater Event 3]]>><</link>>
+	
+	<<elseif passage() is "Kitchen" and $mansionQuestsStage.dungeonFoodWater is 2>>
+		
+		<br>
+		<<link [[Find Food|Dungeon FoodWater Event 3]]>><</link>>
+	
+	<</if>>
+	
+	/* give food or water in dungeon */
+	<<if passage() is "Dungeon Entrance" and $mansionQuestsStage.dungeonFoodWater is 3>>
+		<<link [[Give the prisoner water|Dungeon FoodWater Event 4]]>><</link>>
+	<<elseif passage() is "Dungeon Entrance" and $mansionQuestsStage.dungeonFoodWater is 4>>
+		<<link [[Give the prisoner water|Dungeon FoodWater Event 4]]>><</link>>
+	<</if>>
+
+	<</nobr>><</widget>>

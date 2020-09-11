@@ -1,0 +1,43 @@
+:: Widgets Mansion Sleep [widget]
+	<<widget "mansionsleep">><<nobr>>
+	
+	/* Player is woken up at 6am every day. Different widgets are run when they wake up depending on some variables. */
+	/* If the player is up at 6am, depending on if they are going to be punished that day, they are either sought out by guards or chores are created. */
+	
+	
+	<<set $sleepHoursTotal to 0>>
+	<<for $sleephour gte 1>><<set $sleephour -= 1>>
+		<<effectstime>>
+		
+		<<if $time gte 360 and $mansionChoresMade is false>>
+			<<mansionCreateChores>>
+			<<set $mansionChoresMade to true>>
+		<</if>>	
+		
+		
+		
+	<</for>>
+	<</nobr>><</widget>>
+
+:: Mansion Test Sleep [nobr]
+	<<for $time lte 360 and $time gte 299>>
+		<<set $tiredness -= 200>>
+		<<pass 60>>
+		
+		<<effectstime>>
+	<</for>>
+	
+	<<set $time to 360>>
+	
+	<<mansionmissedchores>>
+	
+	<<if $mansionMissedChores gte 1>>
+		punishment
+		<br>
+		<br>
+		<<mansionCreateChores>>
+	<<else>>
+		<<mansionCreateChores>>
+	<</if>>
+	
+	<<link [[Next|Mansion Chore Wakeup]]>><</link>>

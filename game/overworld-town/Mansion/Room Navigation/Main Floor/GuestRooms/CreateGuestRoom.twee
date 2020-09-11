@@ -1,0 +1,41 @@
+:: Widgets Mansion Create Room [widget]
+	<<widget "mansioncreateroom">><<nobr>>
+	
+	<<set $mansionGuestRoomQuirks to {
+		dirty: false,
+		bathroom: false,
+		smallBed: false,
+		pillory: false,
+		bedChains: false,
+		roomChains: false,
+		floorArmBinder: false,
+		woodenHorse: false
+	}>>
+	
+	<<for _i = 0; _i < random(50, 100); _i++>>
+		<<set $mansionMiscFlag to random (1, 7)>>
+		<<if $mansionMiscFlag is 1>>
+			<<set $mansionGuestRoomQuirks.dirty to true>>
+			<<set $mansionGuestStatus.roomDirt to random(3,6)>>
+		<<elseif $mansionMiscFlag is 2>>
+			<<set $mansionGuestRoomQuirks.smallBed to true>>
+		<<elseif $mansionMiscFlag is 3>>
+			<<set $mansionGuestRoomQuirks.smallBed to true>>
+		<<elseif $mansionMiscFlag is 4>>
+			<<set $mansionGuestRoomQuirks.pillory to true>>
+		<<elseif $mansionMiscFlag is 5>>
+			<<set $mansionGuestRoomQuirks.bedChains to true>>
+			<<set $mansionGuestRoomQuirks.floorArmBinder to false>>
+			<<set $mansionGuestRoomQuirks.woodenHorse to false>>
+		<<elseif $mansionMiscFlag is 6>>
+			<<set $mansionGuestRoomQuirks.floorArmBinder to true>>
+			<<set $mansionGuestRoomQuirks.bedChains to false>>
+			<<set $mansionGuestRoomQuirks.woodenHorse to false>>
+		<<elseif $mansionMiscFlag is 7>>
+			<<set $mansionGuestRoomQuirks.woodenHorse to true>>
+			<<set $mansionGuestRoomQuirks.bedChains to false>>
+			<<set $mansionGuestRoomQuirks.floorArmBinder to false>>
+		<</if>>
+	<</for>>
+		
+	<</nobr>><</widget>>

@@ -1,0 +1,156 @@
+:: Clean Library Chore [nobr]
+	
+	<<if $rng gte 30>>
+		The library is as quiet as you spend a couple hours organizing books for the librarian.
+
+		<<set $mansionChores.cleanLibrary to false>>
+		<br>
+		<br>
+		<<link [[Next|Mansion Library]]>><<pass 120>><</link>>
+
+	<<else>>
+		<<generate1>><<person1>>As you bend over to shelve a book, you feel somebody grab your neck from behind. With <<his>> other hand <<he>> covers your mouth and whispers “we’re in the library, you should keep your voice down while we have our fun”
+		
+		<br>
+		<br>
+		<<link [[Nod You Head|Mansion Library Quiet Assault]]>><<set $sexstart to 1>><<set $mansionMiscFlag to 1>><</link>>
+		<br>
+		<<link [[Say Nothing|Mansion Library Quiet Assault]]>><<set $sexstart to 1>><<set $mansionMiscFlag to 2>><</link>>
+		<br>
+		<<link [[Struggle|Mansion Library Assault]]>><</link>>
+	<</if>>
+
+
+:: Mansion Library Quiet Assault [nobr]
+	<<if $sexstart is 1>>
+		<<if $mansionMiscFlag is 1>>
+			You nod your head as <<he>> pulls you closer. <<set $enemytrust += 10>>
+			<br><br>
+		<<elseif $mansionMiscFlag is 1>>
+			You stand there, not moving as <<he>> moves toward you. 
+			<br><br>
+		<</if>>
+		
+		<<set $sexstart to 0>>
+		<<generate1>>
+		<<consensual>>
+		<<set $consensual to 1>>
+		<<neutral 1>>
+		<<maninit>>
+		<<He>> whispers in your ear "don't make a single noise and everything will be alright".
+		<br>
+		<<set $mouthuse to "lefthand">>
+		<<set $NPCList[0].lefthand to "mouth">>
+		<<set $mouthaction to "rest">>
+	<</if>>
+
+<<if $mouthaction is not "rest">> 
+	<<set $enemyanger += 50>>
+	<<set $enemytrust -= 30>>
+	<<set $consensual to 0>>
+	<<set $rapeavoid to 0>>
+	<<set $molestavoid to 0>>
+<</if>>
+
+<<effects>>
+<<effectsman>>
+
+<<man>>
+<<stateman>>
+<br><br>
+
+<<set $mouthuse to "lefthand">>
+<<set $NPCList[0].lefthand to "mouth">>
+
+<<actionsman>>
+
+<<if $enemyarousal lt $enemyarousalmax and $enemyhealth gt 0>>
+	<span id="next"><<link [[Next|Library Quiet Assault]]>><</link>></span><<nexttext>>
+<<else>>
+	<span id="next"><<link [[Next|Library Quiet Assault Finish]]>><</link>></span><<nexttext>>
+<</if>>
+
+
+:: Mansion Library Assault [nobr]
+	<<if $sexstart is 1>>
+		Not having any of this, you begin to struggle and try to tear the hands off of your head.<br>
+		<<He>> angrily whispers "if you even make the tiniest peep I'll beat you".
+		<br>
+		<br>
+		<<set $sexstart to 0>>
+		<<generate1>>
+		<<controlloss>>
+		<<neutral 1>>
+		<<molested>>
+		<<maninit>>
+		<<set $mouthuse to "lefthand">>
+		<<set $NPCList[0].lefthand to "mouth">>
+		<<set $mouthaction to "rest">>
+		<<set $enemytrust -= 50>>
+	<</if>>
+
+<<effects>>
+<<effectsman>>
+
+<<if $mouthaction is not "rest">> 
+	<<set $enemyanger += 50>>
+	<<set $enemytrust -= 30>>
+	<<set $consensual to 0>>
+<</if>>
+
+<<man>>
+<<stateman>>
+<br><br>
+
+<<actionsman>>
+
+<<if $enemyarousal lt $enemyarousalmax and $enemyhealth gt 0>>
+	<span id="next"><<link [[Next|Mansion Library Assault]]>><</link>></span><<nexttext>>
+<<else>>
+	<span id="next"><<link [[Next|Mansion Library Assault]]>><</link>></span><<nexttext>>
+<</if>>
+	
+:: Mansion Library Quiet Assault Finish [nobr]
+	<<set $mansionChores.cleanLibrary to false>>
+	<<effects>>
+	<<if $enemyarousal gte $enemyarousalmax>>
+		<<ejaculation>>
+		<<if $consensual is 1>>
+			<<He>> gingerly takes <<his>> hand off of your mouth, pats your head and leaves <<gGuestPop>>.
+			<br><br>
+			<<clotheson>>
+			
+			<<tearful>> you finish your chore.
+			<br>
+			<<endcombat>>
+			<<endevent>>
+			<br>
+			<<link [[Next|Mansion Library]]>><<pass 120>><</link>>
+		<br><br>
+		<<else>>
+			<<He>> grabs your hair and pulls, whispering "this was your own fault" before pushing you back to the ground and leaving. <<ggstress>> <<ggpain>> <<llGuestPop>>.
+			<br><br>
+			<<clotheson>>
+			
+			<<tearful>> you finish your chore. The struggle knocked over some books.
+			<br>
+			<<endcombat>>
+			<<endevent>>
+			<br>
+			<<link [[Next|Mansion Library]]>><<pass 150>><</link>>
+		<</if>>
+		
+		<<endcombat>>
+		<<set $mansionChores.cleanLibrary to false>>
+	<<elseif $enemyhealth lte 0>>
+		<<He>> jumps away from you, looks around to see if anyone was watching, then quickly leaves without another glance at you. <<llGuestPop>>
+		<br><br>
+		<<clotheson>>
+		
+		<<tearful>> you finish your chore. The struggle knocked over some books.
+		<br>
+		<<endcombat>>
+		<<endevent>>
+		<br>
+		<<link [[Next|Mansion Library]]>><<pass 150>><</link>>
+	<</if>>

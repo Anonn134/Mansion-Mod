@@ -1,0 +1,120 @@
+:: Widgets Mansion Create Guest [widget]
+	<<widget "mansioncreateguest">><<nobr>>
+	
+	<<set $mansionGuestList[0] to clone($NPCList[0])>>
+	<<endevent>>	
+	
+	/* While there may be multiple guests in the room, there will always only be one set of quirks and sexwants */
+	<<set $mansionGuestQuirks to {
+		startingAnger: 0,
+		startingTrust: 0,
+		
+		quickLeave: false,
+		refuseLeave: false,
+		refuseClean: false,
+		wantClean: false,
+		beatNoise: false,
+		silentViolent: false,
+		wantStruggle: false,
+		playerDenial: false,
+		useToys: false,
+		useGag: false,
+		useBlind: false,
+		useBind: false,
+		chokeOut: false,
+		leaveRoom: false,
+		useBed: false,
+		isKind: false,
+		isSchiz: false
+	}>>
+	
+	<<for _i = 0; _i < random(3, 5); _i++>>
+		<<set $mansionMiscFlag to random (1, 17)>>
+		
+		<<if $mansionMiscFlag is 1>>
+			<<set $mansionGuestQuirks.quickLeave to true>>
+		<<elseif $mansionMiscFlag is 2>>
+			<<set $mansionGuestQuirks.refuseLeave to true>>
+		<<elseif $mansionMiscFlag is 3>>
+			<<set $mansionGuestQuirks.refuseClean to true>>
+		<<elseif $mansionMiscFlag is 4>>
+			<<set $mansionGuestQuirks.wantClean to true>>
+		<<elseif $mansionMiscFlag is 5>>
+			<<set $mansionGuestQuirks.beatNoise to true>>	
+			<<set $mansionGuestQuirks.isKind to false>>
+		<<elseif $mansionMiscFlag is 6>>
+			<<set $mansionGuestQuirks.silentViolent to true>>	
+			<<set $mansionGuestQuirks.isKind to false>>
+		<<elseif $mansionMiscFlag is 7>>
+			<<set $mansionGuestQuirks.wantStruggle to true>>
+			<<set $mansionGuestQuirks.isKind to false>>
+		<<elseif $mansionMiscFlag is 8>>
+			<<set $mansionGuestQuirks.playerDenial to true>>
+			<<set $mansionGuestQuirks.isKind to false>>
+		<<elseif $mansionMiscFlag is 9>>
+			<<set $mansionGuestQuirks.useToys to true>>
+		<<elseif $mansionMiscFlag is 10>>
+			<<set $mansionGuestQuirks.useGag to true>>
+		<<elseif $mansionMiscFlag is 11>>
+			<<set $mansionGuestQuirks.useBlind to true>>			
+		<<elseif $mansionMiscFlag is 12>>
+			<<set $mansionGuestQuirks.useBind to true>>			
+		<<elseif $mansionMiscFlag is 13>>
+			<<set $mansionGuestQuirks.chokeOut to true>>
+			<<set $mansionGuestQuirks.isKind to false>>
+		<<elseif $mansionMiscFlag is 14>>
+			<<set $mansionGuestQuirks.leaveRoom to true>>
+		<<elseif $mansionMiscFlag is 15>>
+			<<set $mansionGuestQuirks.useBed to true>>		
+		<<elseif $mansionMiscFlag is 16>>
+			<<set $mansionGuestQuirks.isKind to true>>
+			<<set $mansionGuestQuirks.isSchiz to false>>
+			<<set $mansionGuestQuirks.beatNoise to false>>			
+			<<set $mansionGuestQuirks.silentViolent to false>>			
+			<<set $mansionGuestQuirks.wantStruggle to false>>
+		<<elseif $mansionMiscFlag is 17>>
+			<<set $mansionGuestQuirks.isSchiz to true>>
+			<<set $mansionGuestQuirks.isKind to false>>
+		<</if>>
+
+	<</for>>
+
+
+	<<set $mansionGuestSexWant to {
+		wantInsert: false,
+		wantAnal: false,
+		wantVaginal: false,
+		wantBoob: false,
+		wantOral: false,
+		wantFeet: false,
+		wantThighs: false
+	}>>
+		
+		
+	<<for _i = 0; _i < random(1, 2); _i++>>
+		<<set $mansionMiscFlag to random (1, 7)>>
+		
+		<<if $mansionMiscFlag is 1>>
+			<<set $mansionGuestSexWant.wantInsert to true>>
+		<<elseif $mansionMiscFlag is 2>>
+			<<set $mansionGuestSexWant.wantAnal to true>>
+		<<elseif $mansionMiscFlag is 3>>
+			<<set $mansionGuestSexWant.wantVaginal to true>>
+		<<elseif $mansionMiscFlag is 4>>
+			<<set $mansionGuestSexWant.wantBoob to true>>
+		<<elseif $mansionMiscFlag is 5>>
+			<<set $mansionGuestSexWant.wantOral to true>>	
+		<<elseif $mansionMiscFlag is 6>>
+			<<set $mansionGuestSexWant.wantFeet to true>>	
+		<<elseif $mansionMiscFlag is 7>>
+			<<set $mansionGuestSexWant.wantThighs to true>>	
+		<</if>>
+	<</for>>
+	
+	<<set $mansionGuestStatus.guestAnger to random(0, 200)>>
+	<<set $mansionGuestStatus.guestTrust to random(-100, 100)>>
+	
+<</nobr>><</widget>>
+	
+	
+	

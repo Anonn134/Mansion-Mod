@@ -1,0 +1,20 @@
+:: Mansion Dorm Sleep [nobr]
+	<<run Save.autosave.save(null, {"saveId":$saveId, "saveName":$saveName})>>
+	<<sleep>><<effects>>
+	<<if $nightmares gte 1 and $controlled is 0>>
+		You dream you are being hunted by something dark and terrible.
+	<<else>>
+		You sleep soundly.
+	<</if>>
+	<<sleepeffects>>
+	<<if $mansionWake is 1>>
+		<<if $time + ($sleephour * 60) gte 360>>
+			<<set $time to 360>>
+			You are woken up at 6 by a loud bell, signaling that it's time to begin the day
+		<</if>>
+	<<else>>
+		<br><br>
+		<<link [[Get out of bed|Mansion Dormitories Personal Room]]>><</link>>
+		<br><br>
+	<</if>>
+	<<set $phase to 0>>

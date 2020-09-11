@@ -1,0 +1,129 @@
+:: Clean Main Hall Chore [nobr]
+	<<if $weather is "rain">>
+		<<if $rng lte 50>>
+			While large, this room is not very dirty. There is some dust scattered in some corners, but overall it is a quick clean.
+			<<if random(1,10) gte 5>>
+				<<set $mansionMainHallReDirtyTime to $time + random(60, 360)>>
+			<</if>>
+			
+			<<set $mansionChores.cleanMainHall to false>>
+			<br>
+			<br>
+			<<link [[Next|Mansion Main Hall]]>><<pass 60>><</link>>
+		<<else>>
+			Guests have tracked in mud from outside and the ground around the doors is wet. It takes you much longer than expected to clean this room. 
+			<<if random(1,10) gte 3>>
+				<<set $mansionMainHallReDirtyTime to $time + random(60, 360)>>
+			<</if>>
+			
+			<<set $mansionChores.cleanMainHall to false>>
+			<br>
+			<br>
+			<<link [[Next|Mansion Main Hall]]>><<pass 90>><</link>>
+		<</if>>
+	<<else>>
+		<<if random(1,10) gte 2>>
+			<<set $mansionMainHallReDirtyTime to $time + random(60, 360)>>
+		<</if>>
+		<<if $daystate is "day" or $daystate is "dawn">>
+			<<if $rng lte 30>>
+				While large, this room is not very dirty. There is some dust scattered in some corners, but overall it is a quick clean.
+				
+				<<set $mansionChores.cleanMainHall to false>>
+				
+				<br>
+				<<link [[Next|Mansion Main Hall]]>><<pass 60>><</link>>
+			<<else>>
+				The main hall is vast and open, and there is grime everywhere as guests have tracked in dirt from outside. As you begin cleaning, a man walks up through the dungeon, dropping a piece of trash on his way upstairs. 
+			
+				<<set $mansionChores.cleanMainHall to false>>
+				<br>
+				<<link [[Next|Mansion Main Hall]]>><<pass 70>><</link>>
+			<</if>>
+		<<elseif $daystate is "night" or $daystate is "dusk">>
+			<<if $rng lte 30>>
+				The main hall is quiet at this time of night, you are able to quickly clean the room without any disturbances.
+				<<set $mansionChores.cleanMainHall to false>>
+				<br>
+				<br>
+				<<link [[Next|Mansion Main Hall]]>><<pass 60>><</link>>
+			<<else>>
+				<<generate1>><<person1>>Before you can finish your chore, you hear somebody behind you stumble through the dinning room door. You smell alcohol as the <<man>> walks up to you and begins groping you.
+				<<if $mansionGuestPopularity gte random(40, 130)>>
+					"I've heard that somebody like you started working here, lets see if those other rumors are true."
+				<</if>>
+				<<set $mansionChores.cleanMainHall to false>>
+				<br>
+				<br>
+				<<link [[Continue Your Chore|Mansion Main Hall Drunk Encounter Loop]]>><<set $mansionMiscFlag to 1>><<set $sexstart to 1>><</link>>
+				<br>
+				<<link [[Pull Away|Mansion Main Hall Drunk Encounter Loop]]>><<set $mansionMiscFlag to 2>><<set $sexstart to 1>><</link>>
+				<<if $promiscuity gte 35>>
+					<br>
+					<<link [[Go along with it|Mansion Main Hall Drunk Encounter Loop]]>><<promiscuous2>><<set $mansionMiscFlag to 3>><<set $sexstart to 1>><</link>>
+				<</if>>
+			<</if>>
+		<</if>>
+	<</if>>
+	
+	
+:: Mansion Main Hall Drunk Encounter Loop [nobr]
+	<<if $sexstart is 1>>
+		<<if $mansionMiscFlag is 1 or $mansionMiscFlag is 3>>
+			You smell the strong alcohol on <<his>> breath as <<he>> gets more and more agressive with <<his>> groping, to the point where you are unable to continue your work.
+			<<consensual>>
+			<<set $consensual to 1>>
+			<<neutral 1>>
+			<<maninit>>
+			<<set $enemytrust += 40>>
+		<<else>>
+			You smell alcohol on <<his>> breath as <<he>> says "you aren't going anywhere."
+			<<controlloss>>
+			<<violence 1>>
+			<<neutral 1>>
+			<<molested>>
+			<<maninit>>
+			<<set $enemytrust -= 20>>
+		<</if>>
+		<<set $sexstart to 0>>	
+	<</if>>
+
+	<<effects>>
+	<<effectsman>>
+	<<man>>
+	<<stateman>>
+	<br><br>
+
+	<<actionsman>>
+
+	<<if $enemyarousal lt $enemyarousalmax and $enemyhealth gt 0>>
+		<span id="next"><<link [[Next|Mansion Main Hall Drunk Encounter Loop]]>><</link>></span><<nexttext>>
+	<<else>>
+		<span id="next"><<link [[Next|Mansion Main Hall Drunk Encounter End]]]>><</link>></span><<nexttext>>
+	<</if>>
+	
+:: Mansion Main Hall Drunk Encounter End [nobr]
+	<<if $enemyarousal gte $enemyarousalmax>>
+		<<ejaculation>>
+		<<if $mansionMiscFlag is 1>>
+			The <<man>> says in slurred speach "thanks that was a lot of fun, we should do this again" and stumbles away. <<gGuestPop>>
+		<<elseif $mansionMiscFlag is 3>>
+			The drunk <<man>> steps back and says in slurred speach "I hope you had as much fun as I did" and stumbles away <<ggGuestPop>>
+		<</if>>
+		
+		<br><br>
+		<<clotheson>>
+		<<endcombat>>
+	<<elseif $enemyhealth lte 0>>
+		The drunk <<man>> stumbles backwards and looks at you confusedly, before standing up with some difficulty and stumbles away. <<llGuestPop>>
+		
+		<br><br>
+		<<clotheson>>
+		<<endcombat>>
+	<</if>>
+	<<set $mansionMiscFlag to 0>>	
+	<br>
+	<br>
+	<<link [[Finish Chore|Mansion Main Hall]]>><<pass 90>><</link>>
+
+	

@@ -1,0 +1,28 @@
+:: Mansion Dining Room [nobr]
+	<<mansionDisplayChores>>
+
+	A long room with a table stretching across the room, with a door leading into the kitchen and another leading back into the Main Hall.
+
+	<<if $time lte 1020 and $time gte 1140>>
+		Other than a long, furnished table and cameras watching every inch of the room, it is empty.
+	<</if>>
+	
+	<<if $time gte 1020 and $time lte 1080>>
+		The room is bustling with activities in preparation for the dinner starting soon.
+	<</if>>
+	
+	<<if $time gte 1080 and $time lte 1140>>
+		Before you can enter, A man at the door shoos you towards the kitchen door.
+	<</if>>
+	
+	<br>
+	<br>
+	<<link [[Mansion Main Hall|Mansion Main Hall]]>><<pass 1>><</link>>
+	<br>
+	<<link [[Kitchen|Mansion Kitchen]]>><<pass 1>><</link>>
+	<br>
+	<<mansionDoChores>>
+	<<mansionDoQuest>>
+
+
+	
