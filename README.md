@@ -13,7 +13,7 @@ When the player enters the main hall of the mansion, the list of chores is creat
 If anyone wants to help, feel free to go over what I've written and give feedback/find mispellings. There will certaily be some of those. 
 Or, if somebody wants to expand on, edit or write a new event, that would be apreceated too. Adding a chore event shouldn't be too hard. My goal for each chore event is to have sub events where the player can interact with each of a guard, guest or another servant while doing each chore.
 
-###Super Short TLDR:
+### Super Short TLDR:
 The player is in a mansion doing work, possibly against their will. They are given a list of chores to do each day. Chores are things like cleaning a room or doing laundry. There are other events like serving or cooking dinner, one happens each day. There are rare events like a servant escaping that will happen some mornings.
 
 # General Overview
@@ -57,12 +57,12 @@ Popularity/social stat within the guests and servants. Will have to choose betwe
   - Less likely to be assaulted if the player expresses disinterest
   - More likely to get a good tip, or a tip at all
   - Might approach the player while working and strike up a conversation. The player can choose to interact or not
- - Servant relations effects 
+- Servant relations effects 
   - More likely to randomly get help with chores, reducing the time taken to complete it
   - Somebody starts the new load for you while you sleep in laundry
   - Servants come by and help/talk while you’re doing a chore
   - More likely to be saved when accosted by a guest
- - Mansion Relation effects
+- Mansion Relation effects
   - Bedroom level
   - Leeway when making mistakes
   - Amount of punishment given to the player when they get in trouble
