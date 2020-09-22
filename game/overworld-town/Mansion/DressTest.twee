@@ -1,0 +1,48 @@
+:: Mansion Dress Test [nobr]
+
+	<br>
+	<<link [[Strip|Mansion Dress Test Strip]]>><</link>>
+	<br>
+	<<link [[Redress|Mansion Dress Test Redress]]>><</link>>
+	<br>
+	<<link [[Dress Maid|Mansion Dress Test Dress Maid]]>><</link>>
+	<br>
+	<<link [[Leave|Bedroom]]>><</link>>
+	
+	
+	
+:: Mansion Dress Test Strip [nobr]
+	strip
+	<<strip>>
+	<br>
+	<<link [[Strip|Mansion Dress Test]]>><</link>>
+
+:: Mansion Dress Test Redress [nobr]
+	Redress
+	<<clotheson>>
+
+	<<link [[Back|Mansion Dress Test]]>><</link>>
+
+
+:: Mansion Dress Test RemoveClothes [nobr]
+	stealclothes
+	<<stealclothes>>
+
+	<<link [[Back|Mansion Dress Test]]>><</link>>
+
+:: Mansion Dress Test Dress Maid [nobr]
+	dress maid
+	<<set $mansionMiscFlag to $clothingrebuy>>
+	
+	<<set $clothingrebuy to 0>>
+	<<strip>>
+	<<stealclothes>>
+	<<upperwear 12>>
+	<<feetwear 14>>
+	
+	<<set $clothingrebuy to _t>>
+
+	<br>
+	<br>
+	
+	<<link [[Back|Mansion Dress Test]]>><</link>>

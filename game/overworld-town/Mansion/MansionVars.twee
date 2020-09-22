@@ -92,7 +92,12 @@
 <<set $mansionMainHallReDirtyTime to 0>> /* See <<mansionmainhallupdate>> */
 
 <<set $mansionNextEventTime to 0>>
+<<set $mansionPaintingPoseGoodness to 0>>
+<<set $mansionPaintingPoseMasturbate to 0>>
+<<set $mansionPaintingPoseStance to "">>
 
+<<set $mansionUpperTest to 0>>
+<<set $mansionLowerTest to 0>>
 
 /* Related to guest rooms */
 <<set $presetGuestRoom to 0>>

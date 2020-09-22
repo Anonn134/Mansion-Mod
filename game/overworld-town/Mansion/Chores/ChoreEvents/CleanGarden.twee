@@ -136,7 +136,7 @@
 	<<if $enemyarousal lt $enemyarousalmax and $enemyhealth gt 0>>
 		<span id="next"><<link [[Next|Mansion Garden Assault Give In End]]>><</link>></span><<nexttext>>
 	<<else>>
-		<span id="next"><<link [[Next|Mansion Garden Assault Resist]]>><</link>></span><<nexttext>>
+		<span id="next"><<link [[Next|Mansion Garden Assault Give In]]>><</link>></span><<nexttext>>
 	<</if>>
 
 
@@ -194,7 +194,7 @@
 	<<link [[Finish The Chore|Mansion Garden Entrance]]>><<pass 160>><</link>>
 
 :: Mansion Garden Assault Give In End [nobr]
-<<if $enemyarousal lt $enemyarousalmax>>
+	<<if $enemyarousal lt $enemyarousalmax>>
 		<<He>> recoils in pain before gathering his things and scrambling away. Hopefully that doesn't come back to bite you. <<llGuestPop>>
 		<<clotheson>>
 		<<endcombat>>

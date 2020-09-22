@@ -95,7 +95,7 @@
 		<br>
 		<<link [[Next|Mansion Guest Chat Assault]]>><</link>>
 	<<elseif $enemyhealth gt 0>>
-		You mannage to fend <<him>> off, pushing <<him>> away and scrambling to your feet. You stare at each other for a few seconds, then <<he>> silently leaves. <<llGuestPop>>
+		You manage to fend <<him>> off, pushing <<him>> away and scrambling to your feet. You stare at each other for a few seconds, then <<he>> silently leaves. <<llGuestPop>>
 		<br><br>
 		<<clotheson>>
 		<<endcombat>>

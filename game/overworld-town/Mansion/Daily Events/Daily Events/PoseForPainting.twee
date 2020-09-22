@@ -1,5 +1,7 @@
+<!--I'm unsure about the code for you losing your clothing in this event. The way I want it to work is that the player is stripped at the start, then given back to them. Using <<undress>> and <<storeon>> to do this. I also want the player to lose the clothing stored with <<undress>> sometimes, but am unsure of how to do that properly. I believe I have but I'm not sure.-->
+
 :: Mansion Pose For Painting [nobr]
-	As you enter the room, you see a half circle of chairs and easels set up with a guest sitting at each. In the center of the circle is a well lit pedestal.The rest of the room is dark, but clean, and there are paint and other art supplies lining the walls of the room. You are greeted by a well dressed man who directs you to strip down and stand on the pedestal.
+	<<generate1>>As you enter the room, you see a half circle of chairs and easels set up with a guest sitting at each. In the center of the circle is a well lit pedestal with a small metal ring in the center. The rest of the room is dark, but clean, and there are paint and other art supplies lining the walls of the room. You are greeted by a well dressed guard who tells you to strip down and stand on the pedestal.
 	<br>
 	<br>
 	<<link [[Strip|Mansion Pose Strip]]>><</link>>
@@ -7,64 +9,466 @@
 	<<link [[Refuse|Mansion Pose Strip Refuse]]>><</link>>
 	
 :: Mansion Pose Strip [nobr]
+	<<undress "mansionPose">>
 	<<if $worn.genitals.type.includes("naked")>>
-		You remove your clothing, revealing that you weren’t wearing much underwear in the first place (++guest popularity)<<if $exhibitionism lt 35>> <<ggstress>> <</if>>
+		You remove your clothing, revealing that you weren’t wearing much underwear in the first place. <<gGuestPop>> <<if $exhibitionism lt 35>><br>Your face turns red with embarrassment as you completely undress in front of the crowd of onlookers. <<gstress>> <</if>>
 	<<else>>
-		You strip down to your underwear, but as the guard continues to stare at you, waiting for something else, you remove those as well. <<if $exhibitionism lt 35>> <<ggstress>> <</if>>
+		<<if $exhibitionism lt 35>>
+			You strip down to your <<undies>>, unable to bring yourself to strop down naked in a room full of strangers. But the guard continues to wait, gesturing for you to continue. You remove your underwear as well. <<gstress>> <<stress 10>> 
+		<<else>>
+			As you remove all your clothing, you feel a thrill as you feel dozens of people eyeing your naked body.
+		<</if>>.
 	<</if>>
-	mtodo: undress the player
+	<<strip>>
 	
 	<br>
 	<br>
-	<<link [[Next|Mansion Pose Strip]]>><</link>>
+	<<link [[Next|Mansion Pose Select]]>><</link>>
 	
 :: Mansion Pose Strip Refuse [nobr]
-	The guard looks around at the guests then leans close to you and whispers “are you sure? These guests have paid good money for this, and one way or another you will be on that pedestal.”
-	<br>
-	<br>
-	<<link [[Refuse Again|Mansion Pose Refuse Again]]>><</link>>
-	<br>
-	<<link [[Strip|Mansion Pose Strip]]>><</link>>
+	<<if $mansionTrust gte 50 or $rng lte 20>>
+		The guard looks around at the guests then leans close to you and whispers “are you sure? These guests have paid good money for this, and one way or another you will be on that pedestal.”
+		<br>
+		<br>
+		<<link [[Refuse Again|Mansion Pose Refuse Again]]>><</link>>
+		<br>
+		<<link [[Strip|Mansion Pose Strip]]>><</link>>
+	<<else>>
+		The guard sighs then says something into <<his>> wrist. Not a moment later, another guards enter the room and grabs you. <<generate2>>
+		<br>
+		<br>
+		<<link [[Next|Mansion Pose Force Undress Loop]]>><<set $sexStart to 1>><</link>>
 	
 :: Mansion Pose Refuse Again [nobr]
-	You once again refuse. The guard sighs then says something into his walkie talkie. Not a moment later, two other guards enter the room and grab you. <<generate 2>> <<generate 3>>
+	You once again refuse. The guard sighs then says something into <<his>> wrist. Not a moment later, another guard enters the room and grab you. <<generate2>>
 	<br>
 	<br>
-	<<link [[Next|Mansion Pose Force Undress Loop]]>><<set $sexStart to 0>><</link>>
-	
-	
-	
+	<<link [[Next|Mansion Pose Force Undress Loop]]>><<set $sexStart to 1>><</link>>
 
-:: Mansion Pose Loop [nobr]
 
+:: Mansion Pose Select [nobr]
+	<<set $mansionPaintingPoseMasturbate to 0>>
+	You stand naked in the center of the room, elevated by the pedestal. Unsure of what to do with yourself.
+	<br>
+	<br>
+	
+	
+	<<link [[Cover your body the best you can|Mansion Pose Finish 1]]>><<set $mansionPaintingPoseGoodness to 0>><</link>>
 	<<if $exhibitionism gte 15>>
-	
+		<br>
+		<<link [[Attempt to pose in an elegant way|Mansion Pose Finish 1]]>><<set $mansionPaintingPoseGoodness to -1>><</link>>
+		<br>
+		<<link [[Stand with your hands to your side|Mansion Pose Finish 1]]>><<set $mansionPaintingPoseGoodness to 15>><</link>>
 	<</if>><br>
+	
 	<<if $exhibitionism gte 35>>
-	
+		<<link [[Strike a seductive pose|Mansion Pose Finish 1]]>><<set $mansionPaintingPoseGoodness to 35>><</link>>
 	<</if>><br>
-	<<if $exhibitionism gte 55>>
 	
-	<</if>><br>
 	<<if $exhibitionism gte 75>>
-	
+		<<link [[Masturbate|Mansion Pose Masturbate]]>><<set $mansionPaintingPoseGoodness to 20>><<set $mansionPaintingPoseMasturbate to 1>><<set $masturbationstart to 1>><</link>>
 	<</if>><br>
 	
-:: Mansion Pose Bondage Loop [nobr]
+	
+:: Mansion Pose Masturbate [nobr]
+	<<set $mansionPaintingPoseGoodness -= 5>>
+	<<effects>>
+	
+	<<if $masturbationstart is 1>>
+		<<set $masturbationstart to 0>>
+		<<set $masturbationstat += 1>>
+
+		You decide to give the painters a show.
+		<<exhibitionism5>>
+
+		<<masturbationstart>>
+		<<set $timer to 15>>
+		<<set $mouth to "disabled">>
+	<</if>>
+
+	<<if $timer is 15>>
+		You fondle yourself. The surrounding guests have a clear view on what you're doing, some whispering excitedly to each other.
+		<<garousal>><<genitalarousal 100>>
+	<<elseif $timer is 5 or $timer is 7 or $timer is 11 or $timer is 13>>
+		The talking becomes louder. Most guests are excitedly watching you, but others are still attempting to paint, appearing to be mildly frustrated by the distractions.
+		<<if $rng gte 50>>
+			<<generate1>>One of the guests leaves with a dissapointed look on <<his>> face. You think <<he>> was one of the few that were actually attempting to paint something.
+			<<set $mansionPaintingPoseGoodness -= 10>>
+		<</if>>
+		
+	<<elseif $timer lte 1>>	
+		It doesn't appear like there is anyone left in the room that is trying to paint anything. Some of the guests glance around the room with a <span class="pink">lecherous</span> look in their eyes, and some begin to slowly rise out of their seats.
+	<<else>>
+		The guests stare at you, excitedly talking among themselves.
+	<</if>>
+	
+	<<if $orgasmdown gte 1 and $timer gt 2>>
+		<<generate1>>One of the guests leaves with a dissapointed look on <<his>> face. You think <<he>> was one of the few that were actually attempting to paint something.
+		<<set $mansionPaintingPoseGoodness -= 10>>
+	<</if>>
+	<br>
+	<<masturbationeffects>>
+	<<masturbationactions>>
+
+	<<if $timer lte 0>>
+		<<link [[Continue|Mansion Pose Masturbate Finish]]>><</link>><<nexttext>>
+		<br>
+	<<else>>
+		<<link [[Continue|Mansion Pose Masturbate]]>><</link>><<nexttext>>
+		<br>
+	<</if>>
+	
+	<<if $corruptionMasturbation isnot true and random(0,3) gt $orgasmcurrent and $corruption_slime gt ($willpower / 10)>>
+		<<link [[Stop|$passage]]>><<set $corruptionMasturbation to true>><</link>>
+	<<elseif $corruptionMasturbation isnot true>>
+		<<link [[Stop|Mansion Pose Masturbate Finish]]>><<set $finish to 1>><</link>>
+	<<else>>
+		The slime in your ear will not allow you to stop.
+	<</if>>
+	<br>
+
+:: Mansion Pose Masturbate Finish [nobr]
+	<<set $outside to 0>> /*<<set $location to "mansion">>*/ <<effects>>
+	
+	<<if $timer lte 0>>
+		Out of the corner of your eye, you see the guards glance at each other and at the crowd of guests. They smile and shrug at each other then exit the room, leaving you alone with the guests. As soon as they leave, the guests surge toward you, their eyes filled with a primal hunger.
+		<br>
+		<br>
+		<<link [[Next|Mansion Pose Masturbate Rape]]>><<set $molestationstart to 1>><</link>>
+	<<elseif $timer lte 5>>
+		You decide to stop masturbating, much to the annoyance of the remaining guests. A few of them get up and leave the room, but a few others settle back down and continue painting.
+		
+		<br><br>
+		<<endmasturbation>>
+		<<clotheson>>
+		<<endcombat>>
+
+		<<towelup>>
+
+		Touching yourself in front of so many people feels fantastic. It takes a while for your racing heart and flushed face to return to normal. By the time it does, most of the guests have left the room. It seems like your time here is nearly up.
+		<br><br>
+		
+		<<link [[Next|Mansion Pose Finish 2]]>><</link>>
+
+	<<else>>
+		The room calms down as you stop, and the guests resume what they were doing.
+		<br><br>
+		<<endmasturbation>>
+		<<clotheson>>
+		<<endcombat>>
+		
+		Touching yourself in front of so many people feels fantastic. It takes a while for your racing heart and flushed face to return to normal. By the time it does, the remaining guests have left the room, leaving you alone with the pair of guards stationed by the door.
+		<br><br>
+		
+		<<link [[Next|Mansion Pose Finish 2]]>><</link>>
+	<</if>>
 
 
+:: Mansion Pose Masturbate Rape [nobr]
+	<<if $molestationstart is 1>>
+		<<set $molestationstart to 0>>
+		<<generate1>>
+		<<generate2>>
+		<<generate3>>
+		<<generate4>>
+		<<controlloss>>
+		<<violence 1>>
+		<<neutral 1>>
+		<<molested>>
+
+		<<maninit>>
+
+	<</if>>
+
+	<<effects>>
+	<<effectsman>><<man>>
+
+	<<audience>>
+
+	<<stateman>>
+	<br><br>
+	<<actionsman>>
+
+	<<if $enemyarousal gte $enemyarousalmax>>
+	<span id="next"><<link [[Next|Mansion Pose Masturbate Rape Finish]]>><</link>></span><<nexttext>>
+	<<elseif $enemyhealth lte 0>>
+	<span id="next"><<link [[Next|Mansion Pose Masturbate Rape Finish]]>><</link>></span><<nexttext>>
+	<<else>>
+	<span id="next"><<link [[Next|MMansion Pose Masturbate Rape Finish ]]>><</link>></span><<nexttext>>
+	<</if>>
+
+	
+:: Mansion Pose Finish 1 [nobr]
+	<<if $mansionPaintingPoseGoodness is 0>>
+		<<set $mansionPaintingPoseStance to "cover">>
+		You stand awkwardly and attempt to cover your <<breasts>> and <<genitals>>, the painters craning their necks in an attempt to get a better view.
+		
+		<<set $mansionPaintingPoseGoodness += ($beauty / 2000) + random(-20,20)>>
+	
+	<<elseif $mansionPaintingPoseGoodness is -1>>
+		<<set $mansionPaintingPoseStance to "seduction">>
+		<<set $seductiondifficulty to (5000)>>
+		<<seductioncheck>>
+		<br><br>
+		<<if $seductionskill lt 1000>><span class="gold">You feel more confident in your powers of seduction.</span><</if>><<seductionskilluse>>
+		<br><br>
+
+		<<if $seductionrating gte $seductionrequired>>
+			You attempt to emulate poses you've seen in movies and paintings, trying to make yourself look as good as possible. Silently, the guests either continue to paint or continue to stare at your body.
+			
+			<<set $mansionPaintingPoseGoodness to 35 + ($beauty / 2000) + random(-20,20) + 10>>
+			
+		<<else>>
+			You attempt to emulate poses you've seen in movies and paintings, trying to make yourself look as good as possible. Unimpressed with your attempts, one of the guests speaks up and says "please just stand still."
+			
+			<<set $mansionPaintingPoseGoodness to 5 + ($beauty / 2000) + random(-20,20)>>
+			
+		<</if>>
+		
+	<<elseif $mansionPaintingPoseGoodness is 15>>
+		You stand rigidly with your hands to your side as the guests paint, or at least pretend to paint.
+		<<set $mansionPaintingPoseStance to "ridged">>
+		<<set $mansionPaintingPoseGoodness += ($beauty / 2000) + random(-20,20)>>
+		<br>
+		<br>
+		<<link [[Next|Mansion Pose Finish 2]]>><</link>>
+	
+	<<elseif $mansionPaintingPoseGoodness is 35>>
+		<<set $mansionPaintingPoseStance to "elegant">>
+		You lay down on the pedestal, openly yet elegantly revealing your <<breasts>> and <<genitals>> to the painters. Some of the guests nod in satisfaction while focusing on their work, while the rest make sure to get a good look at your body.
+			
+		<<set $mansionPaintingPoseGoodness += ($beauty / 2000) + random(-20,20)>>
+		<br>
+		<br>
+		<<link [[Next|Mansion Pose Finish 2]]>><</link>>
+		
+	<</if>>
+	
+	
+:: Mansion Pose Finish 2 [nobr]
+	<<pass 120>>
+	<<if $mansionPaintingPoseGoodness gte 75 + random(-10,10)>>
+		<<generate1>>After a couple hours pass and the guests in the room slowly leave. Soon there is only one guest remaining, and <<he>> seems to be taking his time with <<his>> painting.
+		<br>
+		<br>
+		<<link [[Ask if you can leave|Mansion Pose Finish 2.1]]>><</link>>
+		<br>
+		<<link [[Ask if they want a different pose|Mansion Pose Finish 2.2]]>><</link>>
+		<br>
+		<<link [[Say nothing and wait|Mansion Pose Finish 2.3]]>><</link>>
+	<<else>>
+		After a couple hours pass and the guests in the room slowly leave, and as the last one leaves you are left alone in the room with the guard.
+		<br>
+		<br>
+		<<generate1>><<generate2>>
+		<<if $MansionTrust gte 50 + random(-20, 20)>>
+			The guards walk up to the pedestal, looking your naked body up and down as they approach. They then hand you your clothing and leave the room.
+			<br>
+			<br>
+			<<link [[Leave the room|Mansion Main Hall]]>><<storeon "mansionPose">><</link>>
+		<<else>>
+			<<if $rng lte 25>>
+				The guards walk up to the pedestal, looking your naked body up and down as they approach. They then hand you your clothing and leave the room.
+				<br>
+				<br>
+				<<link [[Leave the room|Mansion Main Hall]]>><<storeon "mansionPose">><</link>>
+			<<else>>
+				The guards walk up to the pedestal, grinning as they approach. One of them speaks up and says "sorry, but it seems like one of the guests have taken your clothes. You could just go out there naked, or one of us could help you out and grab you something to wear. Then in exchange, you could help us out." As <<person1>><<he>> says this last sentence, <<he>> leans in close and caresses your <<breasts>> with his hand. <<garousal>> <<arousal 300>>
+				<br>
+				<br>
+				<<link [[Accept their "help"|Mansion Pose Guard Sex loop]]>><</link>>
+				<br>
+				<<link [[Leave the room naked|Mansion Main Hall]]>><</link>>
+			<</if>>
+		<</if>>
+	<</if>>
+
+	
+:: Mansion Pose Finish 2.1 [nobr]
+	You ask the <<man>> if you can leave, and that you have other chores you need to get done today. Startled, <<he>> looks up at you, then apologizes and says you can leave. As you get dressed and leave the room, <<he>> continues to paint.
+	<br>
+	<br>
+	<<link [[Next|Mansion Main Hall]]>><<storeon "mansionPose">><</link>>
+	
+:: Mansion Pose Finish 2.2 [nobr]
+	You ask the <<man>> if <<he>> would like you to pose differently. Startled, the <<man>> looks up at you, thanking you but reassuring you that that will not be necessary, and that <<he>> is almost done.
+	<br>
+	<br>
+	<<link [[Next|Mansion Pose Finish 2.3]]>><</link>>
+	
+:: Mansion Pose Finish 2.3 [nobr]
+	<<pass 60>>
+	You stand there for another hour, until the guest finally declares they are done, and asks if you would like to see the painting. 
+	<br>
+	<br>
+	<<link [[Yes|Mansion Pose Finish 3.1]]>><</link>>
+	<br>
+	<<link [[No|Mansion Pose Finish 3.2]]>><</link>>
+	<br>
+	<<link [[Say nothing|Mansion Pose Finish 3.3]]>><</link>>
+	
+:: Mansion Pose Finish 3.1 [nobr]
+	You walk over to see what they painted, and when you see you can’t help but be astonished. 
+	<<if $mansionPaintingPoseStance is "cover">>
+		The <<man>> took your modest pose and turned it into a true work of art. <<He>> has painted you on a beach, surrounded by opaque strips of cloth that hide your <<breasts>> and <<genitals>> and wrap around your body. <<ggControl>> <<llTrauma>> <<trauma -24>> <<control 30>>
+	<<elseif $mansionPaintingPoseStance is "awkward">>
+		<<He>> has painted you brilliantly and captured your beauty perfectly. The guest has painted flowers surrounding your body as you stand standing in front of a snow tipped mountain. <<llTrauma>> <<trauma -24>>
+	<<elseif $mansionPaintingPoseStance is "seduction">>
+		<<He>> has painted you brilliantly and captured your beauty perfectly. The guest has painted flowers surrounding your body as you stand standing in front of a snow tipped mountain. <<llTrauma>> <<trauma -24>>
+	<<elseif $mansionPaintingPoseStance is "elegant">>
+		<<He>> has painted you brilliantly and captured your beauty perfectly. The guest has painted flowers surrounding your body as you lay in front of a snow tipped mountain. <<llTrauma>>  <<trauma -24>>
+	<</if>>
+	<br>
+	<br>
+	<<link [[Next|Mansion Pose Finish 4]]>><</link>>
+	
+:: Mansion Pose Finish 4 [nobr]
+	The <<man>> who painted you then walks away with his work in hand, leaving you alone with the pair of guards stationed by the door.
+	<br>
+	
+	<<generate1>><<generate2>>
+	<<if $MansionTrust gte 50 + random(-20, 20)>>
+		The guards walk up to the pedestal, looking your naked body up and down as they approach. They then hand you your clothing and leave the room.
+		<br>
+		<br>
+		<<link [[Leave the room|Mansion Main Hall]]>><</link>>
+	<<else>>
+		<<if $rng lte 25>>
+			The guards walk up to the pedestal, looking your naked body up and down as they approach. They then hand you your clothing and leave the room as you get dressed.
+			<br>
+			<br>
+			<<link [[Leave the room|Mansion Main Hall]]>><</link>>
+		<<else>>
+			The guards walk up to the pedestal, grinning as they approach. One of them speaks up and says "sorry, but it seems like one of the guests have taken your clothes. You could just go out there naked, or one of us could help you out and grab you something to wear. Then in exchange, you could help us out." As <<person1>><<he>> says this last sentence, <<he>> leans in close and caresses your <<breasts>> with his hand. <<garousal>> <<arousal 300>>
+			<br>
+			<br>
+			<<link [[Accept their "help"|Mansion Pose Guard Sex loop]]>><<set $sexstart to 1>><</link>>
+			<br>
+			<<link [[Leave the room naked|Mansion Main Hall]]>><</link>>
+		<</if>>
+	<</if>>
+	
+	
+:: Mansion Pose Finish 3.2 [nobr]
+	You tell the <<man>> that you aren’t interested. <<He>> nods, thanks you and the guard for your time, and then exits with the painting, leaving you alone with the pair of guards stationed by the door.
+	<br>
+	<br>
+	<<if $MansionTrust gte 50 + random(-20, 20)>>
+			The guards walk up to the pedestal, looking your naked body up and down as they approach. They then hand you your clothing and leave the room.
+			<br>
+			<br>
+			<<link [[Leave the room|Mansion Main Hall]]>><<storeon "mansionPose">><</link>>
+		<<else>>
+			<<if $rng lte 25>>
+				The guards walk up to the pedestal, looking your naked body up and down as they approach. They then hand you your clothing and leave the room.
+				<br>
+				<br>
+				<<link [[Leave the room|Mansion Main Hall]]>><<storeon "mansionPose">><</link>>
+			<<else>>
+				The guards walk up to the pedestal, grinning as they approach. One of them speaks up and says "sorry, but it seems like one of the guests have taken your clothes. You could just go out there naked, or one of us could help you out and grab you something to wear. Then in exchange, you could help us out." As <<person1>><<he>> says this last sentence, <<he>> leans in close and caresses your <<breasts>> with his hand. <<garousal>> <<arousal 300>>
+				<br>
+				<br>
+				<<link [[Accept their "help"|Mansion Pose Guard Sex loop]]>><</link>>
+				<br>
+				<<link [[Leave the room naked|Mansion Main Hall]]>><</link>>
+			<</if>>
+		<</if>>
+
+	
+:: Mansion Pose Finish 3.3 [nobr]
+	You say nothing, ignoring the <<man>>'s question. <<He>> shrugs, takes the painting and exits the room, leaving you alone with the pair of guards stationed by the door.
+	<br>
+	
+	<<generate1>><<generate2>>
+	<<if $MansionTrust gte 50 + random(-20, 20)>>
+		The guards walk up to the pedestal, looking your naked body up and down as they approach. They then hand you your clothing and leave the room.
+		<br>
+		<br>
+		<<link [[Leave the room|Mansion Main Hall]]>><</link>>
+	<<else>>
+		<<if $rng lte 25>>
+			The guards walk up to the pedestal, looking your naked body up and down as they approach. They then hand you your clothing and leave the room.
+			<br>
+			<br>
+			<<link [[Leave the room|Mansion Main Hall]]>><</link>>
+		<<else>>
+			The guards walk up to the pedestal, grinning as they approach. One of them speaks up and says "sorry, but it seems like one of the guests have taken your clothes. You could just go out there naked, or one of us could help you out and grab you something to wear. Then in exchange, you could help us out." As <<person1>><<he>> says this last sentence, <<he>> leans in close and caresses your <<breasts>> with his hand. <<garousal>> <<arousal 300>>
+			<br>
+			<br>
+			<<link [[Accept their "help"|Mansion Pose Guard Sex loop]]>><<set $sexstart to 1>><</link>>
+			<br>
+			<<link [[Leave the room naked|Mansion Main Hall]]>><</link>>
+		<</if>>
+	<</if>>
+			
+:: Mansion Pose Guard Sex loop [nobr]
+	<<if $sexstart is 1>>
+		<<set $sexstart to 0>>
+		<<controlloss>>
+		<<neutral 1>>
+		<<molested>>
+		<<maninit>>
+	<</if>>
+
+	<<effects>>
+	<<effectsman>>
+	<<man>>
+	<<stateman>>
+	<br><br>
+	<<actionsman>>
+
+	<<if $enemyarousal gte $enemyarousalmax or $enemyhealth lte 0>>
+		<span id="next"><<link [[Next|Mansion Pose Guard Sex End]]>><</link>></span><<nexttext>>
+	<<else>>
+		<span id="next"><<link [[Next|Mansion Pose Guard Sex loop]]>><</link>></span><<nexttext>>
+	<</if>>
+	
+:: Mansion Pose Guard Sex End [nobr]
+	<<if $enemyarousal gte $enemyarousalmax>>
+		<<ejaculation>>
+		<<if $enemyanger gte ($enemyangermax / 5) * 3>>
+			<<person1>> The <<man>> grabs your hair and says "you should know better than to act the way you did, but you're lucky we aren't ones to break a deal." <<He>> then stands up and begins to walk towards the door. <<lMansionTrust>>
+			<<violence 2>>
+			<br><br>
+		<<else>>
+			<<He>> pats you on the head, then stands up and begins walking towards the door. 
+			<br><br>
+		<</if>>
+		<<tearful>> you gather yourself.
+		<br><br>
+		<<endcombat>>
+		<br>
+		<br>
+		<<link [[Next|Mansion Pose Guard Get Clothing]]>><</link>>
+		
+	<<elseif $enemyhealth gt 0>>
+		You manage to push the guards off of you, then practically yelling one of them says "you won't last long in here acting like this, and I'll make sure of it". With that they hurriedly exit the room, leaving you naked on the floor. <<tearful>> You stand up. <<llMansionTrust>> <<gStress>> <<stress 10>>
+		<br>
+		<br>
+		<<link [[Leave the room naked|Mansion Main Hall]]>><</link>>
+	<</if>>
+
+:: Mansion Pose Guard Get Clothing [nobr]
+	<<if $rng lte 50>>
+		Before the guard reaches the door, <<he>> reaches behind a table and brings out your clothes that were hidden away. "What a surprise, it seems like they were here the whole time. That's a relief, right?" <br><br><<clotheson>>
+	<<else>> 
+		<<He>> leaves the room, and for a few minutes you and the other guard sit in silence waiting for <<him>> to return. Not long after, <<he>> comes back with a maid outfit from the laundry room for you to wear. 
+		<<upperwear 12>>
+	<</if>>
+	<br>
+	<br>
+	<<link [[Leave the room|Mansion Main Hall]]>><</link>>
+	
 :: Mansion Pose Force Undress Loop [nobr]
 	<<if $sexStart is 1>>
 		<<set $sexStart to 0>>
-
 		<<neutral 1>>
-
-		<<maninit>>
+		<<maninit>><<npcstrip>>
 		<<set $enemyhealthmax += 200>>
 		<<set $enemyhealth += 200>>
-		<<set $enemyanger += 200>>
+		<<set $enemyanger += 100>>
+		<<set $enemytrust -= 60>>
 		<<npcidlegenitals>>
-		<br><br>
 		<<set $phase to 1>>
 	<</if>>
 
@@ -72,8 +476,8 @@
 	<<effectsman>><<man>>
 
 	<<if $phase is 1>><<set $phase to 2>>
-	The guests look at your struggles, some with mild concern on their face, but most of them just seem impatient.
-	<br><br>
+	The guests look at your struggles, some with mild concern on their face, but most of them just seem impatient. <<lGuestPop>>
+	<br>
 	<</if>>
 
 	<<stateman>>
@@ -91,3 +495,78 @@
 	<</if>>
 
 :: Mansion Pose Force Undress Finish [nobr]
+	<<effects>>
+
+	<<if $enemyarousal gte $enemyarousalmax>>
+		<<ejaculation>>
+		
+		<<tearful>> you gather yourself and slip away while the guards are momentarily distracted. That's going to come back to bite you. <<lllMansionTrust>> <<lGuestPop>>
+		<br><br>
+
+		<<clotheson>>
+		<<endcombat>>
+		<br>
+		<br>
+		<<link [[Next|Mansion Main Hall]]>><<pass 1>><</link>>
+		
+		<br>
+
+	<<elseif $enemyhealth lte 0>>
+		The guards recoil in pain, giving you a chance to escape. You hear the crowd of would-be artists loudly complaining to the guards as <<tearful>>, you bolt out the door. <<lllMansionTrust>> <<lGuestPop>>
+		<br><br>
+
+		<<clotheson>>
+		<<endcombat>>
+		<br>
+		<br>
+		<<link [[Next|Mansion Main Hall]]>><<pass 1>><</link>>
+	
+	<<elseif $pain gte 100 and $willpowerpain is 0>>
+		Too battered and bruised to resist, drag you onto the pedestal and force you on your knees. Not a moment later, you feel one of them snapping restraints around your wrists then locking them to the pedestal, painfully pulling your arms back behind you. <<gpain>> <<pain 10>>
+		<br>
+		<br>
+		The guards then nod at the crowd of guests and walk away, leaving you bound and naked in the center of the room. 
+		<<if $exhibitionism lt 35>>
+			<<gstress>>
+		<</if>>
+		<<endcombat>>
+		<br>
+		<br>
+		<<link [[Next|Mansion Pose Bound 1]]>><<pass 120>><</link>>
+	<</if>>
+
+
+:: Mansion Pose Bound 1[nobr]
+	<<bind>>
+	You helplessly sit on the pedestal, looking around at what the guests are doing.
+	<<if $mansionGuestPopularity lte 50>>
+		Most of the guests are clearly just here for the show, gawking at you while not even glancing at their canvas. 
+	<<else>>
+		While some are clearly not actually painting and just here for the show, a surprising number of them seem to be engrossed in their work. 
+	<</if>>
+	<br>
+	<br>
+	<<link [[Next|Mansion Pose Bound 2]]>><</link>>	
+
+:: Mansion Pose Bound 2[nobr]
+	<<unbind>>
+	<<pass 130>>
+	<<if $mansionGuestPopularity lte 50 or $rng lte 20>>
+		<<generate1>>After a little more than an hour has passed, guests begin to exit the room, leaving their clearly empty canvases behind.
+		<br>When the last guest leaves, one of the guards approaches you and begins to silently undo your bindings. When finished, <<he>> says to you "your time here could be so much easier for everyone if you would just do as you were told." He gestures to your pile of clothes on the ground while telling you to get back to work.
+		<br>
+		<br>
+		<<clotheson>>
+		<br>
+		<br>
+		<<link [[Next|Mansion Main Hall]]>><<pass 5>><</link>>
+	<<else>>
+		<<generate1>>After a little more than an hour has passed, guests begin to exit the room, some bringing their paintings with them. You're unable to see what they painted.
+		<br>When the last guest leaves, one of the guards approaches you and begins to silently undo your bindings. When finished, <<he>> says to you "your time here could be so much easier for everyone if you would just do as you were told." He gestures to your pile of clothes on the ground while telling you to get back to work.
+		<br>
+		<br>
+		<<clotheson>>
+		<br>
+		<br>
+		<<link [[Next|Mansion Main Hall]]>><<pass 5>><</link>>
+	<</if>>

@@ -11,9 +11,9 @@
 		poseForPainting: false
 	}>>
 	
-	<<if $dayname is "Monday" or $dayname is "Wednsday" or $dayname is "Friday">>
+	<<if $dayname is "Monday" or $dayname is "Wednesday" or $dayname is "Friday">>
 		<<set $mansionDaily.serveDinner to true>>
-	<<elseif $dayname is "Teusday" or $dayname is "Thursday">>
+	<<elseif $dayname is "Tuesday" or $dayname is "Thursday">>
 		<<set $chore = Math.floor(Math.random()*6)>>
 			<<switch $chore>>
 				<<case 1>>

@@ -25,7 +25,7 @@
 			<<elseif $mansionRng is 8>>
 				You hear a something clinking quietly in a nearby room.
 			<<elseif $mansionRng is 9 or $mansionRng is 10>>
-				You hear a moans of extacy in a nearby room.
+				You hear a moans of ecstasy in a nearby room.
 			<</if>>
 		<<else>>
 			The silence is unsettling.

@@ -1,24 +1,92 @@
 :: Clean Library Chore [nobr]
+	<<generate1>>You approach the librarian and say you're supposed to help with whatever <<he>> needs. <<He>> gestures over to a cart full of books and tells you to sort through the pile.
+	<br>
+	<br>
+	<<link [[Next|Mansion Sort Books Chore]]>><</link>>
 	
-	<<if $rng gte 30>>
+	
+:: Mansion Sort Books Chore [nobr]	
+	<<if $rng gte 50>>
 		The library is as quiet as you spend a couple hours organizing books for the librarian.
-
+		
 		<<set $mansionChores.cleanLibrary to false>>
 		<br>
 		<br>
 		<<link [[Next|Mansion Library]]>><<pass 120>><</link>>
-
+	<<elseif $rng is gte 25>>
+		As you sort and put away books, the either("cover", "spine") of one catches your eye.
+		
+		<<set $mansionRng to random(0, 7)>>
+		<<if $mansionRng is 1>>
+			It's a thin, <<print either("black", "grey", "white")>> book with either("no text visible", "strange markings")>> on the outside.
+		<<elseif $mansionRng is 2>>
+			It's a thin, <<print either("pink", "blue")>> book with <<print either("no text visible", "strange markings")>> on the outside.
+		<<elseif $mansionRng is 3>>
+			It's a thin, <<print either("red", "purple")>> book with <<print either("no text visible", "strange markings")>> on the outside.
+		<<else>>
+			It's a thin, <<print either("red", "purple", "black", "grey", "white", "pink", "blue")>> book with no text visible on the outside.
+		<</if>>
+		<br>
+		<br>
+		<<link [[Scan through the book (0:20)|Mansion Library Read Strange Book]]>><<pass 20>><<set $mansionMiscFlag to 1>><</link>>
+		<br>
+		<<link [[Read the book (1:00)|Mansion Library Read Strange Book]]>><<pass 60>><<set $mansionMiscFlag to 1>><</link>>
+		<br>
+		<<link [[Ignore the book|Mansion Library Don't Read Strange Book]]>><</link>>
+		
 	<<else>>
 		<<generate1>><<person1>>As you bend over to shelve a book, you feel somebody grab your neck from behind. With <<his>> other hand <<he>> covers your mouth and whispers “we’re in the library, you should keep your voice down while we have our fun”
 		
 		<br>
 		<br>
-		<<link [[Nod You Head|Mansion Library Quiet Assault]]>><<set $sexstart to 1>><<set $mansionMiscFlag to 1>><</link>>
+		<<link [[Nod your head|Mansion Library Quiet Assault]]>><<set $sexstart to 1>><<set $mansionMiscFlag to 1>><</link>>
 		<br>
-		<<link [[Say Nothing|Mansion Library Quiet Assault]]>><<set $sexstart to 1>><<set $mansionMiscFlag to 2>><</link>>
+		<<link [[Say nothing|Mansion Library Quiet Assault]]>><<set $sexstart to 1>><<set $mansionMiscFlag to 2>><</link>>
 		<br>
 		<<link [[Struggle|Mansion Library Assault]]>><</link>>
 	<</if>>
+
+:: Mansion Library Read Strange Book [nobr]
+	<<if $mansionRng is 1>>
+		<<if $mansionMiscFlag is 1>>
+			You find a quiet corner to read through the book. You learn a thing or two, but nothing major. <<schoolskill>> <<gschool>>
+		<<else>>
+			You flip through the pages of the book for a few minutes, reading small blurbs here and there. <<if either(1, 2, 3) is 1>><<schoolskill>><<gschool>><</if>>
+		<</if>>
+	<<elseif $mansionRng is 2>>
+		<<if $mansionMiscFlag is 1>>
+			You find a quiet corner to read through the book, but it's in a language you don't understand.
+		<<else>>
+			You flip through the pages of the book for a few minutes, but it's in a language you don't understand.
+		<</if>>
+	<<elseif $mansionRng is 3>>
+		<<if $mansionMiscFlag is 1>>
+			You find a quiet corner to read through the book.
+		<<else>>
+			You flip through the pages of the book for a few minutes, reading small blurbs here and there.
+		<</if>>
+	<<else>>
+		<<if $mansionMiscFlag is 1>>
+			You find a quiet corner to read through the book, but there's nothing interesting about it.
+		<<else>>
+			You flip through the pages of the book for a few minutes, reading small blurbs here and there. Nothing stands out to you about it so you put it back.
+		<</if>>
+	<</if>>
+	<br>
+	<br>
+	<<link [[Next|Mansion Library Read Strange Book End]]>><<pass 120>><</link>>
+
+:: Mansion Library Don't Read Strange Book [nobr]
+	You decide to ignore the book and put it with the rest. Not too long after, you're told by the librarian that you can leave.
+	<br>
+	<br>
+	<<link [[Next|Main Hall]]>><<pass 120>><</link>>
+	
+:: Mansion Library Read Strange Book End [nobr]
+	After you're done <<if $mansionMiscFlag is 1>>flipping through<<else>>reading through<</if>> the book, you put it back and finish your work. After you're done, the librarian tells you to leave.
+	<br>
+	<br>
+	<<link [[Next|Main Hall]]>><<pass 120>><</link>>
 
 
 :: Mansion Library Quiet Assault [nobr]
@@ -37,7 +105,7 @@
 		<<set $consensual to 1>>
 		<<neutral 1>>
 		<<maninit>>
-		<<He>> whispers in your ear "don't make a single noise and everything will be alright".
+		<<He>> whispers in your ear "don't make a single noise and you'll be alright".
 		<br>
 		<<set $mouthuse to "lefthand">>
 		<<set $NPCList[0].lefthand to "mouth">>
@@ -128,7 +196,7 @@
 			<<link [[Next|Mansion Library]]>><<pass 120>><</link>>
 		<br><br>
 		<<else>>
-			<<He>> grabs your hair and pulls, whispering "this was your own fault" before pushing you back to the ground and leaving. <<ggstress>> <<ggpain>> <<llGuestPop>>.
+			<<He>> grabs your hair and pulls, whispering "this was your own fault" before pushing you back to the ground and leaving. <<ggstress>> <<stress 12>> <<ggpain>> <<pain 16>> <<llGuestPop>>.
 			<br><br>
 			<<clotheson>>
 			

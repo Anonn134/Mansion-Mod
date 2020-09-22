@@ -93,14 +93,14 @@
 :: Mansion Guest Chat Bound Assault End [nobr]
 	<<ejaculation>>
 	<<if $enemyhealth is 0>>
-		<<He>> stagers back and says "what did I say? You could've been out of here, but now you're stuck. Have fun." <<He>> walks out of the cell, leaving you imobile and bound on the ground. <<ggstress>> <<lllMansionTrust>>
+		<<He>> staggers back and says "what did I say? You could've been out of here, but now you're stuck. Have fun." <<He>> walks out of the cell, leaving you imobile and bound on the ground. <<ggstress>> <<lllMansionTrust>>
 		<br><br>
 		<<stealclothes>>
 		<br><br>
 		<<clotheson>>
 		<<endcombat>>
 		
-		<<link [[Next|Mansion Unoficial Dungeon Stuck Loop]]]>><<set $mansionPunishmentTime to 0>><<pass 30>><</link>>
+		<<link [[Next|Mansion Unofficial Dungeon Stuck Loop]]]>><<set $mansionPunishmentTime to 0>><<pass 30>><</link>>
 			
 	<<elseif $enemyanger gte ($enemyangermax / 5) * 3>>
 		<<He>> steps back and says "what did I say? You could've been out of here, but now you're stuck. Have fun." <<He>> walks out of the cell, leaving you imobile and bound on the ground. <<ggstress>> <<lllMansionTrust>>
@@ -110,7 +110,7 @@
 		<<clotheson>>
 		<<endcombat>>
 			
-		<<link [[Next|Mansion Unoficial Dungeon Stuck Loop]]]>><<set $mansionPunishmentTime to 0>><</link>>
+		<<link [[Next|Mansion Unofficial Dungeon Stuck Loop]]]>><<set $mansionPunishmentTime to 0>><</link>>
 		
 	<<else>>
 		<<He>> says "you're lucky I'm not in a worse mood" before untying you and quickly leaving the cell. <<unbind>>

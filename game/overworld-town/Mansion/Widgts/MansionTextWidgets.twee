@@ -21,7 +21,7 @@
 
 <<widget "lGuestPop">><<nobr>> |
 <span class="purple">- Guest Popularity</span>
-<<set $mansionGuestPopularity to -= random(5, 10)>>
+<<set $mansionGuestPopularity -= random(5, 10)>>
 <<if $rng gte 70>><<set $mansionGuestReport to -1>><</if>>
 <</nobr>><</widget>>
 
@@ -57,17 +57,17 @@
 
 <<widget "lServantPop">><<nobr>> |
 <span class="red">- Servant Popularity</span>
-<<set $mansionServantPopularity to -= random(7, 13)>>
+<<set $mansionServantPopularity -= random(7, 13)>>
 <</nobr>><</widget>>
 
 <<widget "llServantPop">><<nobr>> |
 <span class="red">- - Servant Popularity</span>
-<<set $mansionServantPopularity to -= random(13, 20)>>
+<<set $mansionServantPopularity -= random(13, 20)>>
 <</nobr>><</widget>>
 
 <<widget "lllServantPop">><<nobr>> |
 <span class="red">- - - Servant Popularity</span>
-<<set $mansionServantPopularity to -= random(25, 30)>>
+<<set $mansionServantPopularity -= random(25, 30)>>
 <</nobr>><</widget>>
 
 
@@ -90,15 +90,15 @@
 
 <<widget "lMansionTrust">><<nobr>> |
 <span class="red">- Mansion Trust</span>
-<<set $mansionTrust to -= random(10, 15)>>
+<<set $mansionTrust -= random(10, 15)>>
 <</nobr>><</widget>>
 
 <<widget "llMansionTrust">><<nobr>> |
 <span class="red">- - Mansion Trust</span>
-<<set $mansionTrust to -= random(15, 20)>>
+<<set $mansionTrust -= random(15, 20)>>
 <</nobr>><</widget>>
 
 <<widget "lllMansionTrust">><<nobr>> |
 <span class="red">- - - Mansion Trust</span>
-<<set $mansionTrust to -= random(20, 25)>>
+<<set $mansionTrust -= random(20, 25)>>
 <</nobr>><</widget>>
