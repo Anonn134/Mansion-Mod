@@ -1,37 +1,125 @@
 :: Clean Dorms Chore [nobr]
-	<<if $rng gte 30>>
-		You begin cleaning the dormitories and the other guests stay out of your way.
-	
-		<<set $mansionChores.cleanDormitory to false>>
-		<br>
-		<<link [[Next|Dormitories Hall]]>><<pass 60>><</link>>
-	
-	<<else>>
-		As you begin cleaning, a pair of guests barge in and the room goes silent. They look at you and ask if you've seen a specific girl who works in the mansion, and presumably sleeps here. The room falls silent as they ask.
+	<<if $daystate is "dawn">>
+		<<if $rng gte 10>>
+			You begin cleaning the dormitories and the other servants stay out of your way as they get ready for their day.
+		
+			<<set $mansionChores.cleanDormitory to false>>
+			<br>
+			<<link [[Next|Dormitories Hall]]>><<pass 60>><</link>>
+		
+		<<else>>
+			<<generate1>><<generate2>>As you begin cleaning, a pair of guests barge in and the room goes silent. They look at you and ask if you've seen a specific servant who works in the mansion, and presumably sleeps here. The room falls silent as they ask.
 
-		<br>
-		<<link [[Tell them that you don't know who that is|Clean Dorms Chore 2.1]]>><<pass 60>><</link>>
-		<br>
-		<<link [[Tell them where the girl is|Clean Dorms Chore 2.2]]>><<pass 60>><</link>>
+			<br>
+			<<link [[Tell them that you don't know who that is|Clean Dorms Chore 2.1]]>><<pass 60>><</link>>
+			<br>
+			<<link [[Tell them where the girl is|Clean Dorms Chore 2.2]]>><<pass 60>><</link>>
+		<</if>>
+	<<elseif $daystate is "day">>
+		<<if $rng gte 30>>
+			You begin cleaning the dormitories and the other servants stay out of your way.
+		
+			<<set $mansionChores.cleanDormitory to false>>
+			<br>
+			<<link [[Next|Dormitories Hall]]>><<pass 60>><</link>>
+		
+		<<else>>
+			<<generate1>><<generate2>>As you begin cleaning, a pair of guests barge in and the room goes silent. They look at you and ask if you've seen a specific servant who works in the mansion, and presumably sleeps here. The room falls silent as they ask.
+
+			<br>
+			<<link [[Tell them that you don't know who that is|Clean Dorms Chore 2.1]]>><<pass 60>><</link>>
+			<br>
+			<<link [[Tell them where the girl is|Clean Dorms Chore 2.2]]>><<pass 60>><</link>>
+		<</if>>
+	<<elseif $daystate is "dusk">>
+	
+	<<elseif $daystate is "night">>
+		
 	<</if>>
+	
+	
 
 :: Clean Dorms Chore 2.1 [nobr]
-	The men smile at you and pat you on the back as they pass you and enter towards the girls room. The room remains silent as you complete your cleaning.
+	The two smile at you and pat you on the back as they pass you and enter towards the <<print either("girls'","boys'")>> room. The other servants remain quiet and avoid looking at you as you finish your chore. <<lllServantPop>> <<gggServantPop>>>
 	
 	<<set $mansionChores.cleanDormitory to false>>
 	<br>
 	<<link [[Next|Dormitories Hall]]>><<pass 60>><</link>>
 		
 :: Clean Dorms Chore 2.2 [nobr]
-	mtodo: Change to English check
-	
-	<<if $rng lte 10>>
-		The men don't believe you and approach you angrily.
-		
+	<<if $english gte (350+$rng)>>
+		The two <span class="red">don't believe you</span> and approach you angrily.
+		<br>
+		<br>
+		<<link [[Next|Mansion Clean Dorms Assault loop]]>><<set $molestationstart to 1>><</link>>
 	<<else>>
 		The men glance around at the dozen of faces looking at them then leave without another word. You complete your cleaning and the room returns to normal.
 		
 		<<set $mansionChores.cleanDormitory to false>>
 		<br>
 		<<link [[Next|Dormitories Hall]]>><<pass 60>><</link>>	
+	<</if>>
+	
+:: Mansion Clean Dorms Assault Loop [nobr]
+	<<if $molestationstart is 1>>
+		<<set $molestationstart to 0>>
+		<<controlloss>>
+		<<violence 1>>
+		<<neutral 1>>
+		<<molested>>
+		The guards push you into an open room
+		<<ganginit>>
+		<br>
+	<</if>>
+
+	<<effects>>
+	<<effectsman>><<man>>
+	<<stateman>>
+	<br><br>
+	<<actionsman>>
+	
+	<<if $alarm is 1>>
+		<<if $mansionServantPopularity gte 60 + random(-50, 50)>>
+			<span id="next"><<link [[Next|Mansion Clean Dorms Assault Rescue]]>><</link>></span><<nexttext>>
+		<<else>>
+			Either scared, unsure or unwilling, none of the other servants come to your aid.
+			<<set $alarm to 0>>
+			<<if $drugged gte 1>>
+				Intoxicated as you are, you can't cry very convincingly.
+			<</if>>
+			<br>
+			<br>
+			<<if $enemyarousal lt $enemyarousalmax and $enemyhealth gt 0>>
+				<span id="next"><<link [[Next|Mansion Clean Dorms Assault End]]>><</link>></span><<nexttext>>
+			<<elseif $alarm is 1 and $rescue is 1>>
+				<span id="next"><<link [[Next|Mansion Clean Dorms Assault Rescue]]>><</link>></span><<nexttext>>
+			<<else>>
+				<span id="next"><<link [[Next|Mansion Clean Dorms Assault Loop]]]>><</link>></span><<nexttext>>
+			<</if>>
+		<</if>>		
+	<<elseif $enemyarousal lt $enemyarousalmax and $enemyhealth gt 0>>
+		<span id="next"><<link [[Next|Mansion Clean Dorms Assault End]]>><</link>></span><<nexttext>>
+	<<elseif $alarm is 1 and $rescue is 1>>
+		<span id="next"><<link [[Next|Mansion Clean Dorms Assault Rescue]]>><</link>></span><<nexttext>>
+	<<else>>
+		<span id="next"><<link [[Next|Mansion Clean Dorms Assault Loop]]]>><</link>></span><<nexttext>>
+	<</if>>
+	
+
+:: Mansion Clean Dorms Assault Rescue [nobr]
+
+:: Mansion Clean Dorms Assault End [nobr]
+	<<if $enemyarousal gt $enemyarousalmax>>
+		<<ejaculation>>
+		<<tearful>> you manage to stagger into your room as the guards push their way out of the dormitories, still unclean.
+		<<stealclothes>>
+
+		<<endcombat>>
+			
+		<<link [[Next|Mansion Dormitories Personal Room]]>><</link>>
+	<<elseif $enemyhealth lt 0>>
+		You manage to fend <<him>> off, pushing <<him>> away and scrambling to your feet. You stare at each other for a few seconds, then <<he>> silently leaves. <<llGuestPop>>
+		<br><br>
+		<<clotheson>>
+		<<endcombat>>
 	<</if>>
