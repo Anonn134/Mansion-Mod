@@ -26,7 +26,7 @@
 	<<link [[Next|Mansion Pose Select]]>><</link>>
 	
 :: Mansion Pose Strip Refuse [nobr]
-	<<if $mansionTrust gte 50 or $rng lte 20>>
+	<<if $mansionTrust gte 40 + random(-30, 30)>>
 		The guard looks around at the guests then leans close to you and whispers “are you sure? These guests have paid good money for this, and one way or another you will be on that pedestal.”
 		<br>
 		<br>
