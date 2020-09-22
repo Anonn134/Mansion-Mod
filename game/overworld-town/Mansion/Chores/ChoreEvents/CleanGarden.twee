@@ -18,7 +18,7 @@
 				<<link [[Next|Mansion Garden Entrance]]>><<pass 160>><</link>>
 			<</if>>
 		<<elseif $rng gte 30>>		
-			<<generate1>>You begin to trim some hedges, but as you reach up to trim some especially high branches you feel somebody wrap their hands around and your chest and begin gropping you.
+			<<generate1>>You begin to trim some hedges, but as you reach up to trim some especially high branches you feel somebody wrap their hands around and your chest and begin groping you.
 			<br>
 			<br>			
 			<<link [[Ask them to stop|Mansion Garden Ask Stop]]>><</link>>

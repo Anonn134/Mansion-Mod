@@ -1,15 +1,15 @@
 :: Widgets Mansion Chore Action [widget]
 	<<widget "mansionDoChores">><<nobr>>
 	
-	<<if passage() is "Kitchen" and $mansionChores.cleanKitchen is true>>
+	<<if passage() is "Mansion Kitchen" and $mansionChores.cleanKitchen is true>>
 		<br><<link [[Clean Kitchen|Clean Kitchen Chore]]>><</link>>
 	<</if>>
 		
-	<<if passage() is "Dungeon Entrance" and $mansionChores.cleanDungeon is true>>
+	<<if passage() is "Mansion Dungeon Cells" and $mansionChores.cleanDungeon is true>>
 		<br><<link [[Clean Dungeon|Clean Dungeon Chore]]>><</link>>
 	<</if>>
 	
-	<<if passage() is "Strip Club Entrance" and $mansionChores.cleanStripClub is true>>
+	<<if passage() is "Mansion Strip Club Entrance" and $mansionChores.cleanStripClub is true>>
 		<br><<link [[Clean Club|Clean Club Chore]]>><</link>>
 	<</if>>
 
@@ -21,31 +21,31 @@
 		<br><<link [[Clean Main Hall|Clean Main Hall Chore]]>><</link>>		
 	<</if>>
 	
-	<<if passage() is "Dormitories Hall" and $mansionChores.cleanDormitory is true>>
+	<<if passage() is "Mansion Dormitories Hall" and $mansionChores.cleanDormitory is true>>
 		<br><<link [[Clean Dormitories|Clean Dorms Chore]]>><</link>>
 	<</if>>
 	
-	<<if passage() is "Garden Entrance" and $mansionChores.cleanGarden is true>>
+	<<if passage() is "Mansion Garden Entrance" and $mansionChores.cleanGarden is true>>
 		<br><<link [[Clean Garden|Clean Garden Chore]]>><</link>>
 	<</if>>
 	
-	<<if passage() is "Library" and $mansionChores.cleanLibrary is true>>
+	<<if passage() is "Mansion Library" and $mansionChores.cleanLibrary is true>>
 		<br><<link [[Clean Library|Clean Library Chore]]>><</link>>
 	<</if>>
 	
-	<<if passage() is "Laundry Room" and $mansionChores.doLaundry is true>>
+	<<if passage() is "Mansion Laundry Room" and $mansionChores.doLaundry is true>>
 		<br><<link [[Do Laundry|Do Laundry Chore]]>><</link>>
 	<</if>>
 	
 	<<if passage() is "Mansion Hospital" and $mansionChores.harperExperiment is true>>
-		<br><<link [[Harper Experements|Harper Experement Chore]]>><</link>>
+		<br><<link [[Harper Experiments|Harper Experiment Chore]]>><</link>>
 	<</if>>
 	
-	<<if passage() is "Strip Club Entrance" and $mansionChores.nakedPose is true>>
+	<<if passage() is "Mansion Strip Club Entrance" and $mansionChores.nakedPose is true>>
 		<br><<link [[Pose Naked|Pose Naked Chore]]>><</link>>
 	<</if>>
 	
-	<<if passage() is "Patio Area" and $mansionChores.patioService is true>>
+	<<if passage() is "Mansion Patio Area" and $mansionChores.patioService is true>>
 		<br><<link [[Service Patio|Patio Service Chore]]>><</link>>
 	<</if>>
 	

@@ -9,7 +9,7 @@
 :: Mansion Guest Chat 2.1 [nobr]
 	<<generate1>><<person1>>You turn to them as they approach. 
 	<<if $rng is 50>>
-		<<He>> leans towards you and whispers to you. "Looks like you're done here, how about you and I take a load off and spend some time somwhere private." He motions for you to follow him.
+		<<He>> leans towards you and whispers to you. "Looks like you're done here, how about you and I take a load off and spend some time somewhere private." He motions for you to follow him.
 		<br>
 		<br>
 		<<link [[Stay put|Mansion Guest Chat 3.1]]>><</link>>
@@ -46,7 +46,7 @@
 	<<link [[Next|Mansion Main Hall]]>><</link>>
 
 :: Mansion Guest Chat 4.1 [nobr]
-	mtodo: Relevent text for helping the guest
+	mtodo: Relevant text for helping the guest
 	<br>
 	<br>
 	<<endevent>>

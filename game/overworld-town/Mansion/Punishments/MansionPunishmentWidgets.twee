@@ -6,14 +6,14 @@
 		Your wrists are locked in a pair of metal cuffs, which are connected to chains hanging from the ceiling. The wrist cuffs dig painfully into your skin. <<ggpain>><br>
 
 	<<elseif $mansionpunishmentroomtype is 2>>
-		Your wrists and ankles are tied together with a thick rope, completely imobilizing you. You lay on the floor in a puddle of sweat forming as the lack of any air flow heats up the room. <<ggpain>><br>
+		Your wrists and ankles are tied together with a thick rope, completely immobilizing you. You lay on the floor in a puddle of sweat forming as the lack of any air flow heats up the room. <<ggpain>><br>
 		
 	<<elseif $mansionpunishmentroomtype is 3>>
 		You arms are uncomfortably locked in a pillory.<br>
 
 		<<gstress>>
 	<<elseif $mansionpunishmentroomtype is 4>>
-		Your wrists are tightly bound behind your back and attatched to the floor, forcing you to on your knees.<br>		
+		Your wrists are tightly bound behind your back and attached to the floor, forcing you to on your knees.<br>		
 	<</if>>
 	
 	<</nobr>><</widget>>
@@ -26,7 +26,7 @@
 	
 	<<if $mansionPunishmentTime lte 2>>
 		<<if $mansionRng is 1>>
-			You realize that the room not only is completly dark, but completly silent as well.
+			You realize that the room not only is completely dark, but completely silent as well.
 			<br><br>
 		<<elseif $mansionRng is 2>>
 			With no windows or openings, the room begins to heat up.
@@ -67,7 +67,7 @@
 	<</nobr>><</widget>>
 		
 
-/* When the player is appoached by a guard that asks you if you're ready to work */
+/* When the player is approached by a guard that asks you if you're ready to work */
 :: Widgets Mansion Dungeon Punishment Checkin [widget]
 	<<widget "mansiondungeoncheckin">><<nobr>>
 	
@@ -116,7 +116,7 @@
 				He helps you up and gingerly leads you out of the dungeon and into your bedroom without a word.
 			<</if>>
 		<<else>>
-			After a few moments of silence, he aproaches you. He kneels down then grabs your chin, moving your head left and right as he looks into your eyes.<br>
+			After a few moments of silence, he approaches you. He kneels down then grabs your chin, moving your head left and right as he looks into your eyes.<br>
 			He says "I think this one has learned their lesson, lets get you back to your room so you can get some rest, you're useless like this."
 			<<if $worn.face.type.includes("gag")>>
 				He reaches down and carefully removes the piece of tape blocking your mouth, then helps you up and gingerly leads you out of the dungeon and into your bedroom without a word.
@@ -153,17 +153,17 @@
 	
 	<<set $mansionRng to either(1, 2, 3)>>
 	<<if $mansionRng is 1 and not $worn.face.type.includes("blindfold")>>
-		With something inhand, the reach around your face and tie a blindfold around your head. <<facewear 5>>
+		With something in hand, the reach around your face and tie a blindfold around your head. <<facewear 5>>
 	<<elseif $mansionRng is 2 and not $worn.face.type.includes("gag")>>
 		<<if $worn.face.type.includes("blindfold")>>
-			Unable to see, you feel them sticking something on your mouth that stops you from oppening your lips.
+			Unable to see, you feel them sticking something on your mouth that stops you from opening your lips.
 		<<else>>
-			They take a small strip of tape and attatch it to your mouth.
+			They take a small strip of tape and attach it to your mouth.
 			<<facewear 4>>
 		<</if>>
 	<<elseif $mansionRng is 3>>
 		<<if not $worn.face.type.includes("blindfold")>>
-			With something inhand, they reach around your face and tie a blindfold around your head. <<facewear 5>>
+			With something in hand, they reach around your face and tie a blindfold around your head. <<facewear 5>>
 		<</if>>
 		<<if not $worn.face.type.includes("gag")>>
 			Unable to see, you feel them sticking something on your mouth that prevents you from moving your mouth.

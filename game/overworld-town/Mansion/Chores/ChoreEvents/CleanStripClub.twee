@@ -5,14 +5,14 @@
 		<<set $mansionChores.cleanStripClub to false>>
 		
 		<br>
-		<<link [[Next|Strip Club Entrance]]>><<pass 60>><</link>>
+		<<link [[Next|Mansion Strip Club Entrance]]>><<pass 60>><</link>>
 
 		<</if>>
 	<<if $daystate is "night" or $daystate is "dusk">>
-		The room is crowded and full of guests oogling at the dancers, making your cleaning effort take much longer. You quietly clean the bar area and what unused furniture you can find, glad that you have not been noticed. 
+		The room is crowded and full of guests ogling at the dancers, making your cleaning effort take much longer. You quietly clean the bar area and what unused furniture you can find, glad that you have not been noticed. 
 		
 		<<set $mansionChores.cleanStripClub to false>>
 		
 		<br>
-		<<link [[Next|Strip Club Entrance]]>><<pass 90>><</link>>
+		<<link [[Next|Mansion Strip Club Entrance]]>><<pass 90>><</link>>
 	<</if>>

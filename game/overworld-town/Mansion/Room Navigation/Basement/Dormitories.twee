@@ -4,7 +4,7 @@
 	A straight thin hallway with doors lining each wall. The rooms are cramped and barely lit, and the carpet covering all the floor is checkered with unrecognizable stains. 
 	
 	<<if $daystate is "dawn">>
-		Servants are begining to trickle out of their rooms, you hear people talking quietly, not wanting to wake up anyone still sleeping. 
+		Servants are beginning to trickle out of their rooms, you hear people talking quietly, not wanting to wake up anyone still sleeping. 
 	<<elseif $daystate is "day">>
 		There aren't many people in the halls as the day has begun. 
 	<<elseif $daystate is "dusk">>
@@ -18,7 +18,7 @@
 		<<if $mansionRng is 1>>
 			You see a servant consoling their friend, who is in tears.
 		<<elseif $mansionRng is 2 and $daystate is not "night">>
-			You see a goup of servants talking and laughing.
+			You see a group of servants talking and laughing.
 		<<elseif $mansionRng is 3>>
 			A door to somebodies room is cracked open, and you can see a servant balled up in a corner crying.
 		<</if>>

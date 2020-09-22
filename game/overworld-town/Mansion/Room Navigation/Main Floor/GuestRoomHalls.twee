@@ -1,7 +1,7 @@
 :: Guest Room Hall [nobr]
 	<<mansionDisplayChores>>
 
-	A dark hallway lined with doors and ending with a lavish, pink door that leads to the strip club. A couple of cameras line the hall, leaving no space unwatched. <br>
+	A dark hallway lined with doors and ending with a lavish, pink door that leads to the strip club. A couple of cameras line the hall, leaving no space unlatched. <br>
 	
 	/* mansionOneRoomEventDay is to prevent the player from seeing specific room flavor text more than once when moving to a room. */
 	<<if $mansionOneRoomEventDay.guestroomhalls is false>>

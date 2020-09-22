@@ -70,7 +70,7 @@
 :: Mansion Main Hall Drunk Encounter Loop [nobr]
 	<<if $sexstart is 1>>
 		<<if $mansionMiscFlag is 1 or $mansionMiscFlag is 3>>
-			You smell the strong alcohol on <<his>> breath as <<he>> gets more and more agressive with <<his>> groping, to the point where you are unable to continue your work.
+			You smell the strong alcohol on <<his>> breath as <<he>> gets more and more aggressive with <<his>> groping, to the point where you are unable to continue your work.
 			<<consensual>>
 			<<set $consensual to 1>>
 			<<neutral 1>>

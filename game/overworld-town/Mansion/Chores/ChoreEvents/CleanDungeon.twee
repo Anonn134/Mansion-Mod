@@ -15,7 +15,7 @@
 			<br>
 			<<link [[Finish Chore|Dungeon Entrance]]>><<pass 180>><</link>>
 		<<elseif $rng lte 70>>
-			<<generate1>><<person1>>As you exit a particularly disgusting room, you see an angry guard rubbing their arm with a grimmace on <<his>> face. You hear <<him>> mutter "bitch sure has some claws on her, she'll pay for that."
+			<<generate1>><<person1>>As you exit a particularly disgusting room, you see an angry guard rubbing their arm with a grimace on <<his>> face. You hear <<him>> mutter "bitch sure has some claws on her, she'll pay for that."
 			<br>You try to keep your head down as <<he>> passes, not wanting to draw <<his>> ire.
 			<<if $allure + random(-2000,2000) gte 4000>>
 				As you pass, <<he>> glances at you with a hungry look in <<his>> eyes, then reaches down to you, putting his arm around you and drawing you near. "Hey, so the girl in that room over there didn't want to have fun, so you're going to play the part instead, got it?"
@@ -58,7 +58,7 @@
 	<<link [[Next|Clean Dungeon Assault Resist Loop]]>><<set $sexstart to 1>><</link>>
 
 :: Clean Dungeon Assault Give In
-	You nod your head and the <<man>> smiles. "Good pet." <<He>> half drags, half pushes you into one of the open cells, causing you to sumble and fall. <<gpain>> 
+	You nod your head and the <<man>> smiles. "Good pet." <<He>> half drags, half pushes you into one of the open cells, causing you to stumble and fall. <<gpain>> 
 	<br>You see various pieces of bondage strewn throughout the room, and the <<man>> says "I'm not about to have a second one fight back" while locking your arms in a tight binding and locking you to the floor before advancing on you. <<bind>>
 	<br>
 	<br>
@@ -93,7 +93,7 @@
 :: Mansion Guest Chat Bound Assault End [nobr]
 	<<ejaculation>>
 	<<if $enemyhealth is 0>>
-		<<He>> staggers back and says "what did I say? You could've been out of here, but now you're stuck. Have fun." <<He>> walks out of the cell, leaving you imobile and bound on the ground. <<ggstress>> <<lllMansionTrust>>
+		<<He>> staggers back and says "what did I say? You could've been out of here, but now you're stuck. Have fun." <<He>> walks out of the cell, leaving you immobile and bound on the ground. <<ggstress>> <<lllMansionTrust>>
 		<br><br>
 		<<stealclothes>>
 		<br><br>
@@ -103,7 +103,7 @@
 		<<link [[Next|Mansion Unofficial Dungeon Stuck Loop]]]>><<set $mansionPunishmentTime to 0>><<pass 30>><</link>>
 			
 	<<elseif $enemyanger gte ($enemyangermax / 5) * 3>>
-		<<He>> steps back and says "what did I say? You could've been out of here, but now you're stuck. Have fun." <<He>> walks out of the cell, leaving you imobile and bound on the ground. <<ggstress>> <<lllMansionTrust>>
+		<<He>> steps back and says "what did I say? You could've been out of here, but now you're stuck. Have fun." <<He>> walks out of the cell, leaving you immobile and bound on the ground. <<ggstress>> <<lllMansionTrust>>
 		<br><br>
 		<<stealclothes>>
 		<br><br>

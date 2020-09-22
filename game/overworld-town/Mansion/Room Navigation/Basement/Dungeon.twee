@@ -27,7 +27,7 @@
 	<<mansionDoQuest>>
 	
 	
-:: Mansion Unoficial Dungeon Stuck Loop [nobr]
+:: Mansion Unofficial Dungeon Stuck Loop [nobr]
 	<<if $mansionMiscFlag is 1>>
 		You sit there quietly. 
 	<<else>>
@@ -37,7 +37,7 @@
 	<<if $mansionPunishmentTime is 0>>
 		The door is open and hopefully that guard didn't mark you down to be punished, so hopefully somebody will come by and let you out.
 	<<elseif $mansionPunishmentTime gte 1>>
-		You arms are begining to get uncomfortable, hopefully comes by soon. <<gpain>>
+		You arms are beginning to get uncomfortable, hopefully comes by soon. <<gpain>>
 	<<elseif $mansionPunishmentTime gte 3>>
 		You struggle against your bindings, but they don't budge. <<gpain>>
 	<<elseif $mansionPunishmentTime gte 5>>
@@ -56,61 +56,61 @@
 	<<else>>
 		<<set $mansionRng to random(1,4)>>
 		<<if $mansionRng is 1 or 2>>
-			<<link [[Sit Quietly|Mansion Unoficial Dungeon Stuck Loop]]>><<set $mansionMiscFlag to 1>><</link>>
+			<<link [[Sit Quietly|Mansion Unofficial Dungeon Stuck Loop]]>><<set $mansionMiscFlag to 1>><</link>>
 		<<elseif $mansionRng is 3>>
-			<<link [[Sit Quietly|Mansion Unoficial Dungeon Stuck Guard Quiet]]>><<set $mansionMiscFlag to 0>><</link>>
+			<<link [[Sit Quietly|Mansion Unofficial Dungeon Stuck Guard Quiet]]>><<set $mansionMiscFlag to 0>><</link>>
 		<<elseif $mansionRng is 4>>
-			<<link [[Sit Quietly|Mansion Unoficial Dungeon Stuck Servant Quiet]]>><<set $mansionMiscFlag to 0>><</link>>
+			<<link [[Sit Quietly|Mansion Unofficial Dungeon Stuck Servant Quiet]]>><<set $mansionMiscFlag to 0>><</link>>
 		<</if>>
 		
 		<br>
 		
 		<<set $mansionRng to random(1,3)>>
 		<<if $mansionRng is 1>>
-			<<link [[Yell For Help|Mansion Unoficial Dungeon Stuck Loop]]>><<set $mansionMiscFlag to 2>><</link>>
+			<<link [[Yell For Help|Mansion Unofficial Dungeon Stuck Loop]]>><<set $mansionMiscFlag to 2>><</link>>
 		<<elseif $mansionRng is 2>>
-			<<link [[Yell For Help|Mansion Unoficial Dungeon Stuck Guard Call]]>><<set $mansionMiscFlag to 0>><</link>>
+			<<link [[Yell For Help|Mansion Unofficial Dungeon Stuck Guard Call]]>><<set $mansionMiscFlag to 0>><</link>>
 		<<elseif $mansionRng is 3>>
-			<<link [[Yell For Help|Mansion Unoficial Dungeon Stuck Servant Call]]>><<set $mansionMiscFlag to 0>><</link>>
+			<<link [[Yell For Help|Mansion Unofficial Dungeon Stuck Servant Call]]>><<set $mansionMiscFlag to 0>><</link>>
 		<</if>>
 	<</if>>
 		
 	
-:: Mansion Unoficial Dungeon Stuck Guard Quiet [nobr]
+:: Mansion Unofficial Dungeon Stuck Guard Quiet [nobr]
 	<<if $mansionTrust gte random(40, 70)>>
-		<<generate1>><<person1>>You quietly sit there as a guard passes your cell. <<He>> glances over at you, seeing the open cell door. <<He>> approaches you and says "you don't seem like the troublemaking type, and I don't remember seeing your name on the punishment list, let me see what's going on here" then turns around leaves.
+		<<generate1>><<person1>>You quietly sit there as a guard passes your cell. <<He>> glances over at you, seeing the open cell door. <<He>> approaches you and says "you don't seem like the trouble-making type, and I don't remember seeing your name on the punishment list, let me see what's going on here" then turns around leaves.
 		<br>
 		<br>
-		<<link [[Next|Mansion Unoficial Dungeon Stuck Guard Save]]>><</link>>
+		<<link [[Next|Mansion Unofficial Dungeon Stuck Guard Save]]>><</link>>
 	<<else>>
 		<<set $mansionRng to random(1,3)>>
 		<<if $mansionRng is 1>>
 			You quietly sit there as a guard passes your cell, not even seeming to notice you.
 			<br>
 			<br>
-			<<link [[Next|Mansion Unoficial Dungeon Stuck Loop]]>><</link>>
+			<<link [[Next|Mansion Unofficial Dungeon Stuck Loop]]>><</link>>
 			
 		<<elseif $mansionRng is 2>>
 			You quietly sit there as a guard passes your cell. Guard notices you and assaults you.
 		
 		<<elseif $mansionRng is 3>>
 			<<if $mansionTrust gte random(40, 70)>>
-				<<generate1>><<person1>>You quietly sit there as a guard passes your cell. <<He>> glances over at you, seeing the open cell door. <<He>> approaches you and says "you don't seem like the troublemaking type, and I don't remember seeing your name on the punishment list, let me see what's going on here" then turns around leaves.
+				<<generate1>><<person1>>You quietly sit there as a guard passes your cell. <<He>> glances over at you, seeing the open cell door. <<He>> approaches you and says "you don't seem like the trouble-making type, and I don't remember seeing your name on the punishment list, let me see what's going on here" then turns around leaves.
 				<br>
 				<br>
-				<<link [[Next|Mansion Unoficial Dungeon Stuck Guard Save]]>><</link>>
+				<<link [[Next|Mansion Unofficial Dungeon Stuck Guard Save]]>><</link>>
 			<</if>>
 		<</if>>
 	<</if>>
 
-:: Mansion Unoficial Dungeon Stuck Guard Call [nobr]
+:: Mansion Unofficial Dungeon Stuck Guard Call [nobr]
 	<<generate1>><<person1>>You call out to the guard and tell <<him>> that you aren't supposed to be here.  
 	
 	<<if $mansionTrust gte random(0, 200)>>
-		<<He>> glances over at you, seeing the open cell door. <<He>> approaches you and says "you don't seem like the troublemaking type, and I don't remember seeing your name on the punishment list, let me see what's going on here" then turns around leaves.
+		<<He>> glances over at you, seeing the open cell door. <<He>> approaches you and says "you don't seem like the trouble-making type, and I don't remember seeing your name on the punishment list, let me see what's going on here" then turns around leaves.
 		<br>
 		<br>
-		<<link [[Next|Mansion Unoficial Dungeon Stuck Guard Save]]>><</link>>
+		<<link [[Next|Mansion Unofficial Dungeon Stuck Guard Save]]>><</link>>
 	<<else>>
 		<<if $rng gte 50>>
 			<<He>> glances over at you, ignoring you and shaking his head as <<he>> walks past.
@@ -118,14 +118,14 @@
 			<<He>> glances over at you before glancing around the rest of the dungeon. <<He>> walks into your cell and says "I didn't see anyone's name assigned to this cell, so I'd be willing to believe you and let you out if you show me a good time. How about it?
 			<br>
 			<br>
-			<<link [[Accept <<His>> Help|Mansion Unoficial Dungeon Stuck Guard Accept]]>><</link>>
+			<<link [[Accept <<His>> Help|Mansion Unofficial Dungeon Stuck Guard Accept]]>><</link>>
 			<br>
-			<<link [[Say You'd Rather Stay Here|Mansion Unoficial Dungeon Stuck Guard Reject]]>><</link>>
+			<<link [[Say You'd Rather Stay Here|Mansion Unofficial Dungeon Stuck Guard Reject]]>><</link>>
 		<</if>>
 	<</if>>
 		
 
-:: Mansion Unoficial Dungeon Stuck Servant Quiet [nobr]
+:: Mansion Unofficial Dungeon Stuck Servant Quiet [nobr]
 	<<if $mansionServantPopularity gte random(20, 180)>>
 		<<He>> glances over at you, seeing the open cell door. <<He>> looks left and right, then quickly approaches you. <<He>> puts a finger over his mouth and begins to undo your bindings. After a moment, your arms are free and you stand up. Before you can thank <<him>>, <<he>> runs out of the cell with a worried look on his face. <<ltrauma>> <<gstress>>
 		<br>
@@ -135,10 +135,10 @@
 		<<He>> glances over at you, but speeds up his pace as <<he>> walks past. <<gstress>>
 		<br>
 		<br>
-		<<link [[Next|Mansion Unoficial Dungeon Stuck Loop]]>><</link>>
+		<<link [[Next|Mansion Unofficial Dungeon Stuck Loop]]>><</link>>
 	<</if>>
 
-:: Mansion Unoficial Dungeon Stuck Servant Call [nobr]
+:: Mansion Unofficial Dungeon Stuck Servant Call [nobr]
 	<<generate1>><<person1>>You call out to the servant and tell <<him>> that you aren't supposed to be here.  
 	
 	<<if $mansionServantPopularity gte random(20, 200)>>
@@ -150,17 +150,17 @@
 		<<He>> glances over at you, but speeds up his pace as <<he>> walks past. <<gstress>>
 		<br>
 		<br>
-		<<link [[Next|Mansion Unoficial Dungeon Stuck Loop]]>><</link>>
+		<<link [[Next|Mansion Unofficial Dungeon Stuck Loop]]>><</link>>
 	<</if>>
 		
 
-:: Mansion Unoficial Dungeon Stuck Guard Help [nobr]
+:: Mansion Unofficial Dungeon Stuck Guard Help [nobr]
 	You sit there for another few minutes before the guard comes back and says "I don't want to know what you did to get yourself tied up, but you have work to do and you can't do it like this." <<He>> then unties you and sends you on your way.
 	<br>
 	<br>
 	<<link [[Next|Mansion Dungeon Cells]]>><</link>>
 		
-:: Mansion Unoficial Dungeon Stuck Guard Accept Loop [nobr]
+:: Mansion Unofficial Dungeon Stuck Guard Accept Loop [nobr]
 	<<if $sexstart is 1>>
 		<<set $sexstart to 0>>
 		<<consensual>>
@@ -177,14 +177,14 @@
 	<<actionsman>>
 	
 	<<if $mouthactiondefault is "bite">>
-		<span id="next"><<link [[Next|Mansion Unoficial Dungeon Stuck Guard Accept End Angry]]>><</link>></span><<nexttext>>
+		<span id="next"><<link [[Next|Mansion Unofficial Dungeon Stuck Guard Accept End Angry]]>><</link>></span><<nexttext>>
 	<<elseif $enemyarousal gte $enemyarousalmax or $enemyhealth lte 0>>
-		<span id="next"><<link [[Next|Mansion Unoficial Dungeon Stuck Guard Accept End]]>><</link>></span><<nexttext>>
+		<span id="next"><<link [[Next|Mansion Unofficial Dungeon Stuck Guard Accept End]]>><</link>></span><<nexttext>>
 	<<else>>
-		<span id="next"><<link [[Next|Mansion Unoficial Dungeon Stuck Guard Accept Loop]]>><</link>></span><<nexttext>>
+		<span id="next"><<link [[Next|Mansion Unofficial Dungeon Stuck Guard Accept Loop]]>><</link>></span><<nexttext>>
 	<</if>>
 
-:: Mansion Unoficial Dungeon Stuck Guard Accept End [nobr]
+:: Mansion Unofficial Dungeon Stuck Guard Accept End [nobr]
 	<<if $enemyarousal gte $enemyarousalmax>>
 		<<ejaculation>>
 		"Very good, now lets get you out of those bindings and back to work"
@@ -198,23 +198,23 @@
 		<<endcombat>>
 		<br>
 		<br>
-		<<link [[Next|Mansion Unoficial Dungeon Stuck Loop]]>><</link>>
+		<<link [[Next|Mansion Unofficial Dungeon Stuck Loop]]>><</link>>
 	<</if>>
 
-:: Mansion Unoficial Dungeon Stuck Guard Accept End Angry
+:: Mansion Unofficial Dungeon Stuck Guard Accept End Angry
 	The <<man>> recoils and says "You bitch, I guess you just want to be left here" before quickly leaving the cell <<llMansionTrust>>
 	<br><br>
 	<<endcombat>>
 	<br>
 	<br>
-	<<link [[Next|Mansion Unoficial Dungeon Stuck Loop]]>><</link>>
+	<<link [[Next|Mansion Unofficial Dungeon Stuck Loop]]>><</link>>
 	
 
-:: Mansion Unoficial Dungeon Stuck Guard Reject [nobr]
+:: Mansion Unofficial Dungeon Stuck Guard Reject [nobr]
 	You shake your head, and the guard just shrugs and leaves. 
 	<br>
 	<br>
-	<<link [[Next|Mansion Unoficial Dungeon Stuck Loop]]>><</link>>
+	<<link [[Next|Mansion Unofficial Dungeon Stuck Loop]]>><</link>>
 		
 				
 		
