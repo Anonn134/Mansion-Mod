@@ -38,6 +38,7 @@
 		<br>
 		<br>
 		<<link [[Next|Mansion Pose Force Undress Loop]]>><<set $sexStart to 1>><</link>>
+	<</if>>
 	
 :: Mansion Pose Refuse Again [nobr]
 	You once again refuse. The guard sighs then says something into <<his>> wrist. Not a moment later, another guard enters the room and grab you. <<generate2>>
