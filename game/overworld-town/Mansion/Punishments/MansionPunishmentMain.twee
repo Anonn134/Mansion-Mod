@@ -18,16 +18,16 @@
 	<<set $mansionpunishmentroomtype to either(1, 2, 3, 4)>>
 	
 	<<if $mansionpunishmentroomtype is 1>>
-		One of them men grabs your wrists, locking them into cuffs attached to the ceiling. The other walks to a corner of the room where, after your wrists are both cuffed, he pulls on a chain, lifting you slowly into the air by your wrists until you dangle helplessly. The wrist cuffs dig painfully into your skin as the men leave you hanging in complete darkness. <<ggpain>> <<gstress>>
+		One of them men grabs your wrists, locking them into cuffs attached to the ceiling. The other walks to a corner of the room where, after your wrists are both cuffed, he pulls on a chain, lifting you slowly into the air by your wrists until you dangle helplessly. The wrist cuffs dig painfully into your skin as the men leave you hanging in complete darkness. <<ggpain>> <<pain 6>> <<gstress>> <<stress 6>>
 
 	<<elseif $mansionpunishmentroomtype is 2>>
-		Your wrists and ankles are tied together with a thick rope behind your back, completely immobilizing you. The men step back, admiring their work, then leave, shutting the door and leaving you in complete darkness. <<ggpain>> <<gstress>>
+		Your wrists and ankles are tied together with a thick rope behind your back, completely immobilizing you. The men step back, admiring their work, then leave, shutting the door and leaving you in complete darkness. <<ggpain>> <<pain 6>> <<gstress>> <<stress 6>>
 		
 	<<elseif $mansionpunishmentroomtype is 3>>
-		When you enter, you see a pillory set up in the center of the room. They waste no time in forcing you in and locking your arms and neck inside before giving you a quick slap on the butt and leaving, closing the door and plunging the room into complete darkness. <<ggpain>> <<gstress>>
+		When you enter, you see a pillory set up in the center of the room. They waste no time in forcing you in and locking your arms and neck inside before giving you a quick slap on the butt and leaving, closing the door and plunging the room into complete darkness. <<ggpain>> <<pain 6>> <<gstress>> <<stress 6>>
 		
 	<<elseif $mansionpunishmentroomtype is 4>>
-		One of the men pushes you to the ground face down, and proceeds to force your arms behind your back and into some contraption. When your arms are completely encased, you hear him tug on a string and the contraption tightens painfully, binding your arms together. You are then forced to sit on your knees and you feel the contraption being attached to the floor, causing your entire body to arch back as your arms are completely immobilized. The men walk around you, admiring their work, then exit and close the door, leaving you in pitch darkness. <<ggpain>> <<gstress>>
+		One of the men pushes you to the ground face down, and proceeds to force your arms behind your back and into some contraption. When your arms are completely encased, you hear him tug on a string and the contraption tightens painfully, binding your arms together. You are then forced to sit on your knees and you feel the contraption being attached to the floor, causing your entire body to arch back as your arms are completely immobilized. The men walk around you, admiring their work, then exit and close the door, leaving you in pitch darkness. <<ggpain>> <<pain 6>> <<gstress>> <<stress 6>>
 	<</if>>
 	<br>
 	<br>

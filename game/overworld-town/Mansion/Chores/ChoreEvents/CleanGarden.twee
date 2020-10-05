@@ -18,7 +18,7 @@
 				<<link [[Next|Mansion Garden Entrance]]>><<pass 160>><</link>>
 			<</if>>
 		<<elseif $rng gte 30>>		
-			<<generate1>>You begin to trim some hedges, but as you reach up to trim some especially high branches you feel somebody wrap their hands around and your chest and begin groping you.
+			<<generate1>><<person1>>You begin to trim some hedges, but as you reach up to trim some especially high branches you feel somebody wrap their hands around and your chest and begin groping you.
 			<br>
 			<br>			
 			<<link [[Ask them to stop|Mansion Garden Ask Stop]]>><</link>>
@@ -26,7 +26,7 @@
 			<<link [[Put up with it|Mansion Garden Put Up With]]>><</link>>
 		<<else>>	
 			<<if $mansionServantPopularity gte random(20, 130)>>
-				As you struggle to get a large pile of leaves in a trash bag, another servant approaches you and helps. The two of you chat, and once you're done they wave and go on their way.
+				As you struggle to get a large pile of leaves in a trash bag, another servant approaches you and helps you work. The two of you chat, and once you're done they wave and go on their way. <<gServantPop>> <<ltrauma>> <<trauma -3>>
 				<br>
 				<br>
 				<<link [[Next|Mansion Garden Entrance]]>><<pass 100>><</link>>
@@ -50,7 +50,7 @@
 		<</if>>
 	<<elseif $daystate is "night" or $daystate is "dusk">>
 		<<if random(0, 120) lte $mansionGuestPopularity>>
-			You hear footsteps behind you, but before you can turn you feel somebody roughly grab you and shove you to the ground.
+			<<generate1>>You hear footsteps behind you, but before you can turn you feel somebody roughly grab you and shove you to the ground.
 			<br>
 			<br>
 			<<link [[Next|Mansion Garden Assault Resist]]>><<set $sexstart to 1>><</link>>
@@ -61,7 +61,7 @@
 					<<if $mansionRng is 1>>
 						The time passes uneventfully.
 					<<elseif $mansionRng is 2>>
-						You hear something scurrying behind you, but when you turn around you see nothing but darkness. You quickly finish your chore. <<gstress>>		
+						You hear something scurrying behind you, but when you turn around you see nothing but darkness. You quickly finish your chore. <<gstress>> <<stress 6>>	
 					<</if>>
 				
 				<<set $mansionChores.cleanGarden to false>>
@@ -114,6 +114,7 @@
 		<<He>> continues to grope you, but eventually leaves you to finish your chore.
 		<br>
 		<br>
+		<<set $mansionChores.cleanGarden to false>>
 		<<link [[Finish The Chore|Mansion Garden Entrance]]>><<pass 160>><</link>>
 	<</if>>
 	
@@ -191,7 +192,7 @@
 		<<endcombat>>
 	<</if>>
 	
-	<<link [[Finish The Chore|Mansion Garden Entrance]]>><<pass 160>><</link>>
+	<<link [[Finish The Chore|Mansion Garden Entrance]]>><<pass 160>><<set $mansionChores.cleanGarden to false>><</link>>
 
 :: Mansion Garden Assault Give In End [nobr]
 	<<if $enemyarousal lt $enemyarousalmax>>

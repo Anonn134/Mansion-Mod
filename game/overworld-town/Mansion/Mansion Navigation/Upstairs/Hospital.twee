@@ -5,7 +5,7 @@
 		
 	<br>
 	<br>
-	<<link [[Mansion Main Hall|Mansion Main Hall]]>><<pass 1>><</link>>
+	<<link [[Return|Mansion Upstairs Entrance]]>><</link>>
 	<br>
 	<<mansionDoChores>>	
 	<<mansionDoQuest>>

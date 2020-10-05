@@ -6,10 +6,10 @@
 		You clean the Kitchen without any issues.
 		<br>
 		
-		<<link [[Finish Chore|Kitchen]]>><<pass 60>><</link>>
+		<<link [[Finish Chore|Mansion Kitchen]]>><<pass 60>><</link>>
 	<<else>>
 		As you are cleaning, another maid slips and falls, knocking over a stack of plates and breaking them, you spend an extra half hour cleaning.
 		<br>
 		
-		<<link [[Finish Chore|Kitchen]]>><<pass 90>><</link>>
+		<<link [[Finish Chore|Mansion Kitchen]]>><<pass 90>><</link>>
 	<</if>>

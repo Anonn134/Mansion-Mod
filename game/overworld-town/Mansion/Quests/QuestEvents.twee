@@ -30,7 +30,7 @@
 	<</if>> for them. They quietly thank you as you leave.
 
 	<br>
-	<<link [[Next|Dungeon Entrance]]>><<pass 1>><</link>>
+	<<link [[Next|Mansion Dungeon Cells]]>><<pass 1>><</link>>
 
 
 /* clean then help */
@@ -44,7 +44,7 @@
 	<<set $mansionChores.cleanDungeon to false>>
 	
 	<br>
-	<<link [[Next|Dungeon Entrance]]>><<pass 120>><</link>>
+	<<link [[Next|Mansion Dungeon Cells]]>><<pass 120>><</link>>
 	
 
 /* ignore food or water */	
@@ -54,7 +54,7 @@
 	<<set $mansionChores.cleanDungeon to false>>
 
 	<br>
-	<<link [[Next|Dungeon Entrance]]>><<pass 120>><</link>>
+	<<link [[Next|Mansion Dungeon Cells]]>><<pass 120>><</link>>
 
 /* get food or water */
 :: Dungeon FoodWater Event 3 [nobr]
@@ -93,11 +93,11 @@
 		help them drink the water. Looking much better, they thank you and you spend some time talking. You hear somebody walking down the hall so you leave. <<ltrauma>>
 		
 		<br>
-		<<link [[Leave|Dungeon Entrance]]>>	<<set $mansionQuestsStage.dungeonFoodWater to 0>><</link>>
+		<<link [[Leave|Mansion Dungeon Cells]]>>	<<set $mansionQuestsStage.dungeonFoodWater to 0>><</link>>
 	<<elseif $mansionQuestsStage.dungeonFoodWater is 4>>
 		gingerly feed them the food you brought. Looking much better, they thank you and you spend some time talking. You hear somebody walking down the hall so you leave. <<ltrauma>>
 		
 		<br>
-		<<link [[Leave|Dungeon Entrance]]>>	<<set $mansionQuestsStage.dungeonFoodWater to 0>><</link>>
+		<<link [[Leave|Mansion Dungeon Cells]]>>	<<set $mansionQuestsStage.dungeonFoodWater to 0>><</link>>
 	<</if>>.
 	

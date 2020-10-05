@@ -218,12 +218,16 @@
 			You attempt to emulate poses you've seen in movies and paintings, trying to make yourself look as good as possible. Silently, the guests either continue to paint or continue to stare at your body.
 			
 			<<set $mansionPaintingPoseGoodness to 35 + ($beauty / 2000) + random(-20,20) + 10>>
-			
+			<br>
+			<br>
+			<<link [[Next|Mansion Pose Finish 2]]>><</link>>
 		<<else>>
 			You attempt to emulate poses you've seen in movies and paintings, trying to make yourself look as good as possible. Unimpressed with your attempts, one of the guests speaks up and says "please just stand still."
 			
 			<<set $mansionPaintingPoseGoodness to 5 + ($beauty / 2000) + random(-20,20)>>
-			
+			<br>
+			<br>
+			<<link [[Next|Mansion Pose Finish 2]]>><</link>>
 		<</if>>
 		
 	<<elseif $mansionPaintingPoseGoodness is 15>>

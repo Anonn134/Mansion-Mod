@@ -1,17 +1,17 @@
-/* Widget tht displays the players physical status / position in the dungeon */
+/* Widget that displays the players physical status / position in the dungeon */
 :: Widgets Mansion Dungeon Punishment Restraints Display [widget]
 	<<widget "mansiondungeonrestraintsdisplay">><<nobr>>
 	
 	<<if $mansionpunishmentroomtype is 1>>
-		Your wrists are locked in a pair of metal cuffs, which are connected to chains hanging from the ceiling. The wrist cuffs dig painfully into your skin. <<ggpain>><br>
+		Your wrists are locked in a pair of metal cuffs, which are connected to chains hanging from the ceiling. The wrist cuffs dig painfully into your skin. <<ggpain>> <<pain 6>><br>
 
 	<<elseif $mansionpunishmentroomtype is 2>>
-		Your wrists and ankles are tied together with a thick rope, completely immobilizing you. You lay on the floor in a puddle of sweat forming as the lack of any air flow heats up the room. <<ggpain>><br>
+		Your wrists and ankles are tied together with a thick rope, completely immobilizing you. You lay on the floor in a puddle of sweat forming as the lack of any air flow heats up the room. <<ggpain>> <<pain 6>><br>
 		
 	<<elseif $mansionpunishmentroomtype is 3>>
-		You arms are uncomfortably locked in a pillory.<br>
-
-		<<gstress>>
+		You arms are uncomfortably locked in a pillory. <<gstress>> <<stress 6>>
+		
+		<br>
 	<<elseif $mansionpunishmentroomtype is 4>>
 		Your wrists are tightly bound behind your back and attached to the floor, forcing you to on your knees.<br>		
 	<</if>>
@@ -45,19 +45,19 @@
 			You begin to get tired, but your restraints are so uncomfortable that falling asleep is impossible.
 			<br><br>
 		<<elseif $mansionRng is 3>>
-			You can't tell how long you've been in here. <<gstress>>
+			You can't tell how long you've been in here. <<gstress>> <<stress 6>>
 			<br><br>
 		<</if>>
 	
 	<<elseif $mansionPunishmentTime gte 5>>
 		<<if $mansionRng is 1>>
-			You've been in this room for hours, you don't know how much longer you can take this. <<ggstress>>
+			You've been in this room for hours, you don't know how much longer you can take this. <<ggstress>> <<stress 12>>
 			<br><br>
 		<<elseif $mansionRng is 2>>
-			The heat is getting unbearable and the air is getting stale. A puddle of sweat is forming underneath you. <<ggstress>>
+			The heat is getting unbearable and the air is getting stale. A puddle of sweat is forming underneath you. <<ggstress>> <<stress 12>>
 			<br><br>
 		<<elseif $mansionRng is 3>>
-			You begin to panic, how long are they going to leave you in here? <<ggstress>>
+			You begin to panic, how long are they going to leave you in here? <<ggstress>> <<stress 12>>
 			<br><br>
 		<</if>>
 	<</if>>
@@ -68,7 +68,7 @@
 		
 
 /* When the player is approached by a guard that asks you if you're ready to work */
-:: Widgets Mansion Dungeon Punishment Checkin [widget]
+:: Widgets Mansion Dungeon Punishment Check-in [widget]
 	<<widget "mansiondungeoncheckin">><<nobr>>
 	
 	<<if $worn.face.type.includes("blindfold")>>

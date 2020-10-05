@@ -1,14 +1,15 @@
 :: Guest Room Hall [nobr]
 	<<mansionDisplayChores>>
 
-	A dark hallway lined with doors and ending with a lavish, pink door that leads to the strip club. A couple of cameras line the hall, leaving no space unlatched. <br>
+	You are in the guest room halls, a dark hallway lined with doors leading to guest rooms. At the end of the hall is a lavish, pink door that leads to the strip club.
+	<br>
 	
 	/* mansionOneRoomEventDay is to prevent the player from seeing specific room flavor text more than once when moving to a room. */
 	<<if $mansionOneRoomEventDay.guestroomhalls is false>>
 		<<set $mansionOneRoomEventDay.guestroomhalls to true>>
 		<<if $rng lte 50>>
 			<<set $mansionRng to random(1, 10)>>
-			<<if $mansionRng is to 1>>
+			<<if $mansionRng is 1>>
 				You hear a loud crash from a nearby room, followed by the sound of gagging. <<gstress>>
 			<<elseif $mansionRng is 2>>
 				You think you hear muffled screams. <<gstress>>

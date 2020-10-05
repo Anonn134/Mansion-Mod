@@ -18,9 +18,9 @@
 	<</if>>
 	
 	/* give food or water in dungeon */
-	<<if passage() is "Dungeon Entrance" and $mansionQuestsStage.dungeonFoodWater is 3>>
+	<<if passage() is "Mansion Dungeon Cells" and $mansionQuestsStage.dungeonFoodWater is 3>>
 		<<link [[Give the prisoner water|Dungeon FoodWater Event 4]]>><</link>>
-	<<elseif passage() is "Dungeon Entrance" and $mansionQuestsStage.dungeonFoodWater is 4>>
+	<<elseif passage() is "Mansion Dungeon Cells" and $mansionQuestsStage.dungeonFoodWater is 4>>
 		<<link [[Give the prisoner water|Dungeon FoodWater Event 4]]>><</link>>
 	<</if>>
 

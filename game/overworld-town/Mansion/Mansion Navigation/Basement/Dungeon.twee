@@ -10,7 +10,7 @@
 		<<elseif $mansionRng is 2>>
 			You hear chains rattling.
 		<<elseif $mansionRng is 3>>	
-			A couple of guards oogle you as they walk out.
+			A couple of guards ogle you as they walk out.
 		<<elseif $mansionRng is 4>>
 			
 		<<elseif $mansionRng is 5>>	

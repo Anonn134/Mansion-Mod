@@ -6,15 +6,16 @@
 			<<set $mansionChores.cleanDungeon to false>>
 			<br>
 			<br>
-			<<link [[Finish Chore|Dungeon Entrance]]>><<pass 120>><</link>>
+			<<link [[Finish The Chore|Mansion Dungeon Cells]]>><<pass 120>><</link>>
 			
 		<<elseif $rng lte 50>>
 			The cells are especially dirty today, it takes more than a couple hours to clean this mess up.
 			<<set $mansionChores.cleanDungeon to false>>
 			
 			<br>
-			<<link [[Finish Chore|Dungeon Entrance]]>><<pass 180>><</link>>
+			<<link [[Finish The Chore|Mansion Dungeon Cells]]>><<pass 180>><</link>>
 		<<elseif $rng lte 70>>
+			<<pass 60>>
 			<<generate1>><<person1>>As you exit a particularly disgusting room, you see an angry guard rubbing their arm with a grimace on <<his>> face. You hear <<him>> mutter "bitch sure has some claws on her, she'll pay for that."
 			<br>You try to keep your head down as <<he>> passes, not wanting to draw <<his>> ire.
 			<<if $allure + random(-2000,2000) gte 4000>>
@@ -38,10 +39,10 @@
 		
 		<br>
 		<br>
-		<<link [[Finish Chore|Dungeon Entrance]]>><<pass 120>><<set $mansionChores.cleanDungeon to false>><</link>>
+		<<link [[Finish Chore|Mansion Dungeon Cells]]>><<pass 120>><<set $mansionChores.cleanDungeon to false>><</link>>
 		
 		<br>
-		<<link [[Leave|Dungeon Entrance]]>><<pass 1>><</link>>
+		<<link [[Leave|Mansion Dungeon Cells]]>><<pass 1>><</link>>
 		
 		<<if $mansionQuestsStage.dungeonFoodWater is 3>>
 			<<link [[Give the prisoner water|Dungeon FoodWater Event 4]]>>
@@ -110,7 +111,7 @@
 		<<clotheson>>
 		<<endcombat>>
 			
-		<<link [[Next|Mansion Unofficial Dungeon Stuck Loop]]]>><<set $mansionPunishmentTime to 0>><</link>>
+		<<link [[Next|Mansion Unofficial Dungeon Stuck Loop]]]>><<set $mansionPunishmentTime to 0>><<pass 30>><</link>>
 		
 	<<else>>
 		<<He>> says "you're lucky I'm not in a worse mood" before untying you and quickly leaving the cell. <<unbind>>
@@ -120,7 +121,7 @@
 		<<clotheson>>
 		<<endcombat>>
 		
-		<<link [[Finish Cleaning|Mansion Dungeon]]]>><<pass 30>><</link>>
+		<<link [[Finish Cleaning|Mansion Dungeon]]]>><<pass 70>><</link>>
 	<</if>>
 	
 :: Clean Dungeon Assault Resist Attack Loop
@@ -159,9 +160,9 @@
 		<br><br>
 	<</if>>
 	<br><br>
-	<<tearful>> you rise to your feet.
+	<<tearful>> you rise to your feet and finish cleaning.
 	<br><br>
 	<<clotheson>>
 	<<endcombat>>
-	
-	<<link [[Next|Mansion Dungeon]]]>><</link>>
+	<<set $mansionChores.cleanDungeon to false>>
+	<<link [[Finish The Chore|Mansion Dungeon]]]>><<pass 70>><</link>>

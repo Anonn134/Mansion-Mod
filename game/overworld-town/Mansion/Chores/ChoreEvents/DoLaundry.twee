@@ -13,7 +13,7 @@
 		<<set $mansionQuestsStage.laundryStage to 1>>
 		<<if $rng lte 50>>
 			<<pass 30>>
-			You take a short nap and are soon woken up by the ringing of the washing machine. You move the wet clothing into the dryer and put the next load in the washing machine. Once again, you have some time before this load finishes. <<ltiredness>>
+			You take a short nap and are soon woken up by the ringing of the washing machine. You move the wet clothing into the dryer and put the next load in the washing machine. Once again, you have some time before this load finishes. <<ltiredness>> <<tiredness -3>>
 			<br>
 			<br>
 			<<link [[Do Nothing|Laundry Idle]]>><</link>>
@@ -29,7 +29,7 @@
 			<<else>>
 				<<if $mansionServantPopularity gte random(40, 150)>>
 					<<pass 50>>
-					You slept through the washing machine ring, but not by that much. As you go to move the wet clothing into the dryer, you see that somebody has already done it for you. It seems like another servant helped you out. <<lstress>> <<ltiredness>>
+					You slept through the washing machine ring, but not by that much. As you go to move the wet clothing into the dryer, you see that somebody has already done it for you. It seems like another servant helped you out. <<lstress>> <<ltiredness>> <<tiredness -3>>
 					<br>
 					After you survey the room and see that you have nothing to do but wait, you decide that you have some time before this load finishes.
 					<br>
@@ -39,7 +39,7 @@
 					<<link [[Take a Nap|Laundry Nap]]>><</link>>
 				<<else>>
 					<<pass 50>>
-					You slept through the washing machine ring, but not by that much. You move the wet clothing into the dryer and put the next load in the washing machine. Once again, you have some time before this load finishes. <<ltiredness>>
+					You slept through the washing machine ring, but not by that much. You move the wet clothing into the dryer and put the next load in the washing machine. Once again, you have some time before this load finishes. <<ltiredness>> <<tiredness -3>>
 					<br>
 					<br>
 					<<link [[Do Nothing|Laundry Idle]]>><</link>>
@@ -52,7 +52,7 @@
 		<<set $mansionQuestsStage.laundryStage to 2>>
 		<<if $rng lte 50>>
 			<<pass 30>>
-			You take a short nap and are soon woken up by the ringing of the washing machine. You move the wet clothing into the dryer and put the next load in the washing machine. Once again, you have some time before this load finishes. <<ltiredness>>
+			You take a short nap and are soon woken up by the ringing of the washing machine. You move the wet clothing into the dryer and put the next load in the washing machine. Once again, you have some time before this load finishes. <<ltiredness>> <<tiredness -3>>
 			<br>
 			<br>
 			<<link [[Do Nothing|Laundry Idle]]>><</link>>
@@ -68,7 +68,7 @@
 			<<else>>
 				<<if $mansionServantPopularity gte random(40, 150)>>
 					<<pass 50>>
-					You slept through the washing machine ring, but not by that much. As you go to move the wet clothing into the dryer, you see that somebody has already done it for you. It seems like another servant helped you out. <<lstress>> <<ltiredness>>
+					You slept through the washing machine ring, but not by that much. As you go to move the wet clothing into the dryer, you see that somebody has already done it for you. It seems like another servant helped you out. <<lstress>> <<ltiredness>> <<tiredness -3>>
 					<br>
 					After you survey the room and see that you have nothing to do but wait, you decide that you have some time before this load finishes.
 					<br>
@@ -78,7 +78,7 @@
 					<<link [[Take a Nap|Laundry Nap]]>><</link>>
 				<<else>>
 					<<pass 50>>
-					You slept through the washing machine ring, but not by that much. You move the wet clothing into the dryer and put the next load in the washing machine. Once again, you have some time before this load finishes. <<ltiredness>>
+					You slept through the washing machine ring, but not by that much. You move the wet clothing into the dryer and put the next load in the washing machine. Once again, you have some time before this load finishes. <<ltiredness>> <<tiredness -3>>
 					<br>
 					<br>
 					<<link [[Do Nothing|Laundry Idle]]>><</link>>
@@ -92,15 +92,15 @@
 		<<set $mansionChores.cleanLibrary to false>>
 		<<if $rng lte 80>>
 			<<pass 30>>
-			You take a short nap and are soon woken up by the ringing of the washing machine. You take some time to fold the cloths and put them away.<<ltiredness>>
+			You take a short nap and are soon woken up by the ringing of the washing machine. You take some time to fold the cloths and put them away.<<ltiredness>> <<tiredness -3>>
 		<<else>>
 			<<pass 50>>
-			You slept through the washing machine ring, but not by that much. You take some time to fold the cloths and put them away. <<ltiredness>>
+			You slept through the washing machine ring, but not by that much. You take some time to fold the cloths and put them away. <<ltiredness>> <<tiredness -3>>
 		<</if>>
 				
 		<br>
 		<br>
-		<<link [[Finish Chore|Mansion Laundry Room]]>><</link>>
+		<<link [[Finish The Chore|Mansion Laundry Room]]>><<set $mansionChores.doLaundry to false>><</link>>
 	<</if>>
 		
 :: Laundry Idle [nobr]

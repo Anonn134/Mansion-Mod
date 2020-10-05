@@ -1,1 +1,6 @@
 :: Harper Chore [nobr]
+You complete the chore.
+<br>
+<br>
+<<set $mansionChores.harperExperiment to false>> 
+<<link [[Return|Mansion Upstairs Entrance]]>><</link>>

@@ -1,1 +1,6 @@
 :: Clean Guest Rooms Chore [nobr]
+	Clean guest room
+	<<set $mansionChores.cleanGuestRooms to false>>
+	<br>
+	<br>
+	<<link [[Finish Chore|Mansion Guest Room Hall]]>><<pass 90>><</link>>
